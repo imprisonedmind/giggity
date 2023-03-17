@@ -32,10 +32,12 @@ export default async function Gig({params}) {
       <MainArea item={item}/>
       <Map latLong={latLong} apikey={apiKey}/>
     </div>
-    <ButtonArea ticket={item.ticket}/>
-    <Weather latLng={latLong} date={item.date} apiKey={weatherApiKey}/>
-    {item.artists && Object.values(item.artists).map((artist) => {
-      return <Artist id={artist.id} key={artist.id}/>
+    <div className={"w-full gap-4 flex"}>
+      <ButtonArea ticket={item.ticket}/>
+      <Weather latLng={latLong} date={item.date} apiKey={weatherApiKey}/>
+    </div>
+    {item.artists && item.artists.map((artist) => {
+      return <Artist id={artist} key={artist}/>
     })}
   </div>
 }

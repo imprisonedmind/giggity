@@ -56,7 +56,7 @@ export default async function Artist({id}) {
     const followers = artistData.followers.total
     const imgUrl = artistData.images[0].url
     return (
-        <div className={"flex flex-col grow row-span-2 bg-neutral-800 border border-1" +
+        <div className={"flex flex-col grow h-fit bg-neutral-800 border border-1" +
             " border-neutral-700 rounded-lg p-4 text-neutral-500 gap-4"}>
           <div className={"flex flex-nowrap gap-4 items-center"}>
             <div

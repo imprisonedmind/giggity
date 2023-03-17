@@ -25,11 +25,13 @@ export default async function TopTracks({artistId, token}) {
   const data = await getTopTracks(artistId, token)
   const tracks = data.tracks
 
+  console.log(tracks)
+
   return <div>{
     Object.values(tracks).map((x) => (
         <Link href={x.external_urls.spotify}
-            className={"flex justify-between flex-nowrap gap-4 py-2 items-center" +
-                " cursor-pointer hover:bg-neutral-700 group p-2 rounded-md "}>
+              className={"flex justify-between flex-nowrap gap-4 py-2 items-center" +
+                  " cursor-pointer hover:bg-neutral-700 group p-2 rounded-md "}>
           <div className={"flex flex-nowrap items-center gap-4"}>
             <div className={"relative h-8 w-8 rounded-md overflow-hidden"}>
               <Image src={x.album.images[0].url} alt={"test"} fill={true}/>
