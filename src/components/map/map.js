@@ -6,18 +6,24 @@ const containerStyle = {
   height: '400px'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
 
 const options = {
   styles: [
     {
+      featureType: 'poi',
+      elementType: 'labels',
+      stylers: [{visibility: 'on'}],
+    },
+    {
+      featureType: 'transit',
+      elementType: 'labels',
+      stylers: [{visibility: 'off'}],
+    },
+    {
       featureType: 'all',
       elementType: 'all',
       stylers: [
-        {invert_lightness: 'true'},
+        {invert_lightness: true},
         {saturation: 10},
         {lightness: 10},
         {gamma: 0.9},
@@ -28,21 +34,21 @@ const options = {
   disableDefaultUI: true,
 };
 
-const apikey = process.env.GOOGLE_MAPS_API_KEY || ''
 
+export default function Map({latLong, apikey}) {
 
-export default function Map({location}) {
-
-  return <LoadScript googleMapsApiKey={apikey}>
-    <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={19}
-        options={options}
-    >
-      <Marker position={center}>
-        <div className={"h-4 w-4 bg-red-500"}/>
-      </Marker>
-    </GoogleMap>
-  </LoadScript>
+  return <div className={"col-span-1 rounded-lg overflow-hidden border border-1" +
+      " border-neutral-700 "}>
+    <LoadScript googleMapsApiKey={apikey}>
+      <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={latLong}
+          zoom={18}
+          options={options}
+      >
+        <Marker position={latLong} title={"test test test"}>
+        </Marker>
+      </GoogleMap>
+    </LoadScript>
+  </div>
 }

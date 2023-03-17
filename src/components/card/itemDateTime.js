@@ -1,8 +1,7 @@
-export default function ItemDateTime({item}) {
+export default function ItemDateTime({eventTime, eventDate}) {
   const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
 
-  const timeString = item.time;
-  const [hours, minutes] = timeString.split(':');
+  const [hours, minutes] = eventTime.split(':');
 
   const start = new Date();
   start.setHours(hours);
@@ -15,9 +14,9 @@ export default function ItemDateTime({item}) {
   });
 
   return <div className={"flex text-xs flex-nowrap text-neutral-500 h-fit relative" +
-      " overflow-hidden"}>
+      " overflow-hidden flex-shrink-0"}>
     <p>
-      {new Date(item.date).toLocaleDateString('en-US', options)}
+      {new Date(eventDate).toLocaleDateString('en-US', options)}
     </p>
     <p className={"px-1"}>·</p>
     <p>{time12hr}</p>

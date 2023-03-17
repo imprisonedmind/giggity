@@ -13,12 +13,10 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData()
-  console.log(data)
   return (
       <main className={"flex flex-wrap sm:flex-nowrap gap-4"}>
-        {data.map((item) => {
-          return <ItemCard item={item} key={item.id}/>
-        })}
+        {data.map((item) => <ItemCard item={item} key={item.id}/>
+        )}
       </main>
   )
 }
