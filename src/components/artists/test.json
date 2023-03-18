@@ -1,0 +1,784 @@
+{
+  "tracks": [
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 274000,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZDA81958662"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/1ow2NY5g60OZM20IE405jB"
+      },
+      "href": "https://api.spotify.com/v1/tracks/1ow2NY5g60OZM20IE405jB",
+      "id": "1ow2NY5g60OZM20IE405jB",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Why?",
+      "popularity": 7,
+      "preview_url": "https://p.scdn.co/mp3-preview/65d0ba1e330de194673d473e9ad394a6e8f5407b?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:1ow2NY5g60OZM20IE405jB"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 476000,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZDA81958668"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/3YaHCa1EGVauIlGpHa70PG"
+      },
+      "href": "https://api.spotify.com/v1/tracks/3YaHCa1EGVauIlGpHa70PG",
+      "id": "3YaHCa1EGVauIlGpHa70PG",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Exhale",
+      "popularity": 4,
+      "preview_url": "https://p.scdn.co/mp3-preview/a3f2c492f95311cd70b340e6bd73cbac47fe5d0f?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 7,
+      "type": "track",
+      "uri": "spotify:track:3YaHCa1EGVauIlGpHa70PG"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 756250,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZDA81958666"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/3mwtFiw9AKeiPzNlrdaeEj"
+      },
+      "href": "https://api.spotify.com/v1/tracks/3mwtFiw9AKeiPzNlrdaeEj",
+      "id": "3mwtFiw9AKeiPzNlrdaeEj",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Sunset",
+      "popularity": 3,
+      "preview_url": "https://p.scdn.co/mp3-preview/a3f5bcf1aa12e4ad0208c0846d47076c323a4f33?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 5,
+      "type": "track",
+      "uri": "spotify:track:3mwtFiw9AKeiPzNlrdaeEj"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 432000,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZDA81958664"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/7KEfMjaA1DhRqZoCAft903"
+      },
+      "href": "https://api.spotify.com/v1/tracks/7KEfMjaA1DhRqZoCAft903",
+      "id": "7KEfMjaA1DhRqZoCAft903",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Forwards Backwards",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/6cceb27ab3ef748f52692ab9b5fd4ba63ec6bdab?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 3,
+      "type": "track",
+      "uri": "spotify:track:7KEfMjaA1DhRqZoCAft903"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/1bW7Pf6bYTkHKG1dZorNZt"
+        },
+        "href": "https://api.spotify.com/v1/albums/1bW7Pf6bYTkHKG1dZorNZt",
+        "id": "1bW7Pf6bYTkHKG1dZorNZt",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273c6a2ac145ae8a93dc5b19f95",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02c6a2ac145ae8a93dc5b19f95",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851c6a2ac145ae8a93dc5b19f95",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Birth Create Dissipate",
+        "release_date": "2019-08-16",
+        "release_date_precision": "day",
+        "total_tracks": 8,
+        "type": "album",
+        "uri": "spotify:album:1bW7Pf6bYTkHKG1dZorNZt"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 403500,
+      "explicit": true,
+      "external_ids": {
+        "isrc": "QZFZ71993380"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/2CSflDq1OllFESnzYe3TDy"
+      },
+      "href": "https://api.spotify.com/v1/tracks/2CSflDq1OllFESnzYe3TDy",
+      "id": "2CSflDq1OllFESnzYe3TDy",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Exit Here",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/4b92855186a90fe92e31c224f2a755d0aa5c0e04?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:2CSflDq1OllFESnzYe3TDy"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 315000,
+      "explicit": true,
+      "external_ids": {
+        "isrc": "QZDA81958663"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/2DjkqEr1bLUJ2i5qpzdPfY"
+      },
+      "href": "https://api.spotify.com/v1/tracks/2DjkqEr1bLUJ2i5qpzdPfY",
+      "id": "2DjkqEr1bLUJ2i5qpzdPfY",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Confusing Pool",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/e6add8c08fa504f142078f2141d932bc3dd2aa06?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 2,
+      "type": "track",
+      "uri": "spotify:track:2DjkqEr1bLUJ2i5qpzdPfY"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/1bW7Pf6bYTkHKG1dZorNZt"
+        },
+        "href": "https://api.spotify.com/v1/albums/1bW7Pf6bYTkHKG1dZorNZt",
+        "id": "1bW7Pf6bYTkHKG1dZorNZt",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273c6a2ac145ae8a93dc5b19f95",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02c6a2ac145ae8a93dc5b19f95",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851c6a2ac145ae8a93dc5b19f95",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Birth Create Dissipate",
+        "release_date": "2019-08-16",
+        "release_date_precision": "day",
+        "total_tracks": 8,
+        "type": "album",
+        "uri": "spotify:album:1bW7Pf6bYTkHKG1dZorNZt"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 343000,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZFZ71993382"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/1zfcScRHDNCtR39DEKQRmh"
+      },
+      "href": "https://api.spotify.com/v1/tracks/1zfcScRHDNCtR39DEKQRmh",
+      "id": "1zfcScRHDNCtR39DEKQRmh",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Sickly Sweet",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/f68e8691f1fa099cb87cc74eaacf5eac43c63179?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 3,
+      "type": "track",
+      "uri": "spotify:track:1zfcScRHDNCtR39DEKQRmh"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 390124,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZDA81958665"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/52PqfaURde80Gqou7mA2Q8"
+      },
+      "href": "https://api.spotify.com/v1/tracks/52PqfaURde80Gqou7mA2Q8",
+      "id": "52PqfaURde80Gqou7mA2Q8",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Tiny Minds",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/9e9ce5aeb5f0f5674b302eed3a9328295374c568?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 4,
+      "type": "track",
+      "uri": "spotify:track:52PqfaURde80Gqou7mA2Q8"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/30XqMVtcT2FCsBvswDr8Qo"
+        },
+        "href": "https://api.spotify.com/v1/albums/30XqMVtcT2FCsBvswDr8Qo",
+        "id": "30XqMVtcT2FCsBvswDr8Qo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735e5def5fac95242363c55303",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025e5def5fac95242363c55303",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515e5def5fac95242363c55303",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Death, Existing and Other Joys of Life",
+        "release_date": "2016-12-13",
+        "release_date_precision": "day",
+        "total_tracks": 7,
+        "type": "album",
+        "uri": "spotify:album:30XqMVtcT2FCsBvswDr8Qo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 496500,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZDA81958667"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/0QtZJC6cW1bgTTZ3BLhmbb"
+      },
+      "href": "https://api.spotify.com/v1/tracks/0QtZJC6cW1bgTTZ3BLhmbb",
+      "id": "0QtZJC6cW1bgTTZ3BLhmbb",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Sweet Dull Warmth",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/e6520a28418eed36eb253ed1fa7dc2fc392838c6?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 6,
+      "type": "track",
+      "uri": "spotify:track:0QtZJC6cW1bgTTZ3BLhmbb"
+    },
+    {
+      "album": {
+        "album_group": "album",
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+            },
+            "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+            "id": "3MbHogzjoXCIsuVaI9taM1",
+            "name": "Black Math",
+            "type": "artist",
+            "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/1bW7Pf6bYTkHKG1dZorNZt"
+        },
+        "href": "https://api.spotify.com/v1/albums/1bW7Pf6bYTkHKG1dZorNZt",
+        "id": "1bW7Pf6bYTkHKG1dZorNZt",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273c6a2ac145ae8a93dc5b19f95",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02c6a2ac145ae8a93dc5b19f95",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851c6a2ac145ae8a93dc5b19f95",
+            "width": 64
+          }
+        ],
+        "is_playable": true,
+        "name": "Birth Create Dissipate",
+        "release_date": "2019-08-16",
+        "release_date_precision": "day",
+        "total_tracks": 8,
+        "type": "album",
+        "uri": "spotify:album:1bW7Pf6bYTkHKG1dZorNZt"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3MbHogzjoXCIsuVaI9taM1"
+          },
+          "href": "https://api.spotify.com/v1/artists/3MbHogzjoXCIsuVaI9taM1",
+          "id": "3MbHogzjoXCIsuVaI9taM1",
+          "name": "Black Math",
+          "type": "artist",
+          "uri": "spotify:artist:3MbHogzjoXCIsuVaI9taM1"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 384500,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZFZ71993384"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/7JbZlizgi6y2Uiveel8UMW"
+      },
+      "href": "https://api.spotify.com/v1/tracks/7JbZlizgi6y2Uiveel8UMW",
+      "id": "7JbZlizgi6y2Uiveel8UMW",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Daily Voices",
+      "popularity": 1,
+      "preview_url": "https://p.scdn.co/mp3-preview/257adc9282fc90ed957e8f2d58134b93ede5d6e3?cid=4d2747328f004e23b6e53da6e714ed37",
+      "track_number": 5,
+      "type": "track",
+      "uri": "spotify:track:7JbZlizgi6y2Uiveel8UMW"
+    }
+  ]
+}

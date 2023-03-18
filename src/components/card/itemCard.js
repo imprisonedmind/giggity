@@ -24,7 +24,7 @@ export default function ItemCard({item}) {
       <Price price={item.onlinePrice} online={true}/>
       <Price price={item.doorPrice}/>
     </div>
-    <ItemButton title={"View More"} colour={"bg-neutral-900"}
+    <ItemButton title={"View More"} colour={"bg-neutral-900 border-neutral-700"}
                 hover={"hover:text-neutral-500"} textColour={"text-neutral-600"}
                 link={`/gig/${item.uid}`}/>
   </div>

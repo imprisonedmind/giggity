@@ -25,8 +25,6 @@ export default async function TopTracks({artistId, token}) {
   const data = await getTopTracks(artistId, token)
   const tracks = data.tracks
 
-  console.log(tracks)
-
   return <div>{
     Object.values(tracks).map((x) => (
         <Link href={x.external_urls.spotify}
