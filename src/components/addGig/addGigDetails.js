@@ -13,7 +13,13 @@ async function GetTextExtraction(img) {
   return await response.json();
 }
 
-export default function AddGigDetails({imgUrl, setShowInputs, artists, setArtists}) {
+export default function AddGigDetails({
+                                        imgUrl,
+                                        setShowInputs,
+                                        artists,
+                                        setArtists,
+                                        formik
+                                      }) {
   const [data, setData] = useState(null);
 
 
@@ -46,7 +52,13 @@ export default function AddGigDetails({imgUrl, setShowInputs, artists, setArtist
 
       <div className={"flex flex-col gap-2"}>
         <p>Title</p>
-        <FormInput value={data.title}/>
+        <FormInput
+            id={"title"}
+            name={"title"}
+            placeholder={"Enter event title"}
+            onChange={formik.handleChange}
+            defaultValue={data.title}
+        />
       </div>
 
       <div className={"flex flex-col gap-2"}>
@@ -55,8 +67,12 @@ export default function AddGigDetails({imgUrl, setShowInputs, artists, setArtist
           {artists && artists.map((artist, index) => (
               <div key={index} className={"group relative grow items-center" +
                   " flex max-w-[33%]"}>
-                <FormInput value={artist} width={"w-full"}
-                           onChange={(event) => handleArtistChange(event, index)}/>
+                <FormInput
+                    width={"w-full"}
+                    placeholder={"Enter an artist name"}
+                    defaultValue={artist}
+                    onChange={(event) => handleArtistChange(event, index)}
+                />
                 <div onClick={() => deleteArtist(index)} className={"bg-red-500/20" +
                     " text-red-500 h-3/4 aspect-square p-[5px] hidden absolute right-1" +
                     " rounded-md cursor-pointer group-hover:flex"}>
@@ -75,23 +91,71 @@ export default function AddGigDetails({imgUrl, setShowInputs, artists, setArtist
       <div className={"flex flex-col gap-2"}>
         <p>Venue</p>
         <div className={"flex gap-2"}>
-          <FormInput value={data.venue}/>
-          <FormInput value={data.location}/>
+          <FormInput
+              id={"location"}
+              name={"location"}
+              placeholder={"Enter a venue"}
+              onChange={formik.handleChange}
+              defaultValue={data.venue}
+          />
+          <FormInput
+              id={"city"}
+              name={"city"}
+              placeholder={"Enter a city"}
+              onChange={formik.handleChange}
+              defaultValue={data.location}
+          />
         </div>
       </div>
 
       <div className={"flex flex-col gap-2"}>
         <p>Date</p>
         <div className={"flex gap-2"}>
-          <FormInput value={data.date}/>
-          <FormInput value={data.time}/>
+          <FormInput
+              id={"date"}
+              name={"date"}
+              placeholder={"Enter a date"}
+              onChange={formik.handleChange}
+              defaultValue={data.date}
+          />
+          <FormInput
+              id={"time"}
+              name={"time"}
+              placeholder={"Enter a time"}
+              onChange={formik.handleChange}
+              defaultValue={data.time}
+          />
         </div>
       </div>
 
       <div className={"flex flex-col gap-2"}>
         <p>Price</p>
         <div className={"flex gap-2"}>
-          <FormInput value={data.price}/>
+          <FormInput
+              id={"onlinePrice"}
+              name={"onlinePrice"}
+              placeholder={"Enter online price"}
+              onChange={formik.handleChange}
+              defaultValue={data.price}
+          />
+          <FormInput
+              id={"doorPrice"}
+              name={"doorPrice"}
+              placeholder={"Enter door price"}
+              onChange={formik.handleChange}
+          />
+        </div>
+      </div>
+
+      <div className={"flex flex-col gap-2"}>
+        <p>Ticket Link</p>
+        <div className={"flex gap-2"}>
+          <FormInput
+              id={"ticket"}
+              name={"ticket"}
+              placeholder={"Enter the ticket link"}
+              onChange={formik.handleChange}
+          />
         </div>
       </div>
 

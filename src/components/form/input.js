@@ -11,6 +11,7 @@ export default function FormInput(props) {
           maxLength={props.maxLength}
           onChange={props.onChange}
           value={props.value}
+          defaultValue={props.defaultValue}
           checked={props.checked}
           placeholder={props.placeholder}
           required={props.required}
