@@ -12,8 +12,8 @@ export default function LinkForm({formik, showInstaInput, showSubmission}) {
         </form>
       </FormikProvider>
       <div onClick={formik.handleSubmit}
-           className={"flex bg-neutral-900 p-2 rounded-lg border border-1" +
-               " border-neutral-700 justify-center cursor-pointer mt-4"}>
+           className={"flex bg-neutral-700 p-2 rounded-lg border border-1" +
+               " border-neutral-600 text-neutral-400 justify-center cursor-pointer mt-4"}>
         <p>Submit</p>
       </div>
     </>

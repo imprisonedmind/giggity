@@ -15,7 +15,7 @@ export function QuickView({children}) {
               <div className={"flex relative w-full h-full justify-center items-center"}>
                 <div className={"absolute z-50"}>{content}</div>
                 <div onClick={() => setIsOpen(!isOpen)}
-                     className={"relative flex w-full h-full bg-neutral-900/60"}>
+                     className={"relative flex w-full h-full bg-neutral-900/80"}>
                 </div>
               </div>
             </div>

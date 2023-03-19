@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import FormInput from "@/components/form/input";
 import {TrashIcon} from "@heroicons/react/24/solid";
 
-async function GetSpotifyArtists(img) {
+async function GetTextExtraction(img) {
   const response = await fetch('/api/textExtract', {
     method: 'POST',
     headers: {
@@ -13,12 +13,12 @@ async function GetSpotifyArtists(img) {
   return await response.json();
 }
 
-export default function AddSpotifyArtists({imgUrl}) {
+export default function AddGigDetails({imgUrl, setShowInputs, artists, setArtists}) {
   const [data, setData] = useState(null);
-  const [artists, setArtists] = useState([])
+
 
   const fetchData = async () => {
-    const result = await GetSpotifyArtists(imgUrl);
+    const result = await GetTextExtraction(imgUrl);
     setData(result);
 
     if (result && result.artists) {
@@ -41,9 +41,7 @@ export default function AddSpotifyArtists({imgUrl}) {
     setArtists(updatedArtists);
   };
 
-  console.log(artists)
-
-  if (data) {
+  if (data !== null) {
     return <div className={"flex flex-col gap-4 mt-4 w-full"}>
 
       <div className={"flex flex-col gap-2"}>
@@ -53,10 +51,10 @@ export default function AddSpotifyArtists({imgUrl}) {
 
       <div className={"flex flex-col gap-2"}>
         <p>Artists</p>
-        <div className={"flex flex-wrap justify-between gap-4"}>
+        <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
           {artists && artists.map((artist, index) => (
-              <div key={index} className={"group relative grow max-w-[33%] items-center" +
-                  " flex"}>
+              <div key={index} className={"group relative grow items-center" +
+                  " flex max-w-[33%]"}>
                 <FormInput value={artist} width={"w-full"}
                            onChange={(event) => handleArtistChange(event, index)}/>
                 <div onClick={() => deleteArtist(index)} className={"bg-red-500/20" +
@@ -97,6 +95,11 @@ export default function AddSpotifyArtists({imgUrl}) {
         </div>
       </div>
 
+      <div onClick={() => setShowInputs(false)}
+           className={"flex justify-center p-2 w-full bg-neutral-700 rounded-md border" +
+               " border-1 border-neutral-600 text-neutral-400 cursor-pointer"}>
+        <p>Next</p>
+      </div>
 
     </div>
   } else {

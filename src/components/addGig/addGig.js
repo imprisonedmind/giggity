@@ -51,8 +51,9 @@ export default function AddGig() {
   const [showInstaInput, setShowInstaInput] = useState(false)
   const [showSubmission, setShowSubmission] = useState(false)
 
-  return <div className={"bg-neutral-800 border border-1 border-neutral-700 rounded-lg" +
-      " p-4 text-neutral-500 max-w-[600px] max-h-[90vh] h-full overflow-y-auto"}>
+  return <div className={"relative bg-neutral-800 border border-1 border-neutral-700" +
+      " rounded-lg p-4 text-neutral-500 max-w-[600px] max-h-[90vh] h-full" +
+      " overflow-y-auto"}>
     <ApiMessage msg={errMsg} error={error} success={success} loading={loading}/>
     <Header showSubmission={showSubmission}/>
     <LinkForm

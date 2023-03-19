@@ -4,31 +4,19 @@ import Link from "next/link";
 import TopTracks from "@/components/artists/topTracks";
 
 export async function getArtistData(artistId) {
-  let artistData;
-  let accessToken;
+  const response = await fetch('/api/spotifyArtist', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({artistId})
+  });
 
-  try {
-    const tokenResponse = await fetch('http://localhost:3000/api/spotifyToken');
-    const tokenData = await tokenResponse.json();
-    accessToken = tokenData.access_token;
-
-    const artistResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, {
-      headers: {
-        'Authorization': `Bearer ${accessToken}`
-      }
-    });
-    if (!artistResponse.ok) {
-      return null;
-    }
-    artistData = await artistResponse.json();
-
-  } catch (error) {
-    console.error(error);
-    return null;
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data: ${response.status}`);
   }
-  if (artistData) {
-    return {artistData, accessToken}
-  } else return null
+
+  return await response.json();
 }
 
 
