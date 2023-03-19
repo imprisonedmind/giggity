@@ -9,7 +9,6 @@ export default async function handler(req, res) {
   const {imgUrl} = req.body;
 
   try {
-    console.log("imgUrl:", imgUrl);
     const [result] = await client.textDetection(imgUrl);
     const text = result.fullTextAnnotation.text;
 

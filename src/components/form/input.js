@@ -1,8 +1,8 @@
 export default function FormInput(props) {
   return (
       <input
-          className={`${props.capitalize ?? ""} 
-          w-full rounded-md bg-neutral-900 focus:outline-none p-2`}
+          className={`${props.capitalize ?? ""} ${props.width}
+          w-full rounded-md bg-neutral-900 focus:outline-none p-2 text-sm`}
           id={props.id}
           name={props.name}
           type={props.type}

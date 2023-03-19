@@ -38,7 +38,7 @@ export default function AddGig() {
         setError(false)
       } else {
         const errorResponse = await response.json();
-        const errorMessage = errorResponse.error || "error"; // Set error message to "error" if not provided in the response
+        const errorMessage = errorResponse.error || "error";
         setMsg(errorMessage);
         setError(true);
       }

@@ -18,9 +18,8 @@ export default function Navbar() {
 
   return <div className={"flex flex-nowrap gap-4 w-full sticky mb-4"}>
     {pathname !== "/" && <Link href={"/"} className={"flex flex-nowrap" +
-        " items-center pl-2 pr-4 py-1" +
-        " bg-neutral-800 w-fit text-neutral-500 rounded-md gap-2 border border-1" +
-        " border-neutral-700 cursor-pointer text-normal"}>
+        " items-center pl-2 pr-4 py-1 bg-neutral-800 w-fit text-neutral-500 rounded-xl" +
+        " gap-2 border border-1 border-neutral-700 cursor-pointer text-normal"}>
       <ArrowLeftIcon className={"h-4 w-4"}/> Back
     </Link>}
     <div className={"flex justify-between items-center sticky top-4 z-10 h-fit grow p-2" +

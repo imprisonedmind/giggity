@@ -6,8 +6,6 @@ export default async function handler(req, res) {
     const {text} = req.body;
     const cleanText = text.toLowerCase().replace(/\r?\n|\r/g, " ") + " ";
 
-    console.log(cleanText)
-
     const response = await fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
       headers: {
@@ -31,7 +29,6 @@ export default async function handler(req, res) {
 
     const data = await response.json();
     const final = JSON.parse(data.choices[0].text)
-    console.log("OpenAI API response:", final);
 
     res.status(200).json(final);
 
