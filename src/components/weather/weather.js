@@ -29,7 +29,7 @@ export default async function Weather({latLng, date, apiKey}) {
           <p>{temp} °C</p>
         </div>
       </div>
-      <div className={"relative h-12 w-12"}>
+      <div className={"relative h-12 w-12 flex-shrink-0"}>
         <Image src={`https://openweathermap.org/img/wn/${icon}.png`} alt={"test"}
                fill={true}/>
       </div>

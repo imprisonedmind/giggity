@@ -4,29 +4,14 @@ import Link from "next/link";
 import TopTracks from "@/components/artists/topTracks";
 
 export async function getArtistData(artistId) {
-  const endpoint = 'https://accounts.spotify.com/api/token';
-  const clientId = process.env.SPOTIFY_CLIENT_ID;
-  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
   let artistData;
   let accessToken;
 
   try {
-    // Get access token using client credentials flow
-    const tokenResponse = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: new URLSearchParams({
-        grant_type: 'client_credentials',
-        client_id: clientId,
-        client_secret: clientSecret
-      })
-    });
+    const tokenResponse = await fetch('http://localhost:3000/api/spotifyToken');
     const tokenData = await tokenResponse.json();
     accessToken = tokenData.access_token;
 
-    // Use access token to make request to artists endpoint
     const artistResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
