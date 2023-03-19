@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import FormInput from "@/components/form/input";
 import {TrashIcon} from "@heroicons/react/24/solid";
 
@@ -16,38 +16,52 @@ async function GetTextExtraction(img) {
 export default function AddGigDetails({
                                         imgUrl,
                                         setShowInputs,
-                                        artists,
-                                        setArtists,
-                                        formik
+                                        artistsArray,
+                                        setArtistsArray,
+                                        formik,
+                                        handleFormInputChange,
+                                        gigData,
+                                        setGigData
                                       }) {
-  const [data, setData] = useState(null);
 
 
   const fetchData = async () => {
     const result = await GetTextExtraction(imgUrl);
-    setData(result);
+    setGigData(result);
 
     if (result && result.artists) {
-      setArtists(result.artists);
+      setArtistsArray(result.artists);
     }
   };
 
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  useEffect(() => {
+    console.log(gigData)
+    if (gigData && gigData.title === undefined) {
+      fetchData()
+    }
+  }, [gigData])
+
   const handleAddArtist = () => {
-    setArtists([...artists, '']);
+    setArtistsArray([...artistsArray, '']);
   };
 
   const handleArtistChange = (event, index) => {
-    const updatedArtists = [...artists];
+    const updatedArtists = [...artistsArray];
     updatedArtists[index] = event.target.value;
-    setArtists(updatedArtists);
+    setArtistsArray(updatedArtists);
   };
 
   const deleteArtist = (index) => {
-    const updatedArtists = artists.filter((artist, i) => i !== index);
-    setArtists(updatedArtists);
+    const updatedArtists = artistsArray.filter((artist, i) => i !== index);
+    setArtistsArray(updatedArtists);
   };
 
-  if (data !== null) {
+
+  if (formik.values.title) {
     return <div className={"flex flex-col gap-4 mt-4 w-full"}>
 
       <div className={"flex flex-col gap-2"}>
@@ -56,15 +70,15 @@ export default function AddGigDetails({
             id={"title"}
             name={"title"}
             placeholder={"Enter event title"}
-            onChange={formik.handleChange}
-            defaultValue={data.title}
+            onChange={handleFormInputChange}
+            defaultValue={formik.values.title}
         />
       </div>
 
       <div className={"flex flex-col gap-2"}>
         <p>Artists</p>
         <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
-          {artists && artists.map((artist, index) => (
+          {artistsArray.length > 0 && artistsArray.map((artist, index) => (
               <div key={index} className={"group relative grow items-center" +
                   " flex max-w-[33%]"}>
                 <FormInput
@@ -95,15 +109,15 @@ export default function AddGigDetails({
               id={"location"}
               name={"location"}
               placeholder={"Enter a venue"}
-              onChange={formik.handleChange}
-              defaultValue={data.venue}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.location}
           />
           <FormInput
               id={"city"}
               name={"city"}
               placeholder={"Enter a city"}
-              onChange={formik.handleChange}
-              defaultValue={data.location}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.location}
           />
         </div>
       </div>
@@ -115,15 +129,15 @@ export default function AddGigDetails({
               id={"date"}
               name={"date"}
               placeholder={"Enter a date"}
-              onChange={formik.handleChange}
-              defaultValue={data.date}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.date}
           />
           <FormInput
               id={"time"}
               name={"time"}
               placeholder={"Enter a time"}
-              onChange={formik.handleChange}
-              defaultValue={data.time}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.time}
           />
         </div>
       </div>
@@ -135,14 +149,15 @@ export default function AddGigDetails({
               id={"onlinePrice"}
               name={"onlinePrice"}
               placeholder={"Enter online price"}
-              onChange={formik.handleChange}
-              defaultValue={data.price}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.onlinePrice}
           />
           <FormInput
               id={"doorPrice"}
               name={"doorPrice"}
               placeholder={"Enter door price"}
-              onChange={formik.handleChange}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.doorPrice}
           />
         </div>
       </div>
@@ -154,12 +169,17 @@ export default function AddGigDetails({
               id={"ticket"}
               name={"ticket"}
               placeholder={"Enter the ticket link"}
-              onChange={formik.handleChange}
+              onChange={handleFormInputChange}
+              defaultValue={formik.values.ticket}
           />
         </div>
       </div>
 
-      <div onClick={() => setShowInputs(false)}
+      <div onClick={() => {
+        formik.handleSubmit
+        setShowInputs(false)
+      }
+      }
            className={"flex justify-center p-2 w-full bg-neutral-700 rounded-md border" +
                " border-1 border-neutral-600 text-neutral-400 cursor-pointer"}>
         <p>Next</p>
@@ -167,7 +187,6 @@ export default function AddGigDetails({
 
     </div>
   } else {
-    fetchData()
     return <div>Loading...</div>
   }
 }

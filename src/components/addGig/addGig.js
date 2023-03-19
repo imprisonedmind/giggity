@@ -1,4 +1,3 @@
-import {useFormik} from "formik";
 import {useState} from "react";
 import ApiMessage from "@/components/apiMessage/apiMessage";
 import Header from "@/components/addGig/header";
@@ -6,7 +5,7 @@ import AddingInfo from "@/components/addGig/addingInfo";
 import LinkForm from "@/components/addGig/linkForm";
 import LinkOrManualBtn from "@/components/addGig/linkOrManualBtn";
 
-export default function AddGig() {
+export default function AddGig({formik}) {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
@@ -14,39 +13,6 @@ export default function AddGig() {
 
   const [imgUrl, setImgUrl] = useState()
   const [description, setDescription] = useState()
-
-  const formik = useFormik({
-    initialValues: {
-      link: "",
-    },
-    onSubmit: async (values) => {
-      setLoading(true);
-      const response = await fetch('api/gig', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({link: values.link})
-      });
-
-      if (response.ok) {
-        const data = await response.json()
-        setImgUrl(data.imageUrl)
-        setDescription(data.description)
-        setShowInstaInput(false)
-        setShowSubmission(true)
-        setError(false)
-      } else {
-        const errorResponse = await response.json();
-        const errorMessage = errorResponse.error || "error";
-        setMsg(errorMessage);
-        setError(true);
-      }
-
-      setLoading(false);
-    },
-  });
-
 
   const [showInstaInput, setShowInstaInput] = useState(false)
   const [showSubmission, setShowSubmission] = useState(false)

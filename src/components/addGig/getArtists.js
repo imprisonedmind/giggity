@@ -25,7 +25,7 @@ async function getArtists({artists}) {
   return artistData;
 }
 
-export default function GetArtists({artists}) {
+export default function GetArtists({artists, spotifyArtists, setSpotifyArtists}) {
   const [artistData, setArtistData] = useState([]);
 
   useEffect(() => {
@@ -39,13 +39,12 @@ export default function GetArtists({artists}) {
 
   console.log(artistData)
 
-  const [selectedItems, setSelectedItems] = useState([])
 
   const handleSelection = (id) => {
-    if (selectedItems.includes(id)) {
-      setSelectedItems(selectedItems.filter(item => item !== id));
+    if (spotifyArtists.includes(id)) {
+      setSpotifyArtists(spotifyArtists.filter(item => item !== id));
     } else {
-      setSelectedItems([...selectedItems, id]);
+      setSpotifyArtists([...spotifyArtists, id]);
     }
   }
 
@@ -60,7 +59,7 @@ export default function GetArtists({artists}) {
           {artistData.map((response) =>
               response.artists.items.map((item) => (
                   <div key={item.id} onClick={() => handleSelection(item.id)}
-                       className={`${selectedItems.includes(item.id) ? "bg-neutral-700" +
+                       className={`${spotifyArtists.includes(item.id) ? "bg-neutral-700" +
                            " text-neutral-400" : ""} 
                        relative flex items-center gap-2 grow w-[30%] hover:bg-neutral-700 
                        p-2 rounded-lg cursor-pointer hover:text-neutral-400"`}>
@@ -73,14 +72,14 @@ export default function GetArtists({artists}) {
                       <p className={"text-xs"}>{item.followers.total}</p>
                     </div>
                     <div
-                        className={`${selectedItems.includes(item.id) ? "flex" : "hidden"} absolute h-6 w-6 right-1 top-1 text-blue-500`}>
+                        className={`${spotifyArtists.includes(item.id) ? "flex" : "hidden"} absolute h-6 w-6 right-1 top-1 text-blue-500`}>
                       <CheckBadgeIcon/>
                     </div>
                   </div>
               ))
           )}
         </div>
-        <div className={`${selectedItems.length > 0 ? "flex" : "hidden"} sticky bg-green-500 w-full 
+        <div className={`${spotifyArtists.length > 0 ? "flex" : "hidden"} sticky bg-green-500 w-full 
         p-4 rounded-lg bottom-1 mt-8 justify-center text-white shadow-lg cursor-pointer`}>
           <p className={"text-xl"}>Confirm</p>
         </div>

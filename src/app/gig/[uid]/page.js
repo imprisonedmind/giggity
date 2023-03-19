@@ -1,4 +1,3 @@
-import {supabaseAdmin} from "@/app/page";
 import Map from "@/components/map/map";
 import Weather from "@/components/weather/weather";
 import ButtonArea from "@/components/gigOverview/buttonArea";
