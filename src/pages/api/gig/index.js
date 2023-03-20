@@ -1,5 +1,5 @@
 import chrome from 'chrome-aws-lambda';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 
 export default async function handler(req, res) {
   try {
