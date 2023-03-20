@@ -1,11 +1,16 @@
-export default function ItemDateTime({eventTime, eventDate}) {
-  const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+export default function ItemDateTime({ eventDate, eventTime }) {
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-  const [hours, minutes] = eventTime.split(':');
+  const [year, month, day] = eventDate.split('-');
+  const [hours, minutes, seconds] = eventTime.split(':');
 
   const start = new Date();
-  start.setHours(hours);
-  start.setMinutes(minutes);
+  start.setFullYear(parseInt(year));
+  start.setMonth(parseInt(month) - 1);
+  start.setDate(parseInt(day));
+  start.setHours(parseInt(hours));
+  start.setMinutes(parseInt(minutes));
+  start.setSeconds(parseInt(seconds));
 
   const time12hr = start.toLocaleString('en-US', {
     hour: 'numeric',
@@ -13,12 +18,11 @@ export default function ItemDateTime({eventTime, eventDate}) {
     hour12: true,
   });
 
-  return <div className={"flex text-xs flex-nowrap text-neutral-500 h-fit relative" +
-      " overflow-hidden flex-shrink-0"}>
-    <p>
-      {new Date(eventDate).toLocaleDateString('en-US', options)}
-    </p>
-    <p className={"px-1"}>·</p>
-    <p>{time12hr}</p>
-  </div>
+  return (
+      <div className="flex text-xs flex-nowrap text-neutral-500 h-fit relative overflow-hidden flex-shrink-0">
+        <p>{start.toLocaleDateString('en-US', options)}</p>
+        <p className="px-1">·</p>
+        <p>{time12hr}</p>
+      </div>
+  );
 }

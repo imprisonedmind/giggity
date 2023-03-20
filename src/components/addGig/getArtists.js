@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import Image from "next/image";
-import {CheckBadgeIcon} from "@heroicons/react/24/solid";
+import {ArrowLeftIcon, CheckBadgeIcon} from "@heroicons/react/24/solid";
 
 async function getArtists({artists}) {
   const artistData = [];
@@ -25,7 +25,13 @@ async function getArtists({artists}) {
   return artistData;
 }
 
-export default function GetArtists({artists, spotifyArtists, setSpotifyArtists}) {
+export default function GetArtists({
+                                     artists,
+                                     spotifyArtists,
+                                     setSpotifyArtists,
+                                     formik,
+                                     setShowInputs
+                                   }) {
   const [artistData, setArtistData] = useState([]);
 
   useEffect(() => {
@@ -50,10 +56,18 @@ export default function GetArtists({artists, spotifyArtists, setSpotifyArtists})
 
 
   return (
-      <div >
-        <div className={"mb-4"}>
-          <h1 className={"text-lg font-medium"}>Select Artists</h1>
-          <p>Select the Spotify Account of the Artist playing.</p>
+      <div>
+        <div className={"flex items-center mb-4 gap-4"}>
+          <div onClick={() => setShowInputs(true)} className={"flex items-center" +
+              " bg-neutral-700 p-2 rounded-md border border-1 gap-2 border-neutral-600" +
+              " text-neutral-400 cursor-pointer"}>
+            <ArrowLeftIcon className={"h-4 w-4"}/>
+            <p>Back</p>
+          </div>
+          <div className={"flex flex-col"}>
+            <h1 className={"text-lg font-medium"}>Select Artists</h1>
+            <p>Select the Spotify Account of the Artist playing.</p>
+          </div>
         </div>
         <div className={"flex flex-wrap gap-4"}>
           {artistData.map((response) =>
@@ -79,8 +93,10 @@ export default function GetArtists({artists, spotifyArtists, setSpotifyArtists})
               ))
           )}
         </div>
-        <div className={`${spotifyArtists.length > 0 ? "flex" : "hidden"} sticky bg-green-500 w-full 
-        p-4 rounded-lg bottom-1 mt-8 justify-center text-white shadow-lg cursor-pointer`}>
+        <div onClick={formik.handleSubmit}
+             className={`${spotifyArtists.length > 0 ? "flex" : "hidden"} 
+             sticky bg-green-500 w-full p-4 rounded-lg bottom-1 mt-8 justify-center 
+             text-white shadow-lg cursor-pointer`}>
           <p className={"text-xl"}>Confirm</p>
         </div>
       </div>

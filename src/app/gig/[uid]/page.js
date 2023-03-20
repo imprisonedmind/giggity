@@ -3,6 +3,7 @@ import Weather from "@/components/weather/weather";
 import ButtonArea from "@/components/gigOverview/buttonArea";
 import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
+import {supabaseAdmin} from "../../../../lib/supabaseClient";
 
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || ''
@@ -33,7 +34,7 @@ export default async function Gig({params}) {
     </div>
     <div className={"w-full gap-4 flex"}>
       <ButtonArea ticket={item.ticket}/>
-      <Weather latLng={latLong} date={item.date} apiKey={weatherApiKey}/>
+      <Weather latLng={latLong} date={item.dateTime} apiKey={weatherApiKey}/>
     </div>
     {item.artists && item.artists.map((artist) => {
       return <Artist id={artist} key={artist}/>

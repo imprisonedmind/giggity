@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import FormInput from "@/components/form/input";
 import {TrashIcon} from "@heroicons/react/24/solid";
+import {dateOptions, options, timeOptions} from "../../../lib/utilities";
 
 async function GetTextExtraction(img) {
   const response = await fetch('/api/textExtract', {
@@ -29,7 +30,7 @@ export default function AddGigDetails({
     const result = await GetTextExtraction(imgUrl);
     setGigData(result);
 
-    if (result && result.artists) {
+    if (result && result.artists && artistsArray.length < 1) {
       setArtistsArray(result.artists);
     }
   };
@@ -39,10 +40,10 @@ export default function AddGigDetails({
   }, [])
 
   useEffect(() => {
-    console.log(gigData)
-    if (gigData && gigData.title === undefined) {
+    if (formik.values.title === null) {
       fetchData()
     }
+    console.log(formik.values)
   }, [gigData])
 
   const handleAddArtist = () => {
@@ -117,7 +118,7 @@ export default function AddGigDetails({
               name={"city"}
               placeholder={"Enter a city"}
               onChange={handleFormInputChange}
-              defaultValue={formik.values.location}
+              defaultValue={formik.values.city}
           />
         </div>
       </div>
@@ -129,12 +130,14 @@ export default function AddGigDetails({
               id={"date"}
               name={"date"}
               placeholder={"Enter a date"}
+              type={"date"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.date}
           />
           <FormInput
               id={"time"}
               name={"time"}
+              type={"time"}
               placeholder={"Enter a time"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.time}
@@ -149,6 +152,7 @@ export default function AddGigDetails({
               id={"onlinePrice"}
               name={"onlinePrice"}
               placeholder={"Enter online price"}
+              type={"number"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.onlinePrice}
           />
@@ -156,6 +160,7 @@ export default function AddGigDetails({
               id={"doorPrice"}
               name={"doorPrice"}
               placeholder={"Enter door price"}
+              type={"number"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.doorPrice}
           />
@@ -176,10 +181,8 @@ export default function AddGigDetails({
       </div>
 
       <div onClick={() => {
-        formik.handleSubmit
         setShowInputs(false)
-      }
-      }
+      }}
            className={"flex justify-center p-2 w-full bg-neutral-700 rounded-md border" +
                " border-1 border-neutral-600 text-neutral-400 cursor-pointer"}>
         <p>Next</p>

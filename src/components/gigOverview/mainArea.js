@@ -12,7 +12,7 @@ export default function MainArea({item}) {
     <div className={"flex flex-col h-full"}>
       <h1 className={"text-xl"}>{item.title}</h1>
       <ItemLocation location={item.location} city={item.city}/>
-      <ItemDateTime eventDate={item.date} eventTime={item.time}/>
+      <ItemDateTime eventDate={item.date} eventTime={item.time} />
       <div className={"flex gap-4"}>
         <Price price={item.onlinePrice} online={true}/>
         <Price price={item.doorPrice} />

@@ -4,7 +4,7 @@ import {ArrowLeftIcon} from "@heroicons/react/24/solid";
 import {usePathname} from "next/navigation";
 import Logo from "@/components/navigation/logo";
 import {UseQuickViewContext} from "@/context/quickView";
-import ServerComponent from "@/components/addGig/serverComponent";
+import AddGig from "@/components/addGig/addGig";
 
 
 export default function Navbar() {
@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const handleGig = () => {
     setIsOpen(!isOpen)
-    setContent(<ServerComponent/>)
+    setContent(<AddGig/>)
   }
 
   return <div className={"flex flex-nowrap gap-4 w-full sticky mb-4"}>

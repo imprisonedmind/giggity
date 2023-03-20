@@ -17,7 +17,7 @@ export default function ItemCard({item}) {
       <div className={"w-full"}>
         <ItemTitle title={item.title}/>
         <ItemLocation city={item.city} location={item.location}/>
-        <ItemDateTime eventTime={item.time} eventDate={item.date}/>
+        <ItemDateTime eventDate={item.date} eventTime={item.time}/>
       </div>
     </div>
     <div className={"flex flex-nowrap gap-2 py-4"}>

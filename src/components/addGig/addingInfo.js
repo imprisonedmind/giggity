@@ -3,8 +3,9 @@ import {useEffect, useState} from "react";
 import AddGigDetails from "@/components/addGig/addGigDetails";
 import GetArtists from "@/components/addGig/getArtists";
 import {FormikProvider} from "formik";
+import {parseDateString, parseTimeString} from "../../../lib/utilities";
 
-export default function AddingInfo({imgUrl, description}) {
+export default function AddingInfo({imgUrl, description, formik}) {
   const [showInputs, setShowInputs] = useState(true)
   const [artistsArray, setArtistsArray] = useState([])
   const [gigData, setGigData] = useState(null);
@@ -15,54 +16,71 @@ export default function AddingInfo({imgUrl, description}) {
     const fieldValue = event.target.value;
 
     formik.setFieldValue(`${fieldName}`, fieldValue);
+    console.log("TEST ")
+    console.log(formik.values)
   };
 
+
   useEffect(() => {
-    if (gigData && gigData.title !== undefined) {
-      formik.setValues({
-        date: gigData.date,
-        title: gigData.title,
-        time: gigData.time,
-        city: gigData.venue,
-        location: gigData.location,
-        onlinePrice: gigData.price,
-        artists: spotifyArtists // include spotifyArtists here
-      });
-    }
-  }, [gigData, spotifyArtists]); // check both gigData and spotifyArtists for updates
+    const setFormValues = async () => {
+      if (gigData && gigData.title !== undefined) {
+        const parsedDate = await parseDateString(gigData.date);
+        const parsedTime = await parseTimeString(gigData.time);
+
+        formik.setValues({
+          title: gigData.title,
+          description: description,
+          image: imgUrl,
+          city: gigData.location,
+          location: gigData.venue,
+          onlinePrice: parseFloat(gigData.price.replace(/[^0-9\.]+/g, "")),
+          artists: spotifyArtists,
+          date: parsedDate,
+          time: parsedTime,
+        });
+      }
+    };
+
+    setFormValues();
+  }, [gigData, spotifyArtists]);
+
 
 
   if (imgUrl || description) {
     return <div className={"flex flex-col gap-2 items-center"}>
       <FormikProvider value={formik}>
-        {showInputs && (
-            <>
-              <ImageDescriptionHeader
-                  imgUrl={imgUrl}
-                  description={description}
-                  formik={formik}
-                  handleFormInputChange={handleFormInputChange}
-              />
-              <AddGigDetails
-                  imgUrl={imgUrl}
-                  setShowInputs={setShowInputs}
-                  artistsArray={artistsArray}
-                  setArtistsArray={setArtistsArray}
-                  formik={formik}
-                  handleFormInputChange={handleFormInputChange}
-                  gigData={gigData}
-                  setGigData={setGigData}
+        <form onSubmit={formik.handleSubmit}>
+          {showInputs && (
+              <>
+                <ImageDescriptionHeader
+                    imgUrl={imgUrl}
+                    description={description}
+                    formik={formik}
+                    handleFormInputChange={(e) => handleFormInputChange(e)}
+                />
+                <AddGigDetails
+                    imgUrl={imgUrl}
+                    setShowInputs={setShowInputs}
+                    artistsArray={artistsArray}
+                    setArtistsArray={setArtistsArray}
+                    formik={formik}
+                    handleFormInputChange={(e) => handleFormInputChange(e)}
+                    gigData={gigData}
+                    setGigData={setGigData}
 
+                />
+              </>
+          )}
+          {!showInputs && (
+              <GetArtists
+                  artists={artistsArray}
+                  setSpotifyArtists={setSpotifyArtists}
+                  spotifyArtists={spotifyArtists}
+                  formik={formik}
+                  setShowInputs={setShowInputs}
               />
-            </>
-        )}
-        {!showInputs && (
-            <GetArtists
-                artists={artistsArray}
-                setSpotifyArtists={setSpotifyArtists}
-                spotifyArtists={spotifyArtists}
-            />
-        )}
+          )}
+        </form>
       </FormikProvider>
     </div>
   } else return null
