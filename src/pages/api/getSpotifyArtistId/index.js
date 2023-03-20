@@ -2,7 +2,7 @@
 
 export default async function handler(req, res) {
   try {
-    const tokenResponse = await fetch('http://localhost:3000/api/spotifyToken');
+    const tokenResponse = await fetch(`${process.env.API_URL}/api/spotifyToken`);
     const tokenData = await tokenResponse.json();
     const accessToken = tokenData.access_token;
 

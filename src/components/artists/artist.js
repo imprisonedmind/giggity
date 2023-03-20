@@ -4,7 +4,7 @@ import Link from "next/link";
 import TopTracks from "@/components/artists/topTracks";
 
 export async function getArtistData(artistId) {
-  const response = await fetch('http://localhost:3000/api/getArtists', {
+  const response = await fetch(`${process.env.API_URL}/api/getArtists`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
