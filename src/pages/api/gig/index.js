@@ -1,3 +1,4 @@
+import chrome from 'chrome-aws-lambda';
 import puppeteer from 'puppeteer';
 
 export default async function handler(req, res) {
@@ -7,10 +8,24 @@ export default async function handler(req, res) {
       throw new Error('Not an Instagram link');
     }
 
+    const options = process.env.AWS_REGION
+        ? {
+          args: chrome.args,
+          executablePath: await chrome.executablePath,
+          headless: chrome.headless
+        }
+        : {
+          args: [],
+          executablePath:
+              process.platform === 'win32'
+                  ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+                  : process.platform === 'linux'
+                      ? '/usr/bin/google-chrome'
+                      : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+        };
+
     // Launch Puppeteer with the selected proxy
-    const browser = await puppeteer.launch({
-      headless: true,
-    });
+    const browser = await puppeteer.launch(options);
 
     const page = await browser.newPage();
     await page.goto(link, {waitUntil: 'networkidle0'});
