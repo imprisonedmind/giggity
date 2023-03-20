@@ -34,6 +34,7 @@ export default function AddingInfo({imgUrl, description, formik}) {
           city: gigData.location,
           location: gigData.venue,
           onlinePrice: parseFloat(gigData.price.replace(/[^0-9\.]+/g, "")),
+          doorPrice: parseFloat(gigData.doorPrice?.replace(/[^0-9\.]+/g, "")),
           date: parsedDate,
           time: parsedTime,
         });

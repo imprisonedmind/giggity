@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     const [result] = await client.textDetection(imgUrl);
     const text = result.fullTextAnnotation.text;
 
-    const gigData = await fetch('http://localhost:3000/api/convertText', {
+    const gigData = await fetch(`${process.env.API_URL}/api/convertText`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -7,39 +7,13 @@ export default async function handler(req, res) {
     if (!link.includes('instagram')) {
       throw new Error('Not an Instagram link');
     }
-    // const options = process.env.AWS_REGION
-    //     ? {
-    //       args: chrome.args,
-    //       executablePath: await chrome.executablePath,
-    //       headless: chrome.headless
-    //     }
-    //     : {
-    //       args: [],
-    //       executablePath:
-    //           process.platform === 'win32'
-    //               ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-    //               : process.platform === 'linux'
-    //                   ? '/usr/bin/google-chrome'
-    //                   : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-    //     };
-
-    // const options = {
-    //   args: [],
-    //   executablePath:
-    //       process.platform === 'win32'
-    //           ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-    //           : process.platform === 'linux'
-    //               ? '/usr/bin/google-chrome'
-    //               : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-    // };
 
     const options = {
       args: chrome.args,
       executablePath: await chrome.executablePath,
-      headless: chrome.headless
+      headless: true
     }
 
-    // Launch Puppeteer with the selected proxy
     const browser = await puppeteer.launch(options);
 
     const page = await browser.newPage();

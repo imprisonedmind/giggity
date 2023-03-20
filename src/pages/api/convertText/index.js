@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "text-davinci-003",
-        prompt: `"${cleanText}" This text was scrapped from a music poster from top to bottom, Extract title, artists, venue, location, date, time and price from this text and respond with a json object.`,
+        prompt: `"${cleanText}" This text was scrapped from a music poster from top to bottom, Extract title, artists, venue, location, date, time, price and doorPrice from this text and respond with a json object, artists should be an array, price should be the first price seen or the online price.`,
         temperature: 0,
         max_tokens: 256,
         top_p: 1,
