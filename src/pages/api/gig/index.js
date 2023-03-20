@@ -23,15 +23,21 @@ export default async function handler(req, res) {
     //                   : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
     //     };
 
+    // const options = {
+    //   args: [],
+    //   executablePath:
+    //       process.platform === 'win32'
+    //           ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+    //           : process.platform === 'linux'
+    //               ? '/usr/bin/google-chrome'
+    //               : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+    // };
+
     const options = {
-      args: [],
-      executablePath:
-          process.platform === 'win32'
-              ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-              : process.platform === 'linux'
-                  ? '/usr/bin/google-chrome'
-                  : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-    };
+      args: chrome.args,
+      executablePath: await chrome.executablePath,
+      headless: chrome.headless
+    }
 
     // Launch Puppeteer with the selected proxy
     const browser = await puppeteer.launch(options);
