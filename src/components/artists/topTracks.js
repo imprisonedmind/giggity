@@ -27,7 +27,7 @@ export default async function TopTracks({artistId, token}) {
 
   return <div>{
     Object.values(tracks).map((x) => (
-        <Link href={x.external_urls.spotify}
+        <Link key={x.id} href={x.external_urls.spotify}
               className={"flex justify-between flex-nowrap gap-4 py-2 items-center" +
                   " cursor-pointer hover:bg-neutral-700 group p-2 rounded-md "}>
           <div className={"flex flex-nowrap items-center gap-4"}>

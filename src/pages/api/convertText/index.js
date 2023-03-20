@@ -29,6 +29,8 @@ export default async function handler(req, res) {
 
     const data = await response.json();
     const final = JSON.parse(data.choices[0].text)
+    console.log("response from image extraction")
+    console.log(final)
 
     res.status(200).json(final);
 
