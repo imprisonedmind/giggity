@@ -8,6 +8,7 @@ import LinkOrManualBtn from "@/components/addGig/linkOrManualBtn";
 import {useFormik} from "formik";
 import {supabaseAdmin} from "../../../lib/supabaseClient";
 import {useRouter} from "next/navigation";
+import {UseQuickViewContext} from "@/context/quickView";
 
 export default function AddGig() {
   const [loading, setLoading] = useState(false)
@@ -20,6 +21,8 @@ export default function AddGig() {
 
   const [showInstaInput, setShowInstaInput] = useState(false)
   const [showSubmission, setShowSubmission] = useState(false)
+
+  const {setIsOpen, isOpen} = UseQuickViewContext()
 
   const router = useRouter()
 
@@ -43,7 +46,9 @@ export default function AddGig() {
         if (error) {
           throw error
         }
-        if (data) router.refresh()
+        router.refresh()
+        setIsOpen(!isOpen)
+
       } catch (error) {
         console.error(error)
       }
