@@ -1,3 +1,4 @@
+"use client"
 import {useState} from "react";
 import ApiMessage from "@/components/apiMessage/apiMessage";
 import Header from "@/components/addGig/header";
@@ -6,6 +7,7 @@ import LinkForm from "@/components/addGig/linkForm";
 import LinkOrManualBtn from "@/components/addGig/linkOrManualBtn";
 import {useFormik} from "formik";
 import {supabaseAdmin} from "../../../lib/supabaseClient";
+import {useRouter} from "next/navigation";
 
 export default function AddGig() {
   const [loading, setLoading] = useState(false)
@@ -18,6 +20,8 @@ export default function AddGig() {
 
   const [showInstaInput, setShowInstaInput] = useState(false)
   const [showSubmission, setShowSubmission] = useState(false)
+
+  const router = useRouter()
 
   const formik = useFormik({
     initialValues: {
@@ -34,20 +38,14 @@ export default function AddGig() {
       doorPrice: null,
     },
     onSubmit: async (values) => {
-      console.log("SUBMITTING")
       try {
         const {data, error} = await supabaseAdmin.from('Event').insert(values)
-
         if (error) {
           throw error
         }
-
-        console.log(data)
-        // Do something with the response data
-
+        if (data) router.refresh()
       } catch (error) {
         console.error(error)
-        // Handle the error
       }
     },
   })

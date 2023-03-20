@@ -40,7 +40,7 @@ export default function AddGigDetails({
   }, [])
 
   useEffect(() => {
-    if (formik.values.title === null) {
+    if (gigData && gigData.title === undefined && formik.values.title === null ) {
       fetchData()
     }
     console.log(formik.values)
