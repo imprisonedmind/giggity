@@ -14,6 +14,7 @@ export default async function handler(req, res) {
       executablePath,
       args: edgeChromium.args,
       headless: true,
+      ignoreDefaultArgs: ['--disable-extensions']
     })
 
     const page = await browser.newPage();
