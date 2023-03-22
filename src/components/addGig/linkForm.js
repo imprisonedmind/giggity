@@ -12,13 +12,15 @@ export default function LinkForm({
                                    setError,
                                    setMsg
                                  }) {
+  const url = process.env.INSTA_SCRAPE_API
+
   const formik = useFormik({
     initialValues: {
       link: "",
     },
     onSubmit: async (values) => {
       setLoading(true);
-      const response = await fetch('/api/gig', {
+      const response = await fetch(`${url}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
