@@ -1,5 +1,4 @@
-import puppeteer from 'puppeteer-core';
-import chromium from 'chrome-aws-lambda'
+import {chromium} from 'playwright-core';
 
 export default async function handler(req, res) {
   try {
@@ -8,17 +7,13 @@ export default async function handler(req, res) {
       throw new Error('Not an Instagram link');
     }
 
-    const LOCAL_CHROME_EXECUTABLE = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-    const executablePath = await chromium.executablePath || LOCAL_CHROME_EXECUTABLE
 
-    const browser = await puppeteer.launch({
-      executablePath,
-      args: chromium.args,
+    const browser = await chromium.launch({
       headless: true,
     })
 
     const page = await browser.newPage();
-    await page.goto(link, {waitUntil: 'networkidle0'});
+    await page.goto(link, {waitUntil: 'networkidle'});
 
     const imgClass = 'img.x5yr21d.xu96u03.x10l6tqk.x13vifvy.x87ps6o.xh8yej3'
     const descClass = 'h1._aacl._aaco._aacu._aacx._aad7._aade'
