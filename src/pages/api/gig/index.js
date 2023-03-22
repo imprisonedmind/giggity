@@ -7,13 +7,13 @@ export default async function handler(req, res) {
       throw new Error('Not an Instagram link');
     }
 
-    // const LOCAL_CHROME_EXECUTABLE = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-    // const executablePath = await edgeChromium.executablePath || LOCAL_CHROME_EXECUTABLE
+    const LOCAL_CHROME_EXECUTABLE = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+    const executablePath = await edgeChromium.executablePath || LOCAL_CHROME_EXECUTABLE
 
     const browser = await puppeteer.launch({
       args: edgeChromium.args,
       headless: true,
-      executablePath: await edgeChromium.executablePath,
+      executablePath: executablePath,
       ignoreDefaultArgs: ['--disable-extensions']
     })
 
