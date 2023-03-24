@@ -32,7 +32,7 @@ export default function ChooseLocalImage({
             ? "bg-neutral-700 hover:bg-neutral-600"
             : "bg-green-500 hover:bg-green-600"
         } 
-            flex cursor-pointer items-center justify-between gap-4 rounded py-2 px-4 
+            flex cursor-pointer items-center justify-between gap-4 rounded-md py-2 px-4 
             text-white`}
       >
         <p>{displayImage ? "Change Image" : "Choose Image"}</p>

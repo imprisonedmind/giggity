@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import FormInput from "@/components/form/input";
-import { ArrowPathIcon, TrashIcon } from "@heroicons/react/24/solid";
+import { TrashIcon } from "@heroicons/react/24/solid";
 import Loading from "@/components/loading/loading";
 
 async function GetTextExtraction(img) {

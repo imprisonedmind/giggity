@@ -5,7 +5,7 @@ export default function Loading({ title }) {
   return (
     <div
       className={
-        "mt-4 flex w-full flex-nowrap items-center justify-center gap-4 rounded-lg" +
+        "flex w-full flex-nowrap items-center justify-center gap-4 rounded-lg" +
         " bg-green-500/10 p-2 text-green-500"
       }
     >

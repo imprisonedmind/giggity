@@ -13,8 +13,8 @@ export default function ImageDescriptionHeader({
 
   return (
     <div className={"flex w-full flex-nowrap gap-4"}>
-      <div className={"flex grow flex-col gap-2"}>
-        <p className={"font-bold"}>Cover Image</p>
+      <div className={"flex min-w-[150px] grow flex-col gap-2"}>
+        <p>Cover Image</p>
 
         <div
           className={
@@ -29,8 +29,8 @@ export default function ImageDescriptionHeader({
           />
         </div>
       </div>
-      <div className={"relative flex grow flex-col gap-2"}>
-        <p className={"font-bold"}>Description</p>
+      <div className={"relative flex min-w-[150px] grow flex-col gap-2"}>
+        <p>Description</p>
         <textarea
           id={"description"}
           name={"description"}
