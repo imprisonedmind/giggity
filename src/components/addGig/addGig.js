@@ -1,30 +1,28 @@
-"use client"
-import {useState} from "react";
+"use client";
+import { useState } from "react";
 import ApiMessage from "@/components/apiMessage/apiMessage";
 import Header from "@/components/addGig/header";
 import AddingInfo from "@/components/addGig/addingInfo";
-import LinkForm from "@/components/addGig/linkForm";
-import LinkOrManualBtn from "@/components/addGig/linkOrManualBtn";
-import {useFormik} from "formik";
-import {supabaseAdmin} from "../../../lib/supabaseClient";
-import {useRouter} from "next/navigation";
-import {UseQuickViewContext} from "@/context/quickView";
+import { useFormik } from "formik";
+import { supabaseAdmin } from "../../../lib/supabaseClient";
+import { useRouter } from "next/navigation";
+import { UseQuickViewContext } from "@/context/quickView";
+import ManualEntry from "@/components/addGig/manualEntry";
 
 export default function AddGig() {
-  const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState(false)
-  const [errMsg, setMsg] = useState("")
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [errMsg, setMsg] = useState("");
 
-  const [imgUrl, setImgUrl] = useState()
-  const [description, setDescription] = useState()
+  const [imgUrl, setImgUrl] = useState(null);
+  const [description, setDescription] = useState(null);
 
-  const [showInstaInput, setShowInstaInput] = useState(false)
-  const [showSubmission, setShowSubmission] = useState(false)
+  const [showSubmission, setShowSubmission] = useState(false);
 
-  const {setIsOpen, isOpen} = UseQuickViewContext()
+  const { setIsOpen, isOpen } = UseQuickViewContext();
 
-  const router = useRouter()
+  const router = useRouter();
 
   const formik = useFormik({
     initialValues: {
@@ -42,44 +40,41 @@ export default function AddGig() {
     },
     onSubmit: async (values) => {
       try {
-        const {data, error} = await supabaseAdmin.from('Event').insert(values)
+        const { data, error } = await supabaseAdmin
+          .from("Event")
+          .insert(values);
         if (error) {
-          throw error
+          throw error;
         }
-        router.refresh()
-        setIsOpen(!isOpen)
-
+        router.refresh();
+        setIsOpen(!isOpen);
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     },
-  })
+  });
 
-  return <div className={"relative bg-neutral-800 border border-1 border-neutral-700" +
-      " rounded-lg p-4 text-neutral-500 max-w-[600px] max-h-[90vh] h-full" +
-      " overflow-y-auto"}>
-    <ApiMessage msg={errMsg} error={error} success={success} loading={loading}/>
-    <Header showSubmission={showSubmission}/>
-    <LinkForm
-        showInstaInput={showInstaInput}
-        setShowInstaInput={setShowInstaInput}
-        showSubmission={showSubmission}
-        setShowSubmission={setShowSubmission}
-        setDescription={setDescription}
-        setImgUrl={setImgUrl}
-        setError={setError}
-        setMsg={setMsg}
-        setLoading={setLoading}
-    />
-    <AddingInfo imgUrl={imgUrl} description={description} formik={formik}/>
-    <LinkOrManualBtn
-        showInstaInput={showInstaInput}
-        setShowInstaInput={setShowInstaInput}
-        showSubmission={showSubmission}
-    />
-  </div>
+  return (
+    <div
+      className={
+        "border-1 relative border border-neutral-700 bg-neutral-800" +
+        " h-full max-h-[90vh] max-w-[600px] rounded-lg p-4 text-neutral-500" +
+        " overflow-y-auto"
+      }
+    >
+      <ApiMessage
+        msg={errMsg}
+        error={error}
+        success={success}
+        loading={loading}
+      />
+      <Header imgUrl={imgUrl} loading={loading} />
+      <AddingInfo imgUrl={imgUrl} description={description} formik={formik} />
+      <ManualEntry
+        setLoading={(v) => setLoading(v)}
+        imgUrl={imgUrl}
+        setImgUrl={(v) => setImgUrl(v)}
+      />
+    </div>
+  );
 }
-
-
-
-

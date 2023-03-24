@@ -1,31 +1,29 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 import FormInput from "@/components/form/input";
-import {TrashIcon} from "@heroicons/react/24/solid";
-import {dateOptions, options, timeOptions} from "../../../lib/utilities";
+import { ArrowPathIcon, TrashIcon } from "@heroicons/react/24/solid";
+import Loading from "@/components/loading/loading";
 
 async function GetTextExtraction(img) {
-  const response = await fetch('/api/textExtract', {
-    method: 'POST',
+  const response = await fetch("/api/textExtract", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({imgUrl: img})
+    body: JSON.stringify({ imgUrl: img }),
   });
   return await response.json();
 }
 
 export default function AddGigDetails({
-                                        imgUrl,
-                                        setShowInputs,
-                                        artistsArray,
-                                        setArtistsArray,
-                                        formik,
-                                        handleFormInputChange,
-                                        gigData,
-                                        setGigData
-                                      }) {
-
-
+  imgUrl,
+  setShowInputs,
+  artistsArray,
+  setArtistsArray,
+  formik,
+  handleFormInputChange,
+  gigData,
+  setGigData,
+}) {
   const fetchData = async () => {
     const result = await GetTextExtraction(imgUrl);
     setGigData(result);
@@ -36,18 +34,22 @@ export default function AddGigDetails({
   };
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   useEffect(() => {
-    if (gigData && gigData.title === undefined && formik.values.title === null ) {
-      fetchData()
+    if (
+      gigData &&
+      gigData.title === undefined &&
+      formik.values.title === null
+    ) {
+      fetchData();
     }
-    console.log(formik.values)
-  }, [gigData])
+    console.log(formik.values);
+  }, [gigData]);
 
   const handleAddArtist = () => {
-    setArtistsArray([...artistsArray, '']);
+    setArtistsArray([...artistsArray, ""]);
   };
 
   const handleArtistChange = (event, index) => {
@@ -61,135 +63,152 @@ export default function AddGigDetails({
     setArtistsArray(updatedArtists);
   };
 
-
   if (formik.values.title) {
-    return <div className={"flex flex-col gap-4 mt-4 w-full"}>
-
-      <div className={"flex flex-col gap-2"}>
-        <p>Title</p>
-        <FormInput
+    return (
+      <div className={"mt-4 flex w-full flex-col gap-4"}>
+        <div className={"flex flex-col gap-2"}>
+          <p>Title</p>
+          <FormInput
             id={"title"}
             name={"title"}
             placeholder={"Enter event title"}
             onChange={handleFormInputChange}
             defaultValue={formik.values.title}
-        />
-      </div>
+          />
+        </div>
 
-      <div className={"flex flex-col gap-2"}>
-        <p>Artists</p>
-        <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
-          {artistsArray.length > 0 && artistsArray.map((artist, index) => (
-              <div key={index} className={"group relative grow items-center" +
-                  " flex max-w-[33%]"}>
-                <FormInput
+        <div className={"flex flex-col gap-2"}>
+          <p>Artists</p>
+          <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
+            {artistsArray.length > 0 &&
+              artistsArray.map((artist, index) => (
+                <div
+                  key={index}
+                  className={
+                    "group relative grow items-center" + " flex max-w-[33%]"
+                  }
+                >
+                  <FormInput
                     width={"w-full"}
                     placeholder={"Enter an artist name"}
                     defaultValue={artist}
                     onChange={(event) => handleArtistChange(event, index)}
-                />
-                <div onClick={() => deleteArtist(index)} className={"bg-red-500/20" +
-                    " text-red-500 h-3/4 aspect-square p-[5px] hidden absolute right-1" +
-                    " rounded-md cursor-pointer group-hover:flex"}>
-                  <TrashIcon/>
+                  />
+                  <div
+                    onClick={() => deleteArtist(index)}
+                    className={
+                      "bg-red-500/20" +
+                      " absolute right-1 hidden aspect-square h-3/4 p-[5px] text-red-500" +
+                      " cursor-pointer rounded-md group-hover:flex"
+                    }
+                  >
+                    <TrashIcon />
+                  </div>
                 </div>
-              </div>
-          ))}
-          <div className={"bg-neutral-700 flex items-center px-2 rounded-md border" +
-              " border-1 border-neutral-600 text-neutral-400 cursor-pointer"}
-               onClick={handleAddArtist}>
-            Add Artist
+              ))}
+            <div
+              className={
+                "flex items-center rounded-md border bg-neutral-700 px-2" +
+                " border-1 cursor-pointer border-neutral-600 text-neutral-400"
+              }
+              onClick={handleAddArtist}
+            >
+              Add Artist
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={"flex flex-col gap-2"}>
-        <p>Venue</p>
-        <div className={"flex gap-2"}>
-          <FormInput
+        <div className={"flex flex-col gap-2"}>
+          <p>Venue</p>
+          <div className={"flex gap-2"}>
+            <FormInput
               id={"location"}
               name={"location"}
               placeholder={"Enter a venue"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.location}
-          />
-          <FormInput
+            />
+            <FormInput
               id={"city"}
               name={"city"}
               placeholder={"Enter a city"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.city}
-          />
+            />
+          </div>
         </div>
-      </div>
 
-      <div className={"flex flex-col gap-2"}>
-        <p>Date</p>
-        <div className={"flex gap-2"}>
-          <FormInput
+        <div className={"flex flex-col gap-2"}>
+          <p>Date</p>
+          <div className={"flex gap-2"}>
+            <FormInput
               id={"date"}
               name={"date"}
               placeholder={"Enter a date"}
               type={"date"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.date}
-          />
-          <FormInput
+            />
+            <FormInput
               id={"time"}
               name={"time"}
               type={"time"}
               placeholder={"Enter a time"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.time}
-          />
+            />
+          </div>
         </div>
-      </div>
 
-      <div className={"flex flex-col gap-2"}>
-        <p>Price</p>
-        <div className={"flex gap-2"}>
-          <FormInput
+        <div className={"flex flex-col gap-2"}>
+          <p>Price</p>
+          <div className={"flex gap-2"}>
+            <FormInput
               id={"onlinePrice"}
               name={"onlinePrice"}
               placeholder={"Enter online price"}
               type={"number"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.onlinePrice}
-          />
-          <FormInput
+            />
+            <FormInput
               id={"doorPrice"}
               name={"doorPrice"}
               placeholder={"Enter door price"}
               type={"number"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.doorPrice}
-          />
+            />
+          </div>
         </div>
-      </div>
 
-      <div className={"flex flex-col gap-2"}>
-        <p>Ticket Link</p>
-        <div className={"flex gap-2"}>
-          <FormInput
+        <div className={"flex flex-col gap-2"}>
+          <p>Ticket Link</p>
+          <div className={"flex gap-2"}>
+            <FormInput
               id={"ticket"}
               name={"ticket"}
               placeholder={"Enter the ticket link"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.ticket}
-          />
+            />
+          </div>
+        </div>
+
+        <div
+          onClick={() => {
+            setShowInputs(false);
+          }}
+          className={
+            "flex w-full justify-center rounded-md border bg-neutral-700 p-2" +
+            " border-1 cursor-pointer border-neutral-600 text-neutral-400"
+          }
+        >
+          <p>Next</p>
         </div>
       </div>
-
-      <div onClick={() => {
-        setShowInputs(false)
-      }}
-           className={"flex justify-center p-2 w-full bg-neutral-700 rounded-md border" +
-               " border-1 border-neutral-600 text-neutral-400 cursor-pointer"}>
-        <p>Next</p>
-      </div>
-
-    </div>
+    );
   } else {
-    return <div>Loading...</div>
+    return <Loading title={"Fetching Data..."} />;
   }
 }

@@ -20,7 +20,7 @@ export default function LinkForm({
     },
     onSubmit: async (values) => {
       setLoading(true);
-      const response = await fetch(`${url}`, {
+      const response = await fetch(`/api/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
