@@ -1,6 +1,4 @@
 import Map from "@/components/map/map";
-import Weather from "@/components/weather/weather";
-import ButtonArea from "@/components/gigOverview/buttonArea";
 import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
@@ -32,27 +30,29 @@ export default async function Gig({ params }) {
   if (item.location) latLong = await getLatLngFromAddress(item.location);
 
   return (
-    <div className={"flex flex-wrap gap-4"}>
+    <>
       <Head>
-        <title></title>
+        <title>{item.title}</title>
         <meta
           property={"og:image"}
           content={`/api/gigImage?title=${item.title}&?gigImg=${item.image}`}
         />
       </Head>
-      <div
-        className={
-          "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px] md:grid-cols-4"
-        }
-      >
-        <MainArea item={item} />
-        <Map latLong={latLong} apikey={apiKey} />
+      <div className={"flex flex-wrap gap-4"}>
+        <div
+          className={
+            "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px] md:grid-cols-4"
+          }
+        >
+          <MainArea item={item} />
+          <Map latLong={latLong} apikey={apiKey} />
+        </div>
+        <ButtonWeatherArea item={item} latLong={latLong} />
+        {item.artists &&
+          item.artists.map((artist) => {
+            return <Artist id={artist} key={artist} />;
+          })}
       </div>
-      <ButtonWeatherArea item={item} latLong={latLong} />
-      {item.artists &&
-        item.artists.map((artist) => {
-          return <Artist id={artist} key={artist} />;
-        })}
-    </div>
+    </>
   );
 }

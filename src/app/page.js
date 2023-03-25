@@ -27,7 +27,7 @@ export default async function Home() {
   return (
     <main className={"flex flex-wrap gap-4"}>
       <Head>
-        <title></title>
+        <title>Giggity</title>
         <meta property={"og:image"} content={"/api/og"} />
       </Head>
       <GigsWrapper data={futureGigs} />
