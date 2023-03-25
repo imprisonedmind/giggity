@@ -1,34 +1,48 @@
-"use client"
+"use client";
 import Link from "next/link";
-import {ArrowLeftIcon} from "@heroicons/react/24/solid";
-import {usePathname} from "next/navigation";
+import { ArrowLeftIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
+import { usePathname } from "next/navigation";
 import Logo from "@/components/navigation/logo";
-import {UseQuickViewContext} from "@/context/quickView";
+import { UseQuickViewContext } from "@/context/quickView";
 import AddGig from "@/components/addGig/addGig";
-
+import GreenButton from "@/components/buttons/greenButton";
 
 export default function Navbar() {
-  const pathname = usePathname()
-  const {setContent, setIsOpen, isOpen} = UseQuickViewContext()
+  const pathname = usePathname();
+  const { setContent, setIsOpen, isOpen } = UseQuickViewContext();
 
   const handleGig = () => {
-    setIsOpen(!isOpen)
-    setContent(<AddGig/>)
-  }
+    setIsOpen(!isOpen);
+    setContent(<AddGig />);
+  };
 
-  return <div className={"flex flex-nowrap gap-4 w-full sticky mb-4"}>
-    {pathname !== "/" && <Link href={"/"} className={"flex flex-nowrap" +
-        " items-center pl-2 pr-4 py-1 bg-neutral-800 w-fit text-neutral-500 rounded-xl" +
-        " gap-2 border border-1 border-neutral-700 cursor-pointer text-normal"}>
-      <ArrowLeftIcon className={"h-4 w-4"}/> Back
-    </Link>}
-    <div className={"flex justify-between items-center sticky top-4 z-10 h-fit grow p-2" +
-        " bg-neutral-800 rounded-xl border border-1 border-neutral-700 shadow-lg"}>
-      <Logo/>
-      <div onClick={() => handleGig()} className={"bg-orange-500/20" +
-          " text-neutral-100 p-2 rounded-lg cursor-pointer"}>
-        <p className={"text-orange-500 font-medium"}>Add a Gig!</p>
+  return (
+    <div className={"sticky mb-4 flex w-full flex-nowrap gap-4"}>
+      {pathname !== "/" && (
+        <Link
+          href={"/"}
+          className={
+            "flex flex-nowrap" +
+            " w-fit items-center rounded-xl bg-neutral-800 py-1 pl-2 pr-4 text-neutral-500" +
+            " border-1 text-normal cursor-pointer gap-2 border border-neutral-700"
+          }
+        >
+          <ArrowLeftIcon className={"h-4 w-4"} /> Back
+        </Link>
+      )}
+      <div
+        className={
+          "sticky top-4 z-10 flex h-fit grow items-center justify-between p-2" +
+          " border-1 rounded-xl border border-neutral-700 bg-neutral-800 shadow-lg"
+        }
+      >
+        <Logo />
+        <GreenButton
+          title={"Add a Gig"}
+          icon={<MusicalNoteIcon className={"h-4 w-4"} />}
+          callBack={() => handleGig()}
+        />
       </div>
     </div>
-  </div>
+  );
 }

@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { supabaseAdmin } from "../../../lib/supabaseClient";
+import GreenButton from "@/components/buttons/greenButton";
 
 async function uploadImageToSupabaseStorage(displayFile) {
   try {
@@ -61,17 +62,11 @@ export default function UploadImageToStorage({
 
   if (displayFile) {
     return (
-      <div
-        onClick={() => handleUpload()}
-        className={
-          "border-1 flex cursor-pointer items-center justify-between gap-4 rounded-md" +
-          " border border-white/20 bg-green-600 py-2 px-4 text-white shadow-sm" +
-          " hover:bg-green-500 hover:shadow-lg"
-        }
-      >
-        <p>Next</p>
-        <ArrowRightIcon className={"h-4 w-4"} />
-      </div>
+      <GreenButton
+        title={"Next"}
+        icon={<ArrowRightIcon className={"h-4 w-4"} />}
+        callBack={() => handleUpload()}
+      />
     );
   } else return null;
 }
