@@ -1,6 +1,7 @@
 import { supabaseAdmin } from "../../lib/supabaseClient";
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import SectionDivider from "@/components/divider/sectionDivider";
+import Head from "next/head";
 
 export const revalidate = 0;
 
@@ -25,6 +26,10 @@ export default async function Home() {
   const pastGigs = await getPastGigs();
   return (
     <main className={"flex flex-wrap gap-4"}>
+      <Head>
+        <title></title>
+        <meta property={"og:image"} content={"/api/og"} />
+      </Head>
       <GigsWrapper data={futureGigs} />
       <SectionDivider title={"previous gigs"} />
       <GigsWrapper data={pastGigs} />
