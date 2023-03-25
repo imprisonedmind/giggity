@@ -22,7 +22,7 @@ export default function AddingInfo({ imgUrl, description, formik }) {
 
   useEffect(() => {
     const setFormValues = async () => {
-      if (gigData.title !== null) {
+      if (gigData && gigData.title !== null) {
         const parsedDate = await parseDateString(gigData.date);
         const parsedTime = await parseTimeString(gigData.time);
 

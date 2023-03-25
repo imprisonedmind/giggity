@@ -11,9 +11,8 @@ export default function ItemCard({ item }) {
     <div
       key={item.id}
       className={
-        "flex w-full flex-col bg-neutral-800 p-2 sm:w-[250px]" +
-        " rounded-xl border" +
-        " border-neutral-700"
+        "col-span-1 flex w-full flex-col rounded-xl border border-neutral-700" +
+        " bg-neutral-800 p-2"
       }
     >
       <ItemImage item={item} />
