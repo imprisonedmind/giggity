@@ -17,8 +17,8 @@ export default function ButtonArea({ ticket }) {
     if (navigator.share) {
       navigator
         .share({
-          title: "My website",
-          text: "Check out this website!",
+          title: "Giggity",
+          text: "Check out this Gig!",
           url: window.location.href,
         })
         .then(() => console.log("Shared successfully."))
