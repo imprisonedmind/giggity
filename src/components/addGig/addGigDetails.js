@@ -52,14 +52,19 @@ export default function AddGigDetails({
     setArtistsArray([...artistsArray, ""]);
   };
 
-  const handleArtistChange = (event, index) => {
-    const updatedArtists = [...artistsArray];
-    updatedArtists[index] = event.target.value;
+  const handleArtistChange = (event, id) => {
+    const updatedArtists = artistsArray.map((artist) => {
+      if (artist.id === id) {
+        return { ...artist, name: event.target.value };
+      } else {
+        return artist;
+      }
+    });
     setArtistsArray(updatedArtists);
   };
 
-  const deleteArtist = (index) => {
-    const updatedArtists = artistsArray.filter((artist, i) => i !== index);
+  const deleteArtist = (id) => {
+    const updatedArtists = artistsArray.filter((artist) => artist.id !== id);
     setArtistsArray(updatedArtists);
   };
 
@@ -81,9 +86,9 @@ export default function AddGigDetails({
           <p>Artists</p>
           <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
             {artistsArray.length > 0 &&
-              artistsArray.map((artist, index) => (
+              artistsArray.map((artist) => (
                 <div
-                  key={index}
+                  key={artist.id}
                   className={
                     "group relative grow items-center" + " flex max-w-[33%]"
                   }
@@ -91,11 +96,11 @@ export default function AddGigDetails({
                   <FormInput
                     width={"w-full"}
                     placeholder={"Enter an artist name"}
-                    defaultValue={artist}
-                    onChange={(event) => handleArtistChange(event, index)}
+                    defaultValue={artist.name}
+                    onChange={(event) => handleArtistChange(event, artist.id)}
                   />
                   <div
-                    onClick={() => deleteArtist(index)}
+                    onClick={() => deleteArtist(artist.id)}
                     className={
                       "bg-red-500/20" +
                       " absolute right-1 hidden aspect-square h-3/4 p-[5px] text-red-500" +
@@ -209,6 +214,10 @@ export default function AddGigDetails({
       </div>
     );
   } else {
-    return <Loading title={"Fetching Data..."} />;
+    return (
+      <div className={"mt-4"}>
+        <Loading title={"Fetching Data..."} />
+      </div>
+    );
   }
 }

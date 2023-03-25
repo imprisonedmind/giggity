@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "text-davinci-003",
-        prompt: `"${cleanText}" Extract title, artists, venue, location, date, time, price, doorPrice and organiser. Respond with a json object, artists should be an array, price is first price seen or the online price. Date is numbers followed by a month. The "title" is "organiser" x "venue". CPT is short for Cape Town.`,
+        prompt: `"${cleanText}" Extract title, artists, venue, location, date, time, price, doorPrice and organiser. Respond with a json object, artists should be an array of objects with id and name, price is first price seen or the online price. Date is numbers followed by a month. The "title" is "organiser" x "venue". CPT is short for Cape Town.`,
         temperature: 0,
         max_tokens: 256,
         top_p: 1,
