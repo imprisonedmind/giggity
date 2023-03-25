@@ -1,12 +1,33 @@
+"use client";
 import ItemButton from "@/components/card/itemButton";
-import {
-  CheckBadgeIcon,
-  HandThumbDownIcon,
-  HandThumbUpIcon,
-  TicketIcon,
-} from "@heroicons/react/24/solid";
+import { ShareIcon, TicketIcon } from "@heroicons/react/24/solid";
 
 export default function ButtonArea({ ticket }) {
+  const copyToClipboard = () => {
+    const input = document.createElement("input");
+    input.value = window.location.href;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    console.log("Copied to clipboard:", window.location.href);
+  };
+
+  const share = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "My website",
+          text: "Check out this website!",
+          url: window.location.href,
+        })
+        .then(() => console.log("Shared successfully."))
+        .catch((error) => console.log("Error sharing:", error));
+    } else {
+      copyToClipboard();
+    }
+  };
+
   if (ticket) {
     return (
       <div
@@ -25,6 +46,13 @@ export default function ButtonArea({ ticket }) {
             icon={<TicketIcon />}
           />
         )}
+        <ItemButton
+          title={"Share"}
+          callback={() => share()}
+          textColour={"text-blue-500"}
+          colour={"bg-blue-500/10 border-blue-500"}
+          icon={<ShareIcon />}
+        />
         {/*<ItemButton*/}
         {/*    title={"I'm Going - 25"}*/}
         {/*    link={"/test"}*/}
