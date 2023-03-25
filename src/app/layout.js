@@ -4,7 +4,7 @@ import Navbar from "@/components/navigation/navbar";
 
 export const metadata = {
   title: "Giggity",
-  description: "Find local gis near you!",
+  description: "Find local gigs near you!",
 };
 
 export default function RootLayout({ children }) {
