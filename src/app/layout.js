@@ -1,17 +1,11 @@
 import "./globals.css";
 import { QuickView } from "@/context/quickView";
 import Navbar from "@/components/navigation/navbar";
-import Head from "next/head";
-
-// export const metadata = {
-//   title: "Giggity",
-//   description: "Find local gigs near you!",
-// };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <div className={"m-auto max-w-[1200px] bg-neutral-900 py-4 px-2 md:p-4"}>
+    <html lang="en" className={"bg-neutral-900"}>
+      <div className={"m-auto max-w-[1200px] py-4 px-2 md:p-4"}>
         <QuickView>
           <Navbar />
           {children}

@@ -26,15 +26,13 @@ export default async function Home() {
   const pastGigs = await getPastGigs();
   return (
     <>
-      <Head>
-        <meta property="og:title" content="Giggity" />
-        <meta property="og:image" content="/api/og" />
-        <meta property="og:description" content="Find local gigs near you!" />
-      </Head>
       <head>
-        <title>Giggity</title>
-        <meta name="description" content="Find local gigs near you!" />
-        <meta property={"og:image"} content={"/api/og"} />
+        <meta property="og:title" content="Giggity" />
+        <meta
+          property="og:image"
+          content="https://giggity-ruddy.vercel.app/api/og"
+        />
+        <meta property="og:description" content="Find local gigs near you!" />
       </head>
       <div className={"flex flex-wrap gap-4"}>
         <GigsWrapper data={futureGigs} />
