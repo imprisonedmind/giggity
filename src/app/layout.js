@@ -3,10 +3,10 @@ import { QuickView } from "@/context/quickView";
 import Navbar from "@/components/navigation/navbar";
 import Head from "next/head";
 
-export const metadata = {
-  title: "Giggity",
-  description: "Find local gigs near you!",
-};
+// export const metadata = {
+//   title: "Giggity",
+//   description: "Find local gigs near you!",
+// };
 
 export default function RootLayout({ children }) {
   return (
