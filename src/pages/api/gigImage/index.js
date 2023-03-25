@@ -5,10 +5,10 @@ export const config = {
 };
 
 export default async function (params) {
-  const url1 = await new URL(params.url);
-  const searchParams1 = new URLSearchParams(url1.search);
-  const gigImg = searchParams1.get("gigImg");
-  const title = searchParams1.get("title");
+  // const url1 = await new URL(params.url);
+  // const searchParams1 = new URLSearchParams(url1.search);
+  // const gigImg = searchParams1.get("gigImg");
+  // const title = searchParams1.get("title");
 
   return new ImageResponse(
     (
