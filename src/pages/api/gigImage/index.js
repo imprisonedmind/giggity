@@ -5,7 +5,7 @@ export const config = {
 };
 
 export default async function (params) {
-  const url1 = new URL(params.url);
+  const url1 = await new URL(params.url);
   const searchParams1 = new URLSearchParams(url1.search);
   const gigImg = searchParams1.get("gigImg");
   const title = searchParams1.get("title");
@@ -125,19 +125,21 @@ export default async function (params) {
               />
             </svg>
           </div>
-          <div tw={"flex flex-col w-1/2"}>
-            <div
-              tw={
-                "flex h-[420px] w-[420px] rounded-3xl overflow-hidden border" +
-                " border-[5px] border-neutral-600 shadow-lg m-auto"
-              }
-            >
-              <img src={gigImg} tw={"w-full h-full"} />
+          {gigImg && (
+            <div tw={"flex flex-col w-1/2"}>
+              <div
+                tw={
+                  "flex h-[420px] w-[420px] rounded-3xl overflow-hidden border" +
+                  " border-[5px] border-neutral-600 shadow-lg m-auto"
+                }
+              >
+                <img src={gigImg} tw={"w-full h-full"} />
+              </div>
+              <div tw={"flex text-neutral-500 text-[30px] text-center"}>
+                <p>{title}</p>
+              </div>
             </div>
-            <div tw={"flex text-neutral-500 text-[30px] text-center"}>
-              <p>{title}</p>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     ),
