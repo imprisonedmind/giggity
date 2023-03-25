@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import vision from "@google-cloud/vision";
 
 const client = new vision.ImageAnnotatorClient({
-  keyFilename: "/lib/serviceAccount/cloudVisionServiceAccount.json",
+  keyFilename: "./lib/serviceAccount/cloudVisionServiceAccount.json",
 });
 
 export default async function handler(req, res) {
