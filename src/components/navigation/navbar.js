@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className={"sticky mb-4 flex w-full flex-nowrap gap-4"}>
+    <div className={"z-50 mb-4 flex w-full flex-nowrap gap-4"}>
       {pathname !== "/" && (
         <Link
           href={"/"}
@@ -37,11 +37,13 @@ export default function Navbar() {
         }
       >
         <Logo />
-        <GreenButton
-          title={"Add a Gig"}
-          icon={<MusicalNoteIcon className={"h-4 w-4"} />}
-          callBack={() => handleGig()}
-        />
+        {pathname === "/" && (
+          <GreenButton
+            title={"Add a Gig"}
+            icon={<MusicalNoteIcon className={"h-4 w-4"} />}
+            callBack={() => handleGig()}
+          />
+        )}
       </div>
     </div>
   );

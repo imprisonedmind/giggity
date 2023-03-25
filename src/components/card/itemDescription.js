@@ -9,7 +9,12 @@ export default function ItemDescription({ description }) {
   const usernameRegex = /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
 
   return (
-    <div className={"flex flex-grow overflow-y-auto text-sm text-neutral-500"}>
+    <div
+      className={
+        "md:max-h-auto flex max-h-[350px] flex-grow overflow-y-auto text-sm" +
+        " text-neutral-500"
+      }
+    >
       <p className={"whitespace-pre-wrap"}>
         {descriptionWords.map((word, index) => {
           if (usernameRegex.test(word)) {
