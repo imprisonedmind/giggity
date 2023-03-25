@@ -5,22 +5,18 @@ import SectionDivider from "@/components/divider/sectionDivider";
 export const revalidate = 0;
 
 async function getFutureGigs() {
-  const headers = { "Cache-Control": "no-cache" };
-  const { data } = await supabaseAdmin
+  let { data } = await supabaseAdmin
     .from("Event")
     .select()
-    .gt("date", new Date().toISOString())
-    .headers(headers);
+    .gt("date", new Date().toISOString());
   return data;
 }
 
 async function getPastGigs() {
-  const headers = { "Cache-Control": "no-cache" };
-  const { data } = await supabaseAdmin
+  let { data } = await supabaseAdmin
     .from("Event")
     .select()
-    .lt("date", new Date().toISOString())
-    .headers(headers);
+    .lt("date", new Date().toISOString());
   return data;
 }
 
