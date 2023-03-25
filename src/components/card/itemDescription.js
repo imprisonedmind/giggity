@@ -1,11 +1,6 @@
 export default function ItemDescription({ description }) {
   let descriptionWords = description.split(" ");
 
-  // Ensure there is a space before and after parentheses
-  descriptionWords = descriptionWords.map((word) => {
-    return word.replace(/\(/g, "").replace(/\)/g, "");
-  });
-
   const usernameRegex = /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
 
   return (

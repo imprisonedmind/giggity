@@ -2,7 +2,7 @@ import DividerLine from "@/components/line/dividerLine";
 
 export default function SectionDivider({ title }) {
   return (
-    <div className={"flex w-full flex-nowrap items-center"}>
+    <div className={"mt-8 flex w-full flex-nowrap items-center"}>
       <DividerLine />
       <h1
         className={

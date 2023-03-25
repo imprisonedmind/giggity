@@ -22,11 +22,7 @@ export default function AddingInfo({ imgUrl, description, formik }) {
 
   useEffect(() => {
     const setFormValues = async () => {
-      if (
-        gigData &&
-        gigData.title !== undefined &&
-        formik.values.title !== undefined
-      ) {
+      if (gigData.title !== null) {
         const parsedDate = await parseDateString(gigData.date);
         const parsedTime = await parseTimeString(gigData.time);
 
@@ -36,7 +32,7 @@ export default function AddingInfo({ imgUrl, description, formik }) {
           image: imgUrl,
           city: gigData.location,
           location: gigData.venue,
-          onlinePrice: parseFloat(gigData.price.replace(/[^0-9\.]+/g, "")),
+          onlinePrice: parseFloat(gigData.price?.replace(/[^0-9\.]+/g, "")),
           doorPrice: parseFloat(gigData.doorPrice?.replace(/[^0-9\.]+/g, "")),
           date: parsedDate,
           time: parsedTime,
@@ -45,6 +41,10 @@ export default function AddingInfo({ imgUrl, description, formik }) {
     };
 
     setFormValues();
+    console.log("GIG DATA:");
+    console.log(gigData);
+    console.log("FORMIK VALUES:");
+    console.log(formik.values);
   }, [gigData]);
 
   useEffect(() => {

@@ -33,19 +33,14 @@ export default function AddGigDetails({
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
-    if (
-      gigData &&
-      gigData.title === undefined &&
-      formik.values.title === null
-    ) {
+    if (formik.values.title === null) {
       fetchData();
     }
-    console.log(formik.values);
   }, [gigData]);
 
   const handleAddArtist = () => {
