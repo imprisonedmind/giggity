@@ -4,9 +4,9 @@ import ButtonArea from "@/components/gigOverview/buttonArea";
 import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
+import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
-const weatherApiKey = process.env.OPEN_WEATHER_API || "";
 
 async function getLatLngFromAddress(address) {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`;
@@ -40,10 +40,7 @@ export default async function Gig({ params }) {
         <MainArea item={item} />
         <Map latLong={latLong} apikey={apiKey} />
       </div>
-      <div className={"flex w-full flex-wrap gap-4 md:flex-nowrap"}>
-        <ButtonArea ticket={item.ticket} />
-        <Weather latLng={latLong} date={item.dateTime} apiKey={weatherApiKey} />
-      </div>
+      <ButtonWeatherArea item={item} latLong={latLong} />
       {item.artists &&
         item.artists.map((artist) => {
           return <Artist id={artist} key={artist} />;
