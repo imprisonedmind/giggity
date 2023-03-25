@@ -10,6 +10,8 @@ export default async function (params) {
   // const gigImg = searchParams1.get("gigImg");
   // const title = searchParams1.get("title");
 
+  const gigImg = false;
+
   return new ImageResponse(
     (
       <div
