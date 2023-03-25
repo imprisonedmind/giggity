@@ -1,6 +1,7 @@
 import { supabaseAdmin } from "../../lib/supabaseClient";
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import SectionDivider from "@/components/divider/sectionDivider";
+import Head from "next/head";
 
 export const revalidate = 0;
 
@@ -25,6 +26,11 @@ export default async function Home() {
   const pastGigs = await getPastGigs();
   return (
     <>
+      <Head>
+        <meta property="og:title" content="Giggity" />
+        <meta property="og:image" content="/api/og" />
+        <meta property="og:description" content="Find local gigs near you!" />
+      </Head>
       <head>
         <title>Giggity</title>
         <meta name="description" content="Find local gigs near you!" />
