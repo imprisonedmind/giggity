@@ -24,10 +24,17 @@ export default async function Home() {
   const futureGigs = await getFutureGigs();
   const pastGigs = await getPastGigs();
   return (
-    <main className={"flex flex-wrap gap-4"}>
-      <GigsWrapper data={futureGigs} />
-      <SectionDivider title={"previous gigs"} />
-      <GigsWrapper data={pastGigs} />
-    </main>
+    <>
+      <head>
+        <title>Giggity</title>
+        <meta name="description" content="Find local gigs near you!" />
+        <meta property={"og:image"} content={"/api/og"} />
+      </head>
+      <div className={"flex flex-wrap gap-4"}>
+        <GigsWrapper data={futureGigs} />
+        <SectionDivider title={"previous gigs"} />
+        <GigsWrapper data={pastGigs} />
+      </div>
+    </>
   );
 }

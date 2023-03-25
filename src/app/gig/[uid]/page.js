@@ -31,13 +31,14 @@ export default async function Gig({ params }) {
 
   return (
     <>
-      <Head>
+      <head>
         <title>{item.title}</title>
+        <meta name="description" content={item.description} />
         <meta
           property={"og:image"}
           content={`/api/gigImage?title=${item.title}&?gigImg=${item.image}`}
         />
-      </Head>
+      </head>
       <div className={"flex flex-wrap gap-4"}>
         <div
           className={
