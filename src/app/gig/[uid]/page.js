@@ -35,7 +35,7 @@ export default async function Gig({ params }) {
         <meta property="og:title" content={item.title} />
         <meta
           property="og:image"
-          content={`/api/gigImage?title=${item.title}&?gigImg=${item.image}`}
+          content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}&?gigImg=${item.image}`}
         />
         <meta property="og:description" content={item.description} />
       </head>
