@@ -14,7 +14,7 @@ export default function ButtonWeatherArea({ item, latLong }) {
 
   return (
     <div className={"flex w-full flex-wrap gap-4 md:flex-nowrap"}>
-      <ButtonArea ticket={item.ticket} />
+      <ButtonArea ticket={item.ticket} title={item.title} />
       <Weather latLng={latLong} date={item.date} apiKey={weatherApiKey} />
     </div>
   );

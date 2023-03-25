@@ -2,7 +2,7 @@
 import ItemButton from "@/components/card/itemButton";
 import { ShareIcon, TicketIcon } from "@heroicons/react/24/solid";
 
-export default function ButtonArea({ ticket }) {
+export default function ButtonArea({ ticket, title }) {
   const copyToClipboard = () => {
     const input = document.createElement("input");
     input.value = window.location.href;
@@ -18,7 +18,7 @@ export default function ButtonArea({ ticket }) {
       navigator
         .share({
           title: "Giggity",
-          text: "Check out this Gig!",
+          text: `Check out this Gig: ${title}`,
           url: window.location.href,
         })
         .then(() => console.log("Shared successfully."))
