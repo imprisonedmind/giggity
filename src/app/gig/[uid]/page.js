@@ -3,7 +3,6 @@ import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
-import Head from "next/head";
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
@@ -35,6 +34,10 @@ export default async function Gig({ params }) {
         <meta property="og:title" content={item.title} />
         <meta
           property="og:image"
+          content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}&gigImg=${item.image}`}
+        />
+        <meta
+          name="twitter:image"
           content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}&gigImg=${item.image}`}
         />
         <meta property="og:description" content={item.description} />

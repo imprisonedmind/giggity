@@ -32,6 +32,10 @@ export default async function Home() {
           property="og:image"
           content="https://giggity-ruddy.vercel.app/api/og"
         />
+        <meta
+          property="twitter:image"
+          content="https://giggity-ruddy.vercel.app/api/og"
+        />
         <meta property="og:description" content="Find local gigs near you!" />
       </head>
       <div className={"flex flex-wrap gap-4"}>
