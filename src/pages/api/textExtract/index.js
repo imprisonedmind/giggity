@@ -1,14 +1,12 @@
 import fetch from "node-fetch";
 import vision from "@google-cloud/vision";
 
-const client = new vision.ImageAnnotatorClient({
-  credentials: JSON.parse(process.env.COULD_VISION_SERVICE_ACCOUNT),
-});
-
 export default async function handler(req, res) {
-  const { imgUrl } = req.body;
-
   try {
+    const client = new vision.ImageAnnotatorClient({
+      credentials: JSON.parse(process.env.COULD_VISION_SERVICE_ACCOUNT),
+    });
+    const { imgUrl } = req.body;
     const [result] = await client.textDetection(imgUrl);
     const text = result.fullTextAnnotation.text;
 
