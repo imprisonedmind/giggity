@@ -1,16 +1,31 @@
-import ItemCard from "@/components/card/itemCard";
-import {supabaseAdmin} from "../../lib/supabaseClient";
+import { supabaseAdmin } from "../../lib/supabaseClient";
+import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
+import SectionDivider from "@/components/divider/sectionDivider";
 
-async function getData() {
-  let {data} = await supabaseAdmin.from('Event').select()
-  return data
+async function getFutureGigs() {
+  let { data } = await supabaseAdmin
+    .from("Event")
+    .select()
+    .gt("date", new Date().toISOString());
+  return data;
+}
+
+async function getPastGigs() {
+  let { data } = await supabaseAdmin
+    .from("Event")
+    .select()
+    .lt("date", new Date().toISOString());
+  return data;
 }
 
 export default async function Home() {
-  const data = await getData()
+  const futureGigs = await getFutureGigs();
+  const pastGigs = await getPastGigs();
   return (
-      <main className={"flex flex-wrap sm:flex-nowrap gap-4"}>
-        {data.map((item) => <ItemCard item={item} key={item.id}/>)}
-      </main>
-  )
+    <main className={"flex flex-wrap gap-4"}>
+      <GigsWrapper data={futureGigs} />
+      <SectionDivider title={"past gigs"} />
+      <GigsWrapper data={pastGigs} />
+    </main>
+  );
 }
