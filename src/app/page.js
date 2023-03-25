@@ -28,6 +28,7 @@ export default async function Home() {
     <>
       <head>
         <meta property="og:title" content="Giggity" />
+        <meta property="og:description" content="Find local gigs near you!" />
         <meta
           property="og:image"
           content="https://giggity-ruddy.vercel.app/api/og"
@@ -36,7 +37,7 @@ export default async function Home() {
           property="twitter:image"
           content="https://giggity-ruddy.vercel.app/api/og"
         />
-        <meta property="og:description" content="Find local gigs near you!" />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <div className={"flex flex-wrap gap-4"}>
         <GigsWrapper data={futureGigs} />
