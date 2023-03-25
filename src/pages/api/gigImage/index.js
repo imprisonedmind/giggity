@@ -4,7 +4,12 @@ export const config = {
   runtime: "edge",
 };
 
-export default async function () {
+export default async function (params) {
+  const url1 = new URL(params.url);
+  const searchParams1 = new URLSearchParams(url1.search);
+  const gigImg = searchParams1.get("gigImg");
+  const title = searchParams1.get("title");
+
   return new ImageResponse(
     (
       <div
@@ -18,8 +23,8 @@ export default async function () {
           backgroundColor: "white",
         }}
       >
-        <div tw="bg-neutral-900 flex items-center justify-center w-full h-full">
-          <div tw={"flex flex-col w-1/2 m-auto"}>
+        <div tw="bg-neutral-900 flex flex-nowrap h-full w-full justify-between py-12 items-center p-8">
+          <div tw={"flex flex-col w-1/2 mb-12"}>
             <svg
               width="550"
               height="550"
@@ -119,6 +124,19 @@ export default async function () {
                 fill="#16A34A"
               />
             </svg>
+          </div>
+          <div tw={"flex flex-col w-1/2"}>
+            <div
+              tw={
+                "flex h-[420px] w-[420px] rounded-3xl overflow-hidden border" +
+                " border-[5px] border-neutral-600 shadow-lg m-auto"
+              }
+            >
+              <img src={gigImg} tw={"w-full h-full"} />
+            </div>
+            <div tw={"flex text-neutral-500 text-[30px] text-center"}>
+              <p>{title}</p>
+            </div>
           </div>
         </div>
       </div>

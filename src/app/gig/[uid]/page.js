@@ -5,6 +5,7 @@ import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
+import Head from "next/head";
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
@@ -32,6 +33,10 @@ export default async function Gig({ params }) {
 
   return (
     <div className={"flex flex-wrap gap-4"}>
+      <Head>
+        <title></title>
+        <meta property={"og:image"} content={"/api/gigImage"} />
+      </Head>
       <div
         className={
           "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px] md:grid-cols-4"
