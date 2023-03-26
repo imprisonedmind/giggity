@@ -21,6 +21,16 @@ export async function generateMetadata() {
       locale: "en-US",
       type: "website",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "Giggity",
+      description:
+        "Discover your next favorite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+      // siteId: '1467726470533754880',
+      creator: "@lukey_stephens",
+      // creatorId: '1467726470533754880',
+      images: ["https://giggity-ruddy.vercel.app/api/og"],
+    },
   };
 }
 
