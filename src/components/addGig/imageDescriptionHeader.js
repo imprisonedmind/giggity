@@ -23,7 +23,7 @@ export default function ImageDescriptionHeader({
         >
           <Image
             src={imgUrl}
-            alt={"test"}
+            alt={description}
             fill={true}
             className={"object-cover"}
           />

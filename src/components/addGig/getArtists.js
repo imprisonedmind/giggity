@@ -93,7 +93,11 @@ export default function GetArtists({
                   " flex-shrink-0 "
                 }
               >
-                <Image src={item.images[0]?.url} alt={"test"} fill={true} />
+                <Image
+                  src={item.images[0]?.url}
+                  alt={item.images[0]?.url}
+                  fill={true}
+                />
               </div>
               <div className={"flex flex-col"}>
                 <p className={"text-sm"}>{item.name}</p>

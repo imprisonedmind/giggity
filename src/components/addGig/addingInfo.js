@@ -16,7 +16,6 @@ export default function AddingInfo({ imgUrl, description, formik }) {
     const fieldValue = event.target.value;
 
     formik.setFieldValue(`${fieldName}`, fieldValue);
-    console.log("TEST ");
     console.log(formik.values);
   };
 

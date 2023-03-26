@@ -13,7 +13,7 @@ export default function MainArea({ item }) {
         " border-neutral-700 "
       }
     >
-      <HeroImage image={item.image} imgAlt={item.imgAlt} />
+      <HeroImage image={item.image} imgAlt={item.description} />
       <div className={"flex h-full flex-col"}>
         <h1 className={"text-xl"}>{item.title}</h1>
         <ItemLocation location={item.location} city={item.city} />

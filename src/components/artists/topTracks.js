@@ -39,7 +39,11 @@ export default async function TopTracks({ artistId, token }) {
         >
           <div className={"flex flex-nowrap items-center gap-4"}>
             <div className={"relative h-8 w-8 overflow-hidden rounded-md"}>
-              <Image src={x.album.images[0].url} alt={"test"} fill={true} />
+              <Image
+                src={x.album.images[0].url}
+                alt={x.album.images[0].url}
+                fill={true}
+              />
             </div>
             <p className={"text-md group-hover:text-neutral-400"}>{x.name}</p>
           </div>
