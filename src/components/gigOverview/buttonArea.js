@@ -53,13 +53,13 @@ export default function ButtonArea({ ticket, title }) {
           colour={"bg-blue-500/10 border-blue-500"}
           icon={<ShareIcon />}
         />
-        <ItemButton
-          title={"Add to Calendar"}
-          callback={() => share()}
-          textColour={"text-blue-500"}
-          colour={"bg-blue-500/10 border-blue-500"}
-          icon={<CalendarIcon />}
-        />
+        {/*<ItemButton*/}
+        {/*  title={"Add to Calendar"}*/}
+        {/*  callback={() => share()}*/}
+        {/*  textColour={"text-blue-500"}*/}
+        {/*  colour={"bg-blue-500/10 border-blue-500"}*/}
+        {/*  icon={<CalendarIcon />}*/}
+        {/*/>*/}
 
         {/*<ItemButton*/}
         {/*    title={"I'm Going - 25"}*/}

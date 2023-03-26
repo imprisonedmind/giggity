@@ -31,6 +31,8 @@ const options = {
     },
   ],
   disableDefaultUI: true,
+  scrollwheel: false,
+  gestureHandling: "none",
 };
 
 export default function Map({ latLong, apikey }) {
