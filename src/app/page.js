@@ -1,7 +1,6 @@
 import { supabaseAdmin } from "../../lib/supabaseClient";
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import SectionDivider from "@/components/divider/sectionDivider";
-import Head from "next/head";
 
 export const revalidate = 0;
 

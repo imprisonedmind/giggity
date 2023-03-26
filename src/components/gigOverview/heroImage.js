@@ -6,7 +6,7 @@ export default function HeroImage({ image, imgAlt }) {
       className={
         "border-1 relative aspect-square overflow-hidden rounded-lg border" +
         " max-h-[450px] w-full flex-shrink-0 border-neutral-700 shadow-2xl md:h-full" +
-        " md:w-1/3"
+        " sm:w-1/3"
       }
     >
       <Image

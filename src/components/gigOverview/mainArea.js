@@ -10,7 +10,7 @@ export default function MainArea({ item }) {
       className={
         "row-span-1 flex flex-wrap text-neutral-400 sm:flex-nowrap" +
         " border-1 col-span-3 gap-4 rounded-lg border border bg-neutral-800 p-4" +
-        " border-neutral-700 "
+        " overflow-hidden border-neutral-700"
       }
     >
       <HeroImage image={item.image} imgAlt={item.description} />

@@ -1,6 +1,12 @@
-export default function ItemTitle({title}) {
-  return <div className={"flex flex-nowrap text-neutral-400 items-center" +
-      " justify-between w-full"}>
-    <h1 className={"text-md truncate "}>{title}</h1>
-  </div>
+export default function ItemTitle({ title }) {
+  return (
+    <div
+      className={
+        "flex flex-nowrap items-center text-neutral-400" +
+        " w-full justify-between"
+      }
+    >
+      <h1 className={"text-md truncate "}>{title}</h1>
+    </div>
+  );
 }
