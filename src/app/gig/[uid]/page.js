@@ -4,38 +4,6 @@ import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
 
-export async function generateMetadata({ params }) {
-  const item = await getGig(params);
-  return {
-    openGraph: {
-      title: item.title,
-      description: item.description,
-      siteName: "Giggity",
-      images: [
-        {
-          url: `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
-          width: 1800,
-          height: 1600,
-          alt: item.description,
-        },
-      ],
-      locale: "en-US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: item.title,
-      description: item.description,
-      // siteId: '1467726470533754880',
-      creator: "@lukey_stephens",
-      // creatorId: '1467726470533754880',
-      images: [
-        `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
-      ],
-    },
-  };
-}
-
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
 async function getLatLngFromAddress(address) {
@@ -86,4 +54,36 @@ export default async function Gig({ params }) {
       </div>
     </>
   );
+}
+
+export async function generateMetadata({ params }) {
+  const item = await getGig(params);
+  return {
+    openGraph: {
+      title: item.title,
+      description: item.description,
+      siteName: "Giggity",
+      images: [
+        {
+          url: `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
+          width: 1800,
+          height: 1600,
+          alt: item.description,
+        },
+      ],
+      locale: "en-US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: item.title,
+      description: item.description,
+      // siteId: '1467726470533754880',
+      creator: "@lukey_stephens",
+      // creatorId: '1467726470533754880',
+      images: [
+        `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
+      ],
+    },
+  };
 }

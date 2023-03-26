@@ -1,26 +1,40 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ItemDescription({ description }) {
   let descriptionWords = description.split(" ");
 
   const usernameRegex = /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleClick = () => {
-    console.log("clicked");
     setShow(!show);
-    console.log(show);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div
-      className={` 
-        md:max-h-auto flex h-fit flex-grow flex-col text-sm text-neutral-500
-        `}
-    >
-      {show && (
+    <div className={"flex flex-col text-sm text-neutral-500 md:max-h-[190px]"}>
+      <div
+        className={`${show ? "h-full overflow-y-auto" : "h-0 overflow-hidden"}`}
+      >
         <p className={"whitespace-pre-wrap"}>
           {descriptionWords.map((word, index) => {
             if (usernameRegex.test(word)) {
@@ -41,12 +55,12 @@ export default function ItemDescription({ description }) {
             }
           })}
         </p>
-      )}
+      </div>
       <div
         onClick={() => handleClick()}
         className={
           "flex h-fit w-full justify-center rounded-md border bg-neutral-900 p-2" +
-          " border-1 mt-2 cursor-pointer border-neutral-600"
+          " border-1 mt-2 cursor-pointer border-neutral-600 md:hidden"
         }
       >
         <p>{show ? "Hide Description" : "Show Description"}</p>
