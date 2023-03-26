@@ -2,7 +2,27 @@ import { supabaseAdmin } from "../../lib/supabaseClient";
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import SectionDivider from "@/components/divider/sectionDivider";
 
-export const revalidate = 0;
+export async function generateMetadata() {
+  return {
+    openGraph: {
+      title: "Giggity",
+      description:
+        "Discover your next favorite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+      url: "https://giggity-ruddy.vercel.app",
+      siteName: "Giggity",
+      images: [
+        {
+          url: "https://giggity-ruddy.vercel.app/api/og",
+          width: 1800,
+          height: 1600,
+          alt: "Discover your next favorite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+        },
+      ],
+      locale: "en-US",
+      type: "website",
+    },
+  };
+}
 
 async function getFutureGigs() {
   let { data } = await supabaseAdmin
@@ -27,19 +47,6 @@ export default async function Home() {
   const pastGigs = await getPastGigs();
   return (
     <>
-      <head>
-        <meta property="og:title" content="Giggity" />
-        <meta property="og:description" content="Find local gigs near you!" />
-        <meta
-          property="og:image"
-          content="https://giggity-ruddy.vercel.app/api/og"
-        />
-        <meta
-          property="twitter:image"
-          content="https://giggity-ruddy.vercel.app/api/og"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </head>
       <div className={"flex flex-wrap gap-4"}>
         <GigsWrapper data={futureGigs} />
         <SectionDivider title={"previous gigs"} />

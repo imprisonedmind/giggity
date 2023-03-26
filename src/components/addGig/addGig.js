@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import ApiMessage from "@/components/apiMessage/apiMessage";
 import Header from "@/components/addGig/header";

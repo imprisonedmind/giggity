@@ -3,7 +3,27 @@ import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
-import GigHead from "@/components/head/gigHead";
+
+export async function generateMetadata({ params }) {
+  const item = await getGig(params);
+  return {
+    openGraph: {
+      title: item.title,
+      description: item.description,
+      siteName: "Giggity",
+      images: [
+        {
+          url: `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
+          width: 1800,
+          height: 1600,
+          alt: item.description,
+        },
+      ],
+      locale: "en-US",
+      type: "website",
+    },
+  };
+}
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
@@ -19,12 +39,17 @@ async function getLatLngFromAddress(address) {
   return { lat, lng };
 }
 
-export default async function Gig({ params }) {
+async function getGig(params) {
   const { data } = await supabaseAdmin
     .from("Event")
     .select()
     .match({ uid: params.uid });
-  const item = data[0];
+  return data[0];
+}
+
+export default async function Gig({ params }) {
+  const item = await getGig(params);
+
   let latLong = null;
 
   const address = item.location + ", " + item.city;
@@ -33,7 +58,6 @@ export default async function Gig({ params }) {
 
   return (
     <>
-      <GigHead item={item} />
       <div className={"flex flex-wrap gap-4"}>
         <div
           className={
