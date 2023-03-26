@@ -15,7 +15,7 @@ export default function ItemButton({
         href={link}
         className={`${colour} ${textColour} ${hover}
       flex h-fit cursor-pointer flex-nowrap items-center gap-2 rounded-lg border 
-      border-[0.6px] px-2 py-4 text-center text-sm font-medium uppercase hover:shadow-md md:py-2`}
+      border-[0.6px] px-4 py-2 text-center text-sm font-medium uppercase hover:shadow-md md:p-4`}
       >
         {icon && <div className={"h-4 w-4"}>{icon}</div>}
         <p className={"m-auto"}>{title}</p>
@@ -27,7 +27,7 @@ export default function ItemButton({
         onClick={callback}
         className={`${colour} ${textColour} ${hover}
       flex h-fit cursor-pointer flex-nowrap items-center gap-2 rounded-lg border 
-      border-[0.6px] px-2 py-4 text-center text-sm font-medium uppercase hover:shadow-md md:py-2`}
+      border-[0.6px] px-4 py-2 text-center text-sm font-medium uppercase hover:shadow-md md:p-4`}
       >
         {icon && <div className={"h-4 w-4"}>{icon}</div>}
         <p className={"m-auto"}>{title}</p>

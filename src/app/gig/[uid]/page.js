@@ -59,6 +59,11 @@ export default async function Gig({ params }) {
 export async function generateMetadata({ params }) {
   const item = await getGig(params);
   return {
+    title: {
+      default: item.title,
+    },
+    description: item.description,
+    keywords: item.title.split(/\s+/).map((word) => word.replace(/[,x-]/g, "")),
     openGraph: {
       title: item.title,
       description: item.description,
