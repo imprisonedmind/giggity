@@ -126,7 +126,7 @@ export default async function (params) {
             </svg>
           </div>
           {gigImg && (
-            <div tw={"flex flex-col w-1/2"}>
+            <div tw={"flex flex-col w-1/2 justify-center"}>
               <div
                 tw={
                   "flex h-[420px] w-[420px] rounded-3xl overflow-hidden border" +
