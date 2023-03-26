@@ -135,8 +135,8 @@ export default async function (params) {
               >
                 <img src={gigImg} tw={"w-full h-full"} alt={title} />
               </div>
-              <div tw={"flex text-neutral-500 text-[30px] text-center"}>
-                <p>{title}</p>
+              <div tw={"flex text-neutral-500 text-[30px] text-center m-auto"}>
+                <p tw={"m-auto"}>{title}</p>
               </div>
             </div>
           )}
