@@ -1,7 +1,6 @@
 "use client";
 import ItemButton from "@/components/card/itemButton";
 import { CalendarIcon, ShareIcon, TicketIcon } from "@heroicons/react/24/solid";
-import { AddToCalendarButton } from "add-to-calendar-button-react";
 
 export default function ButtonArea({ ticket, title }) {
   const copyToClipboard = () => {
