@@ -9,7 +9,8 @@ async function getFutureGigs() {
   let { data } = await supabaseAdmin
     .from("Event")
     .select()
-    .gt("date", new Date().toISOString());
+    .gt("date", new Date().toISOString())
+    .order("date", { ascending: true });
   return data;
 }
 
@@ -17,7 +18,8 @@ async function getPastGigs() {
   let { data } = await supabaseAdmin
     .from("Event")
     .select()
-    .lt("date", new Date().toISOString());
+    .lt("date", new Date().toISOString())
+    .order("date", { ascending: false });
   return data;
 }
 
