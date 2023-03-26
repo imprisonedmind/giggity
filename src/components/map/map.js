@@ -37,8 +37,7 @@ export default function Map({ latLong, apikey }) {
   return (
     <div
       className={
-        "border-1 col-span-1 w-full overflow-hidden rounded-lg border" +
-        " border-neutral-700 "
+        "border-1 col-span-1 w-full overflow-hidden rounded-lg border border-neutral-700 "
       }
     >
       <LoadScript googleMapsApiKey={apikey}>
@@ -48,7 +47,7 @@ export default function Map({ latLong, apikey }) {
           zoom={18}
           options={options}
         >
-          <Marker position={latLong} title={"test test test"}></Marker>
+          <Marker position={latLong}></Marker>
         </GoogleMap>
       </LoadScript>
     </div>

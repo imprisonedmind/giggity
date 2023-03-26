@@ -3,6 +3,7 @@ import Artist from "@/components/artists/artist";
 import MainArea from "@/components/gigOverview/mainArea";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
+import GigHead from "@/components/head/gigHead";
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
@@ -24,34 +25,22 @@ export default async function Gig({ params }) {
     .select()
     .match({ uid: params.uid });
   const item = data[0];
-  let latLong;
+  let latLong = null;
 
-  if (item.location) latLong = await getLatLngFromAddress(item.location);
+  const address = item.location + ", " + item.city;
+
+  if (address) latLong = await getLatLngFromAddress(address);
 
   return (
     <>
-      <head>
-        <meta property="og:title" content={item.title} />
-        <meta property="og:description" content={item.description} />
-        <meta
-          property="og:image"
-          content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}&gigImg=${item.image}`}
-          // content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}`}
-        />
-        <meta
-          name="twitter:image"
-          content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}&gigImg=${item.image}`}
-          // content={`https://giggity-ruddy.vercel.app/api/gigImage?title=${item.title}`}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </head>
+      <GigHead item={item} />
       <div className={"flex flex-wrap gap-4"}>
         <div
           className={
             "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px] md:grid-cols-4"
           }
         >
-          <MainArea item={item} />
+          <MainArea item={item} latLng={latLong} />
           <Map latLong={latLong} apikey={apiKey} />
         </div>
         <ButtonWeatherArea item={item} latLong={latLong} />
