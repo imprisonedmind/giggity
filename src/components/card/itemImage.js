@@ -10,7 +10,7 @@ export default function ItemImage({ item }) {
     >
       <Image
         src={item.image}
-        alt={item.imgAlt}
+        alt={item.description}
         fill={true}
         className={"object-cover "}
         placeholder={"blur"}

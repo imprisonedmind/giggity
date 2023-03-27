@@ -26,16 +26,12 @@ export default function AddGigDetails({
 }) {
   const fetchData = async () => {
     const result = await GetTextExtraction(imgUrl);
-    setGigData(result);
+    if (result !== gigData) setGigData(result);
 
     if (result && result.artists && artistsArray.length < 1) {
       setArtistsArray(result.artists);
     }
   };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
 
   useEffect(() => {
     if (formik.values.title === null) {

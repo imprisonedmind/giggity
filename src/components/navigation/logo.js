@@ -1,6 +1,7 @@
 import { Gochi_Hand } from "next/font/google";
 import Image from "next/image";
 import icon from "public/devil.png";
+import Link from "next/link";
 
 const reenie = Gochi_Hand({
   weight: "400",
@@ -9,7 +10,10 @@ const reenie = Gochi_Hand({
 
 export default function Logo() {
   return (
-    <div className={"relative flex h-full flex-nowrap items-center gap-1"}>
+    <Link
+      href={"/"}
+      className={"relative flex h-full flex-nowrap items-center gap-1"}
+    >
       <div className={"relative h-10 w-10"}>
         <Image src={icon} alt={"Giggity Icon image"} fill={true} />
       </div>
@@ -18,6 +22,6 @@ export default function Logo() {
       >
         <h1 className={reenie.className}>Giggity</h1>
       </div>
-    </div>
+    </Link>
   );
 }

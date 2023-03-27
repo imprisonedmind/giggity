@@ -22,8 +22,8 @@ export default function AddingInfo({ imgUrl, description, formik }) {
   useEffect(() => {
     const setFormValues = async () => {
       if (gigData && gigData.title !== null) {
-        const parsedDate = await parseDateString(gigData.date);
-        const parsedTime = await parseTimeString(gigData.time);
+        const parsedDate = parseDateString(gigData.date);
+        const parsedTime = parseTimeString(gigData.time);
 
         formik.setValues({
           title: gigData.title,
@@ -31,8 +31,8 @@ export default function AddingInfo({ imgUrl, description, formik }) {
           image: imgUrl,
           city: gigData.location,
           location: gigData.venue,
-          onlinePrice: parseFloat(gigData.price?.replace(/[^0-9\.]+/g, "")),
-          doorPrice: parseFloat(gigData.doorPrice?.replace(/[^0-9\.]+/g, "")),
+          onlinePrice: parseFloat(gigData.price),
+          doorPrice: parseFloat(gigData.doorPrice),
           date: parsedDate,
           time: parsedTime,
         });
