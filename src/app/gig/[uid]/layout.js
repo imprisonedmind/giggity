@@ -1,3 +1,3 @@
 export default function SingleGigLayout({ children }) {
-  return <div>{children}</div>;
+  return <div className={"relative"}>{children}</div>;
 }

@@ -32,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={"bg-neutral-900"}>
-      <body className={"m-auto max-w-[1200px] py-4 px-2 md:p-4"}>
+      <body className={"relative m-auto max-w-[1200px] py-4 px-2 md:p-4"}>
         <QuickView>
           <Navbar />
           {children}
