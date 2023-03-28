@@ -23,6 +23,7 @@ export default function ChooseLocalImage({
       <input
         id="imageInput"
         type="file"
+        accept="image/*"
         className="hidden"
         onChange={handleImageChange}
       />

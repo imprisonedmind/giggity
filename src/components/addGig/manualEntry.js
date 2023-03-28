@@ -15,7 +15,12 @@ export default function ManualEntry({ setImgUrl, imgUrl, setLoading }) {
             className="relative mt-4 aspect-square w-[300px] overflow-hidden
           rounded-lg border border-white/5 shadow-md"
           >
-            <Image src={displayImage} alt="selected image" fill={true} />
+            <Image
+              src={displayImage}
+              alt="selected image"
+              fill={true}
+              className={"object-cover"}
+            />
           </div>
         )}
 

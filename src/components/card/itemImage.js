@@ -12,7 +12,7 @@ export default function ItemImage({ item }) {
         src={item.image}
         alt={item.description}
         fill={true}
-        className={"object-cover "}
+        className={"object-cover"}
         placeholder={"blur"}
         blurDataURL={item.image}
       />
