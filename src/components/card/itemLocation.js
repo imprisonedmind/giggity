@@ -2,7 +2,7 @@ export default function ItemLocation({ city, location }) {
   return (
     <div
       className={
-        "relative flex flex-nowrap text-xs  text-neutral-500" +
+        "relative flex flex-wrap text-xs  text-neutral-500" +
         " flex-shrink-0 overflow-hidden"
       }
     >

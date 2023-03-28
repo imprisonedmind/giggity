@@ -18,7 +18,7 @@ export default function ItemCard({ item }) {
       <ItemImage item={item} />
       <div
         className={
-          "mt-4 flex w-full flex-nowrap items-center justify-between overflow-hidden"
+          "mt-4 flex w-full flex-col items-center justify-between overflow-hidden"
         }
       >
         <div className={"w-full"}>
