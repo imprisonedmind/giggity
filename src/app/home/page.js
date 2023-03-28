@@ -28,7 +28,7 @@ export default async function Home() {
       <div className={"flex flex-wrap gap-4"}>
         <GigsWrapper data={futureGigs} />
         <SectionDivider title={"previous gigs"} />
-        <GigsWrapper data={pastGigs} />
+        <GigsWrapper data={pastGigs} m={"mb-8"} />
       </div>
     </>
   );

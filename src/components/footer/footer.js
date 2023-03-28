@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div
       className={
-        "border-1 left-0 mt-12 grid w-full grid-cols-1 border md:grid-cols-3" +
+        "border-1 left-0 mt-4 grid w-full grid-cols-1 border md:grid-cols-3" +
         " gap-4 rounded-lg border-neutral-700 bg-neutral-800 p-4 text-neutral-500" +
         " md:gap-0"
       }
