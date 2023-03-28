@@ -2,6 +2,7 @@ import "./globals.css";
 import { QuickView } from "@/context/quickView";
 import Navbar from "@/components/navigation/navbar";
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/footer/footer";
 
 export const metadata = {
   title: {
@@ -32,11 +33,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={"bg-neutral-900"}>
-      <body className={"relative m-auto max-w-[1200px] py-4 px-2 md:p-4"}>
+      <body className={"relative m-auto max-w-[1200px] px-2 pt-4 md:p-4"}>
         <QuickView>
           <Navbar />
           {children}
           <Analytics />
+          <Footer />
         </QuickView>
       </body>
     </html>

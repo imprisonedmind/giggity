@@ -32,6 +32,7 @@ export default async function TopTracks({ artistId, token }) {
         <Link
           key={x.id}
           href={x.external_urls.spotify}
+          target={"_blank"}
           className={
             "flex flex-nowrap items-center justify-between gap-4 py-2" +
             " group cursor-pointer rounded-md p-2 hover:bg-neutral-700 "

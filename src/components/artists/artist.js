@@ -41,7 +41,10 @@ export default async function Artist({ id }) {
               " flex-shrink-0 overflow-hidden"
             }
           >
-            <Link href={`https://open.spotify.com/artist/${id}`}>
+            <Link
+              href={`https://open.spotify.com/artist/${id}`}
+              target={"_blank"}
+            >
               <Image src={imgUrl} alt={imgUrl} fill={true} />
             </Link>
             <Image
