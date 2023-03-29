@@ -10,7 +10,7 @@ export const metadata = {
     template: "Giggity | %s ",
   },
   description:
-    "Discover your next favorite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+    "Discover your next favourite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
   keywords: [
     "Giggity",
     "Disctrict",

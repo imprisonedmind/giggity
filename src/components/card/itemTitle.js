@@ -6,7 +6,7 @@ export default function ItemTitle({ title }) {
         " w-full justify-between"
       }
     >
-      <h1 className={"text-md truncate "}>{title}</h1>
+      <h2 className={"text-md truncate "}>{title}</h2>
     </div>
   );
 }
