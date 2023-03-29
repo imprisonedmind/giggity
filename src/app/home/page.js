@@ -39,7 +39,7 @@ export async function generateMetadata() {
     openGraph: {
       title: "Giggity",
       description:
-        "Discover your next favourite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+        "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
       url: "https://giggity-ruddy.vercel.app",
       siteName: "Giggity",
       images: [
@@ -47,7 +47,7 @@ export async function generateMetadata() {
           url: "https://giggity-ruddy.vercel.app/api/og",
           width: 1800,
           height: 1600,
-          alt: "Discover your next favourite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+          alt: "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
         },
       ],
       locale: "en-US",
@@ -57,7 +57,7 @@ export async function generateMetadata() {
       card: "summary_large_image",
       title: "Giggity",
       description:
-        "Discover your next favourite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+        "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
       // siteId: '1467726470533754880',
       creator: "@lukey_stephens",
       // creatorId: '1467726470533754880',

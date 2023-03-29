@@ -6,11 +6,11 @@ import Footer from "@/components/footer/footer";
 
 export const metadata = {
   title: {
-    default: "Giggity | Find a gig!",
+    default: "Giggity | Find live music gigs in Cape Town.",
     template: "Giggity | %s ",
   },
   description:
-    "Discover your next favourite artist and catch live music events in your area with our gig-finding platform. Browse a diverse selection of local gigs and concerts, and sample the artists' music on Spotify before you go. Don't miss out on unforgettable experiences - start exploring today!",
+    "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
   keywords: [
     "Giggity",
     "Disctrict",
