@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import lukey from "/public/logo.png";
 
+const copyRightDate = new Date();
+
 export default function Footer() {
   return (
     <footer
@@ -59,16 +61,19 @@ export default function Footer() {
       </div>
       <div
         className={
-          "col-span-1 flex flex-nowrap items-center justify-center gap-2 md:justify-end"
+          "col-span-1 flex flex-col items-center justify-center md:items-end"
         }
       >
-        <p>📓 </p>
-        <Link
-          href={"/changelogs"}
-          className={"hover:text-blue-500 hover:underline"}
-        >
-          Changelogs
-        </Link>
+        <div className={"flex w-fit flex-nowrap gap-2"}>
+          <p>📓 </p>
+          <Link
+            href={"/changelogs"}
+            className={"hover:text-blue-500 hover:underline"}
+          >
+            Changelogs
+          </Link>
+        </div>
+        <p className={"w-fit"}>© 2023 - {copyRightDate.getFullYear()}</p>
       </div>
     </footer>
   );
