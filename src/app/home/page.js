@@ -2,7 +2,7 @@ import { supabaseAdmin } from "/lib/supabaseClient";
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import SectionDivider from "@/components/divider/sectionDivider";
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 async function getFutureGigs() {
   let { data } = await supabaseAdmin
@@ -29,11 +29,11 @@ export default async function Home() {
   const pastGigs = await getPastGigs();
   return (
     <>
-      <div className={"flex flex-wrap gap-4"}>
+      <main className={"flex flex-wrap gap-4"}>
         <GigsWrapper data={futureGigs} />
         <SectionDivider title={"previous gigs"} />
         <GigsWrapper data={pastGigs} m={"mb-8"} />
-      </div>
+      </main>
     </>
   );
 }

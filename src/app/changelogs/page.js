@@ -5,6 +5,8 @@ async function getChangeLogs() {
   return data;
 }
 
+export const revalidate = 0;
+
 export default async function ChangeLogs() {
   const changeLogs = await getChangeLogs();
   return (

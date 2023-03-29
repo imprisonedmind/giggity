@@ -37,7 +37,7 @@ export default async function Gig({ params }) {
 
   return (
     <>
-      <div className={"flex flex-wrap gap-4"}>
+      <main className={"flex flex-wrap gap-4"}>
         <div
           className={
             "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px] md:grid-cols-4"
@@ -51,7 +51,7 @@ export default async function Gig({ params }) {
           item.artists.map((artist) => {
             return <Artist id={artist} key={artist} />;
           })}
-      </div>
+      </main>
     </>
   );
 }

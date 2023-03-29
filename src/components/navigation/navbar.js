@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className={"z-50 mb-4 flex w-full flex-nowrap gap-4"}>
+    <header className={"z-50 mb-4 flex w-full flex-nowrap gap-4"}>
       {pathname !== "/" && (
         <Link
           href={"/"}
@@ -45,6 +45,6 @@ export default function Navbar() {
           />
         )}
       </div>
-    </div>
+    </header>
   );
 }

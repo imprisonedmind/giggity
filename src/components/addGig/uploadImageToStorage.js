@@ -6,25 +6,23 @@ import GreenButton from "@/components/buttons/greenButton";
 async function uploadImageToSupabaseStorage(displayFile) {
   try {
     const fileName = displayFile.name;
-    const { data, error } = await supabaseAdmin.storage
+    const { data, error, status } = await supabaseAdmin.storage
       .from("gig-images")
       .upload(fileName, displayFile);
 
-    if (error) {
-      throw error;
+    // Check if file already exists
+    if (status === 409) {
+      const publicUrl = supabaseAdmin.storage
+        .from("gig-images")
+        .getPublicUrl(fileName);
+
+      return publicUrl.data.publicUrl;
     }
 
     // Get the public URL of the uploaded file
     const publicUrl = supabaseAdmin.storage
       .from("gig-images")
       .getPublicUrl(fileName);
-
-    // if (!publicUrl) {
-    //   throw new Error("Failed to generate public URL for uploaded file");
-    // }
-    //
-    // const tableUpload = await UploadToEvents(publicUrl);
-    // console.log(tableUpload);
 
     return publicUrl.data.publicUrl;
   } catch (error) {
