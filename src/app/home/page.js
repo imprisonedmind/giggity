@@ -9,7 +9,8 @@ async function getFutureGigs() {
     .from("Event")
     .select()
     .gt("date", new Date().toISOString())
-    .order("date", { ascending: true });
+    .order("date", { ascending: true })
+    .order("time", { ascending: true });
   return data;
 }
 
@@ -18,7 +19,8 @@ async function getPastGigs() {
     .from("Event")
     .select()
     .lt("date", new Date().toISOString())
-    .order("date", { ascending: false });
+    .order("date", { ascending: false })
+    .order("time", { ascending: true });
   return data;
 }
 
