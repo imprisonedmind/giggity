@@ -2,6 +2,8 @@ import { supabaseAdmin } from "/lib/supabaseClient";
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import SectionDivider from "@/components/divider/sectionDivider";
 
+export const revalidate = 60;
+
 async function getFutureGigs() {
   let { data } = await supabaseAdmin
     .from("Event")

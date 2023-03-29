@@ -16,12 +16,12 @@ export default async function ChangeLogs() {
     >
       {Object.values(changeLogs).map((log) => (
         <>
-          <p key={log.id} className={"mb-2 text-lg text-neutral-500"}>
+          <p key={log.id} className={"mb-2 text-lg text-neutral-400"}>
             Version {log.title}
           </p>
           <ul className={"list-disc pl-4"}>
             {Object.values(log.log).map((item) => (
-              <li key={item} className={"text-md text-neutral-600"}>
+              <li key={item} className={"text-md text-neutral-500"}>
                 {item}
               </li>
             ))}
