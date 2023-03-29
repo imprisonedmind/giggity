@@ -1,10 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
 
+function getUsernameRegex() {
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if (isSafari) {
+    return /(?<!\\S)@[a-zA-Z0-9_.-]+\\b/;
+  } else {
+    return /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
+  }
+}
+
 export default function ItemDescription({ description }) {
   let descriptionWords = description?.split(" ");
 
-  const usernameRegex = /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
+  const usernameRegex = getUsernameRegex();
 
   const [show, setShow] = useState(false);
 
