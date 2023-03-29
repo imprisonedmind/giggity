@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "user",
-            content: `${cleanText} - Extract title, artists, venue, location, date, time, price, doorPrice and organiser. Respond with a json object, artists should be an array of objects with id and name, id should be the index. price is first price seen or the online price, price must be a number. Venue is a street address or the name of a place. Location is the city in which the venue is. Date is numbers followed by a month, ignore the year. If you cannot find a value for a key set it to null.`,
+            content: `${cleanText} - Extract title, artists, venue, location, date, time, price, doorPrice and organiser. Respond with a json object, artists should be an array of objects with id and name, id should be the index. price is first price seen or the online price, price must be a number. Venue is a street address or the name of a place. Location is the city in which the venue is. Date should only be one date, ignore the year. Time should only be one time. If you cannot find a value for a key set it to null.`,
           },
         ],
         temperature: 0,
