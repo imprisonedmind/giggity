@@ -2,12 +2,16 @@
 import { useEffect, useState } from "react";
 
 function getUsernameRegex() {
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  if (isSafari) {
-    return /(?<!\\S)@[a-zA-Z0-9_.-]+\\b/;
+  let regex;
+  if (typeof window !== "undefined") {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    regex = isSafari
+      ? new RegExp(`(?:^|\\W)@[a-zA-Z0-9_.-]+(?:\\b|\\W)`)
+      : /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
   } else {
-    return /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
+    regex = /(?<!\S)@[a-zA-Z0-9_.-]+\b/;
   }
+  return regex;
 }
 
 export default function ItemDescription({ description }) {
