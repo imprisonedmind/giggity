@@ -3,6 +3,7 @@ import { QuickView } from "@/context/quickView";
 import Navbar from "@/components/navigation/navbar";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/footer/footer";
+import Head from "next/head";
 
 export const metadata = {
   title: {
@@ -27,6 +28,10 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  google: {
+    name: "google-site-verification",
+    content: "Z7GA_0F_eEU5p3OX3vR2C95vrR8qXKHIhd-DKazVm8A",
   },
 };
 
