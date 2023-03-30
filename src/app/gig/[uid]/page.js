@@ -20,7 +20,7 @@ async function getLatLngFromAddress(address) {
 
 async function getGig(params) {
   const { data } = await supabaseAdmin
-    .from("Event")
+    .from("event")
     .select()
     .match({ uid: params.uid });
   return data[0];

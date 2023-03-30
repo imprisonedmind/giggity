@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "../../../lib/supabaseClient";
 
 async function getChangeLogs() {
-  let { data } = await supabaseAdmin.from("Changelogs").select();
+  let { data } = await supabaseAdmin.from("changelogs").select();
   return data;
 }
 

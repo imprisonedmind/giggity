@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 async function getFutureGigs() {
   let { data } = await supabaseAdmin
-    .from("Event")
+    .from("event")
     .select()
     .gt("date", new Date().toISOString())
     .order("date", { ascending: true })
@@ -16,7 +16,7 @@ async function getFutureGigs() {
 
 async function getPastGigs() {
   let { data } = await supabaseAdmin
-    .from("Event")
+    .from("event")
     .select()
     .lt("date", new Date().toISOString())
     .order("date", { ascending: false })

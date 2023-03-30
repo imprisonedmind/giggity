@@ -40,7 +40,7 @@ export default function AddGig() {
     onSubmit: async (values) => {
       try {
         const { data, error } = await supabaseAdmin
-          .from("Event")
+          .from("event")
           .insert(values);
         if (error) {
           throw error;

@@ -36,7 +36,7 @@ async function UploadToEvents(publicUrl) {
     const url = publicUrl.data.publicUrl;
 
     const { data, error } = await supabaseAdmin
-      .from("Event")
+      .from("event")
       .insert({ image: url });
 
     return "Successful Table Creation";
