@@ -23,7 +23,7 @@ export default function ItemCard({ item }) {
       >
         <div className={"w-full"}>
           <ItemTitle title={item.title} />
-          <ItemLocation city={item.city} location={item.location} />
+          <ItemLocation city={item.city} location={item.address} />
           <ItemDateTime eventDate={item.date} eventTime={item.time} />
         </div>
       </div>

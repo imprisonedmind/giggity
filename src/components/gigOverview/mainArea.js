@@ -15,7 +15,7 @@ export default function MainArea({ item }) {
       <HeroImage image={item.image} imgAlt={item.description} />
       <div className={"flex h-full flex-col"}>
         <h2 className={"text-xl"}>{item.title}</h2>
-        <ItemLocation location={item.location} city={item.city} />
+        <ItemLocation location={item.address} city={item.city} />
         <ItemDateTime eventDate={item.date} eventTime={item.time} />
         <div className={"flex gap-4"}>
           <Price price={item.onlinePrice} online={true} />

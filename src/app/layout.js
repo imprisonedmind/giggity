@@ -3,7 +3,6 @@ import { QuickView } from "@/context/quickView";
 import Navbar from "@/components/navigation/navbar";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/footer/footer";
-import Head from "next/head";
 
 export const metadata = {
   title: {

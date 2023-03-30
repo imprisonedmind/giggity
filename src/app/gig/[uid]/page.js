@@ -31,7 +31,7 @@ export default async function Gig({ params }) {
 
   let latLong = null;
 
-  const address = item.location + ", " + item.city;
+  const address = item.address + ", " + item.city;
 
   if (address) latLong = await getLatLngFromAddress(address);
 
