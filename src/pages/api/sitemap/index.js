@@ -15,6 +15,9 @@ export default async function handler(req, res) {
   // Set modification date to date of push.
   const modDate = new Date();
 
+  // Convert date to ISO-8601 format
+  const isoDate = modDate.toISOString();
+
   // Get gig uids for link generation
   const data = await getGigs();
 
@@ -23,18 +26,18 @@ export default async function handler(req, res) {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
     <url>
       <loc>https://www.giggity.co.za</loc>
-      <lastmod>${modDate}</lastmod>
+      <lastmod>${isoDate}</lastmod>
     </url>
     <url>
       <loc>https://www.giggity.co.za/changelogs</loc>
-      <lastmod>${modDate}</lastmod>
+      <lastmod>${isoDate}</lastmod>
     </url>
     ${data
       .map((gig) => {
         return `
                 <url>
                     <loc>${`https://giggity.co.za/gig/${gig.uid}`}</loc>
-                    <lastmod>${modDate}</lastmod>
+                    <lastmod>${isoDate}</lastmod>
                 </url>
             `;
       })

@@ -7,12 +7,13 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
+    height: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    @apply bg-neutral-900 rounded-full
+    @apply bg-neutral-800 rounded-full
 }
 
 /* Handle */
@@ -22,5 +23,5 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-neutral-600
+    @apply bg-neutral-600 cursor-pointer
 }
