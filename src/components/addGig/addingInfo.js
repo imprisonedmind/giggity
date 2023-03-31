@@ -30,7 +30,7 @@ export default function AddingInfo({ imgUrl, description, formik }) {
           description: description,
           image: imgUrl,
           city: gigData.location,
-          location: gigData.venue,
+          address: gigData.venue,
           onlinePrice: parseFloat(gigData.price),
           doorPrice: parseFloat(gigData.doorPrice),
           date: parsedDate,

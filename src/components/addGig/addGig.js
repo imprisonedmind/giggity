@@ -33,7 +33,7 @@ export default function AddGig() {
       artists: null,
       ticket: null,
       city: null,
-      location: null,
+      address: null,
       onlinePrice: null,
       doorPrice: null,
     },
