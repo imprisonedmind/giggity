@@ -1,33 +1,52 @@
 export default function ItemDateTime({ eventDate, eventTime }) {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+  const dateObj = new Date(eventDate);
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const [year, month, day] = eventDate.split("-");
-  const [hours, minutes, seconds] = eventTime.split(":");
+  // Get the hour and minute components of the event time
+  const [hour, minute] = eventTime.split(":");
 
-  const start = new Date();
-  start.setFullYear(parseInt(year));
-  start.setMonth(parseInt(month) - 1);
-  start.setDate(parseInt(day));
-  start.setHours(parseInt(hours));
-  start.setMinutes(parseInt(minutes));
-  start.setSeconds(parseInt(seconds));
+  // Convert the hour to 12-hour format and add the AM/PM suffix
+  let hour12 = parseInt(hour, 10) % 12;
+  if (hour12 === 0) {
+    hour12 = 12;
+  }
+  const amPm = parseInt(hour, 10) >= 12 ? "PM" : "AM";
 
-  const time12hr = start.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
+  const dayOfWeek = daysOfWeek[dateObj.getDay()];
+  const month = monthNames[dateObj.getMonth()];
+  const dateOfMonth = dateObj.getDate();
 
   return (
     <div className="relative flex h-fit flex-shrink-0 flex-nowrap overflow-hidden text-xs text-neutral-500">
-      <p>{start.toLocaleDateString("en-US", options)}</p>
+      <p>
+        {dayOfWeek}, {month} {dateOfMonth}
+      </p>
       <p className="px-1">·</p>
-      <p>{time12hr}</p>
+      <p>
+        {hour12}:{minute} {amPm}
+      </p>
     </div>
   );
 }
