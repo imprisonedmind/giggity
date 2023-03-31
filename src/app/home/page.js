@@ -1,20 +1,44 @@
 import { supabaseAdmin } from "/lib/supabaseClient";
-import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
-import SectionDivider from "@/components/divider/sectionDivider";
+import GigWeeklyWrapper from "@/components/gigWrapper/gigWeeklyWrapper";
 
 export const revalidate = 0;
 
-async function getFutureGigs() {
+// async function getFutureGigs(lat, long) {
+//   let { data } = await supabaseAdmin.rpc("get_events_within_radius", {
+//     lat: lat,
+//     long: long,
+//   });
+//   // .gt("date", new Date().toISOString())
+//   // .order("date", { ascending: true })
+//   // .order("time", { ascending: true });
+//   return data;
+// }
+const today = new Date();
+const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000); // Calculate the date one week from today
+
+export async function getThisWeeksEvents(lat, long) {
   let { data } = await supabaseAdmin
     .from("event")
     .select()
-    .gt("date", new Date().toISOString())
+    .gte("date", today.toISOString())
+    .lt("date", nextWeek.toISOString())
+    .order("date", { ascending: true })
+    .order("time", { ascending: true });
+
+  return data;
+}
+
+export async function getFutureGigs(lat, long) {
+  let { data } = await supabaseAdmin
+    .from("event")
+    .select()
+    .gt("date", nextWeek.toISOString())
     .order("date", { ascending: true })
     .order("time", { ascending: true });
   return data;
 }
 
-async function getPastGigs() {
+export async function getPastGigs() {
   let { data } = await supabaseAdmin
     .from("event")
     .select()
@@ -25,14 +49,27 @@ async function getPastGigs() {
 }
 
 export default async function Home() {
-  const futureGigs = await getFutureGigs();
+  const thisWeekGiggs = await getThisWeeksEvents();
+  const futureGigs = await getFutureGigs("-33.92622", "18.47954");
   const pastGigs = await getPastGigs();
   return (
     <>
-      <main className={"flex flex-wrap gap-4"}>
-        <GigsWrapper data={futureGigs} />
-        <SectionDivider title={"previous gigs"} />
-        <GigsWrapper data={pastGigs} m={"mb-8"} />
+      <main className={"flex flex-wrap gap-8"}>
+        <GigWeeklyWrapper
+          data={thisWeekGiggs}
+          title={"Events This Week"}
+          link={"/weekly"}
+        />
+        <GigWeeklyWrapper
+          data={futureGigs}
+          title={"Upcoming Events"}
+          link={"/upcoming"}
+        />
+        <GigWeeklyWrapper
+          data={pastGigs}
+          title={"Previous Events"}
+          link={"/previous"}
+        />
       </main>
     </>
   );
