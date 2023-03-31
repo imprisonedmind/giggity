@@ -6,14 +6,14 @@ import ItemDateTime from "@/components/card/itemDateTime";
 import ItemTitle from "@/components/card/itemTitle";
 import ItemLocation from "@/components/card/itemLocation";
 
-export default function ItemCard({ item }) {
+export default function ItemCard({ item, full }) {
   return (
     <div
       key={item.id}
-      className={
-        "col-span-1 flex w-full max-w-[300px] flex-col justify-between rounded-xl" +
-        " border border-neutral-700 bg-neutral-800 p-2"
-      }
+      className={`${
+        full ? "w-full" : "w-full max-w-[300px]"
+      } col-span-1 flex  flex-col justify-between rounded-xl
+         border border-neutral-700 bg-neutral-800 p-2`}
     >
       <ItemImage item={item} />
       <div
