@@ -64,14 +64,14 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
         <div
           className={`${
             dragPosition > 0 ? "w-[50px] md:w-[100px]" : "w-0 opacity-0"
-          } transition-width z-50 flex h-full items-center justify-start bg-gradient-to-l 
-          from-neutral-900/0 to-neutral-900 duration-700 ease-in-out`}
+          } transition-width pointer-events-none z-30 flex h-full items-center justify-start 
+          bg-gradient-to-l from-neutral-900/0 to-neutral-900 duration-700 ease-in-out md:pointer-events-auto`}
         >
           <div
             onClick={() => handleLeftArrowClick()}
-            className={`z-60 hover:p-4" border1 border-1 hidden aspect-square cursor-pointer
-              items-center justify-center rounded-lg border border-neutral-600 bg-neutral-700 
-              p-2 text-neutral-500 md:flex`}
+            className={`hover:p-4" border1 border-1 z-50 hidden aspect-square
+              cursor-pointer items-center justify-center rounded-lg border border-neutral-600 
+              bg-neutral-700 p-2 text-neutral-500 md:flex`}
           >
             <ArrowLeftIcon className={"h-8 w-8"} />
           </div>
@@ -81,12 +81,12 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
             dragPosition < maxScrollPosition
               ? "w-[50px] md:w-[100px]"
               : "w-0 opacity-0"
-          } transition-width z-50 flex h-full items-center justify-end bg-gradient-to-r 
-          from-neutral-900/0 to-neutral-900 duration-700 ease-in-out`}
+          } transition-width pointer-events-none z-30 flex h-full items-center justify-end bg-gradient-to-r 
+          from-neutral-900/0 to-neutral-900 duration-700 ease-in-out md:pointer-events-auto`}
         >
           <div
             onClick={() => handleRightArrowClick()}
-            className={`z-60 hover:p-4" border1 border-1 hidden aspect-square cursor-pointer
+            className={`hover:p-4" border1 border-1 z-50 hidden aspect-square cursor-pointer
               items-center justify-center rounded-lg border border-neutral-600 bg-neutral-700 
               p-2 text-neutral-500 md:flex`}
           >
