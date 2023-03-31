@@ -11,7 +11,7 @@ export default function ItemCard({ item }) {
     <div
       key={item.id}
       className={
-        "col-span-1 flex w-full flex-col justify-between rounded-xl md:max-w-[300px]" +
+        "col-span-1 flex w-full max-w-[300px] flex-col justify-between rounded-xl" +
         " border border-neutral-700 bg-neutral-800 p-2"
       }
     >

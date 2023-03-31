@@ -69,7 +69,7 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
         >
           <div
             onClick={() => handleLeftArrowClick()}
-            className={`z-60 hover:p-4" border1 border-1 flex aspect-square cursor-pointer
+            className={`z-60 hover:p-4" border1 border-1 hidden aspect-square cursor-pointer
               items-center justify-center rounded-lg border border-neutral-600 bg-neutral-700 
               p-2 text-neutral-500 md:flex`}
           >
@@ -86,7 +86,7 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
         >
           <div
             onClick={() => handleRightArrowClick()}
-            className={`z-60 hover:p-4" border1 border-1 flex aspect-square cursor-pointer
+            className={`z-60 hover:p-4" border1 border-1 hidden aspect-square cursor-pointer
               items-center justify-center rounded-lg border border-neutral-600 bg-neutral-700 
               p-2 text-neutral-500 md:flex`}
           >
