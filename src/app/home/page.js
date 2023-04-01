@@ -13,7 +13,9 @@ export const revalidate = 0;
 //   // .order("time", { ascending: true });
 //   return data;
 // }
-const today = new Date();
+const today = new Date().toLocaleString("en-US", {
+  timeZone: "Africa/Johannesburg",
+});
 const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000); // Calculate the date one week from today
 
 export async function getThisWeeksEvents(lat, long) {
