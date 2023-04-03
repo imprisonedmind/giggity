@@ -3,16 +3,6 @@ import GigWeeklyWrapper from "@/components/gigWrapper/gigWeeklyWrapper";
 
 export const revalidate = 0;
 
-// async function getFutureGigs(lat, long) {
-//   let { data } = await supabaseAdmin.rpc("get_events_within_radius", {
-//     lat: lat,
-//     long: long,
-//   });
-//   // .gt("date", new Date().toISOString())
-//   // .order("date", { ascending: true })
-//   // .order("time", { ascending: true });
-//   return data;
-// }
 const today = new Date();
 const options = { timeZone: "Africa/Johannesburg" };
 const todayString = today.toLocaleString("en-US", options);
