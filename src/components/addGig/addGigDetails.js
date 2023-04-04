@@ -122,7 +122,7 @@ export default function AddGigDetails({
               name={"location"}
               placeholder={"Enter a venue"}
               onChange={handleFormInputChange}
-              defaultValue={formik.values.location}
+              defaultValue={formik.values.address}
             />
             <FormInput
               id={"city"}
