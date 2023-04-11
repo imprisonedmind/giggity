@@ -1,8 +1,8 @@
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
-import { getFutureGigs } from "@/app/home/page";
+import { getFutureAll } from "../../../lib/dataFetching";
 
 export default async function Page() {
-  let data = await getFutureGigs();
+  let data = await getFutureAll();
 
   return <GigsWrapper data={data} />;
 }

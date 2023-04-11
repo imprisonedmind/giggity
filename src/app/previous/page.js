@@ -1,8 +1,8 @@
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
-import { getPastGigs } from "@/app/home/page";
+import { getPastAll } from "../../../lib/dataFetching";
 
 export default async function Page() {
-  let data = await getPastGigs();
+  let data = await getPastAll();
 
   return <GigsWrapper data={data} />;
 }
