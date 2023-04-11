@@ -1,6 +1,6 @@
 import { supabaseAdmin } from "/lib/supabaseClient";
 import GigWeeklyWrapper from "@/components/gigWrapper/gigWeeklyWrapper";
-//post
+//push
 export const revalidate = 0;
 
 const today = new Date();

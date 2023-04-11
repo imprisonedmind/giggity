@@ -118,8 +118,8 @@ export default function AddGigDetails({
           <p>Venue</p>
           <div className={"flex gap-2"}>
             <FormInput
-              id={"location"}
-              name={"location"}
+              id={"address"}
+              name={"address"}
               placeholder={"Enter a venue"}
               onChange={handleFormInputChange}
               defaultValue={formik.values.address}
