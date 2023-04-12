@@ -44,8 +44,6 @@ export default function GetArtists({
     fetchData();
   }, [artists]);
 
-  console.log(artistData);
-
   const handleSelection = (id) => {
     if (spotifyArtists.includes(id)) {
       setSpotifyArtists(spotifyArtists.filter((item) => item !== id));
