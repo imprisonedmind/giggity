@@ -32,6 +32,9 @@ export const metadata = {
     name: "google-site-verification",
     content: "Z7GA_0F_eEU5p3OX3vR2C95vrR8qXKHIhd-DKazVm8A",
   },
+  manifest: "/manifest.json",
+  icon: "/icon.png",
+  themeColor: "#131313",
 };
 
 export default function RootLayout({ children }) {

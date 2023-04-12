@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withPwa = require("@ducanh2912/next-pwa").default({
+  dest: "public",
+});
+
+module.exports = withPwa({
   experimental: {
     appDir: true,
+    disable: process.env.NODE_ENV === "development",
   },
   images: {
     domains: [
@@ -21,6 +27,4 @@ const nextConfig = {
       },
     ];
   },
-};
-
-module.exports = nextConfig;
+});
