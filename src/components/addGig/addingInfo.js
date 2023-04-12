@@ -47,7 +47,7 @@ export default function AddingInfo({ imgUrl, formik }) {
     }));
   }, [spotifyArtists]);
 
-  if (imgUrl || description) {
+  if (imgUrl || formik.description) {
     return (
       <div className={"flex flex-col items-center gap-2"}>
         <FormikProvider value={formik}>
@@ -56,7 +56,6 @@ export default function AddingInfo({ imgUrl, formik }) {
               <>
                 <ImageDescriptionHeader
                   imgUrl={imgUrl}
-                  description={description}
                   formik={formik}
                   handleFormInputChange={(e) => handleFormInputChange(e)}
                 />

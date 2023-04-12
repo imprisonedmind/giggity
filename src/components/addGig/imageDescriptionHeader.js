@@ -1,15 +1,13 @@
 import Image from "next/image";
-import { useEffect } from "react";
 
 export default function ImageDescriptionHeader({
   imgUrl,
-  description,
   formik,
   handleFormInputChange,
 }) {
-  useEffect(() => {
-    formik.setFieldValue("description", description);
-  }, [description]);
+  // useEffect(() => {
+  //   formik.setFieldValue("description", description);
+  // }, [description]);
 
   return (
     <div className={"flex w-full flex-nowrap gap-4"}>
@@ -23,7 +21,7 @@ export default function ImageDescriptionHeader({
         >
           <Image
             src={imgUrl}
-            alt={description}
+            alt={formik.values.description}
             fill={true}
             className={"object-cover"}
           />

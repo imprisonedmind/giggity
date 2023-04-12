@@ -4,14 +4,25 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 import Loading from "@/components/loading/loading";
 
 async function GetTextExtraction(img) {
-  const response = await fetch("/api/textExtract", {
+  const text = await fetch("/api/textExtract", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ imgUrl: img }),
-  });
-  return await response.json();
+  }).then((res) => res.json());
+
+  const response = await fetch("/api/convertText", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      text: await text,
+    }),
+  }).then((res) => res.json());
+
+  return await response;
 }
 
 export default function AddGigDetails({
@@ -26,7 +37,7 @@ export default function AddGigDetails({
 }) {
   const fetchData = async () => {
     const result = await GetTextExtraction(imgUrl);
-    if (result !== gigData) setGigData(result);
+    if (result !== null && result !== gigData) setGigData(result);
 
     if (result && result.artists && artistsArray.length < 1) {
       setArtistsArray(result.artists);
