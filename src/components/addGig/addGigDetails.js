@@ -81,7 +81,7 @@ export default function AddGigDetails({
                 <div
                   key={artist.id}
                   className={
-                    "group relative grow items-center" + " flex max-w-[33%]"
+                    "group relative flex max-w-[33%] grow items-center"
                   }
                 >
                   <FormInput
@@ -93,9 +93,8 @@ export default function AddGigDetails({
                   <div
                     onClick={() => deleteArtist(artist.id)}
                     className={
-                      "bg-red-500/20" +
-                      " absolute right-1 hidden aspect-square h-3/4 p-[5px] text-red-500" +
-                      " cursor-pointer rounded-md group-hover:flex"
+                      "absolute right-1 hidden aspect-square h-3/4 bg-red-500/20" +
+                      " cursor-pointer rounded-md p-[5px] text-red-500 group-hover:flex"
                     }
                   >
                     <TrashIcon />
@@ -104,8 +103,8 @@ export default function AddGigDetails({
               ))}
             <div
               className={
-                "flex items-center rounded-md border bg-neutral-700 px-2" +
-                " border-1 cursor-pointer border-neutral-600 text-neutral-400"
+                "border-1 flex items-center rounded-md border bg-neutral-700 px-2" +
+                " cursor-pointer border-neutral-600 text-neutral-400"
               }
               onClick={handleAddArtist}
             >

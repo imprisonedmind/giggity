@@ -5,7 +5,7 @@ import GetArtists from "@/components/addGig/getArtists";
 import { FormikProvider } from "formik";
 import { parseDateString, parseTimeString } from "../../../lib/utilities";
 
-export default function AddingInfo({ imgUrl, description, formik }) {
+export default function AddingInfo({ imgUrl, formik }) {
   const [showInputs, setShowInputs] = useState(true);
   const [artistsArray, setArtistsArray] = useState([]);
   const [gigData, setGigData] = useState(null);
@@ -27,7 +27,6 @@ export default function AddingInfo({ imgUrl, description, formik }) {
 
         formik.setValues({
           title: gigData.title,
-          description: description,
           image: imgUrl,
           city: gigData.location,
           address: gigData.venue,
@@ -38,12 +37,7 @@ export default function AddingInfo({ imgUrl, description, formik }) {
         });
       }
     };
-
     setFormValues();
-    console.log("GIG DATA:");
-    console.log(gigData);
-    console.log("FORMIK VALUES:");
-    console.log(formik.values);
   }, [gigData]);
 
   useEffect(() => {

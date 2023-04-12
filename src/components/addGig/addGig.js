@@ -15,10 +15,6 @@ export default function AddGig() {
   const [errMsg, setMsg] = useState("");
 
   const [imgUrl, setImgUrl] = useState(null);
-  const [description, setDescription] = useState(null);
-
-  const [showSubmission, setShowSubmission] = useState(false);
-
   const { setIsOpen, isOpen } = UseQuickViewContext();
 
   const router = useRouter();
@@ -68,7 +64,7 @@ export default function AddGig() {
         loading={loading}
       />
       <Header imgUrl={imgUrl} loading={loading} />
-      <AddingInfo imgUrl={imgUrl} description={description} formik={formik} />
+      <AddingInfo imgUrl={imgUrl} formik={formik} />
       <ManualEntry
         setLoading={(v) => setLoading(v)}
         imgUrl={imgUrl}
