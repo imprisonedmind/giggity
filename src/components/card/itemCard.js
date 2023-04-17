@@ -11,9 +11,9 @@ export default function ItemCard({ item, full }) {
     <div
       key={item.id}
       className={`${
-        full ? "w-full " : "w-full max-w-[300px]"
+        full ? "w-full " : "w-full max-w-[350px]"
       } col-span-1 flex flex-col justify-between rounded-xl border
-         border-neutral-700 bg-neutral-800 p-2 md:max-w-[300px]`}
+         border-neutral-700 bg-neutral-800 p-2 md:max-w-[350px]`}
     >
       <ItemImage item={item} />
       <div
