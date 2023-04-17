@@ -10,11 +10,13 @@ export default async function Home() {
 
   return (
     <main className={"flex flex-wrap gap-8"}>
-      <GigWeeklyWrapper
-        data={weekGigs}
-        title={"Events This Week"}
-        link={"/weekly"}
-      />
+      {weekGigs.length > 0 && (
+        <GigWeeklyWrapper
+          data={weekGigs}
+          title={"Events This Week"}
+          link={"/weekly"}
+        />
+      )}
       <GigWeeklyWrapper
         data={futureGigs}
         title={"Upcoming Events"}

@@ -11,5 +11,19 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          ".scrollbar-hidden::-webkit-scrollbar": {
+            display: "none",
+          },
+          ".scrollbar-show::-webkit-scrollbar": {
+            display: "flex",
+          },
+        },
+        ["responsive"]
+      );
+    },
+  ],
 };

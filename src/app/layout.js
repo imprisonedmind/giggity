@@ -4,6 +4,21 @@ import Navbar from "@/components/navigation/navbar";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/footer/footer";
 
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={"bg-neutral-900"}>
+      <body className={"relative m-auto max-w-[1200px] md:p-4 lg:px-2 lg:pt-4"}>
+        <QuickView>
+          <Navbar />
+          {children}
+          <Analytics />
+          <Footer />
+        </QuickView>
+      </body>
+    </html>
+  );
+}
+
 export const metadata = {
   title: {
     default: "Giggity | Find live music gigs in Cape Town.",
@@ -36,18 +51,3 @@ export const metadata = {
   icon: "/icon.png",
   themeColor: "#131313",
 };
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className={"bg-neutral-900"}>
-      <body className={"relative m-auto max-w-[1200px] px-2 pt-4 md:p-4"}>
-        <QuickView>
-          <Navbar />
-          {children}
-          <Analytics />
-          <Footer />
-        </QuickView>
-      </body>
-    </html>
-  );
-}

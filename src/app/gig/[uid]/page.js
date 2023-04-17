@@ -34,7 +34,7 @@ export default async function Gig({ params }) {
 
   return (
     <>
-      <main className={"flex flex-wrap gap-4"}>
+      <main className={"flex flex-wrap gap-4 p-2 md:p-0"}>
         <div
           className={
             "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px] md:grid-cols-4"
