@@ -48,6 +48,9 @@ export const metadata = {
     content: "Z7GA_0F_eEU5p3OX3vR2C95vrR8qXKHIhd-DKazVm8A",
   },
   manifest: "/manifest.json",
-  icon: "/favicon.svg",
+  icon: {
+    href: "/favicon.svg",
+    sizes: "any",
+  },
   themeColor: "#131313",
 };
