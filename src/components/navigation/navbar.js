@@ -17,7 +17,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className={"z-50 mb-2 flex w-full flex-nowrap gap-4 p-2 md:p-0"}>
+    <header
+      className={"z-50 mb-2 flex w-full flex-nowrap gap-4 p-2 md:mb-4 md:p-0"}
+    >
       {pathname !== "/" && (
         <Link
           href={"/"}
