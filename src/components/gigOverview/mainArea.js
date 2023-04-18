@@ -18,8 +18,7 @@ export default function MainArea({ item }) {
         <ItemLocation location={item.address} city={item.city} />
         <ItemDateTime eventDate={item.date} eventTime={item.time} />
         <div className={"flex gap-4"}>
-          <Price price={item.onlinePrice} online={true} />
-          <Price price={item.doorPrice} />
+          <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />
         </div>
         <ItemDescription description={item.description} />
       </div>
