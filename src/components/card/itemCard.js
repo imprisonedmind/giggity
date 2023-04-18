@@ -5,6 +5,7 @@ import ItemDateTime from "@/components/card/itemDateTime";
 import ItemTitle from "@/components/card/itemTitle";
 import ItemLocation from "@/components/card/itemLocation";
 import Link from "next/link";
+import ItemCountDown from "@/components/card/itemCountDown";
 
 export default function ItemCard({ item, full }) {
   return (
@@ -30,14 +31,8 @@ export default function ItemCard({ item, full }) {
       </div>
       <div className={"flex flex-nowrap gap-2 py-2"}>
         <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />
+        <ItemCountDown date={item.date} time={item.time} />
       </div>
-      {/*<ItemButton*/}
-      {/*  title={"View More"}*/}
-      {/*  colour={"bg-neutral-900 border-neutral-700"}*/}
-      {/*  hover={"hover:text-neutral-500"}*/}
-      {/*  textColour={"text-neutral-600"}*/}
-      {/*  link={`/gig/${item.uid}`}*/}
-      {/*/>*/}
     </Link>
   );
 }
