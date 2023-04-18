@@ -19,7 +19,7 @@ export default function Price({ onlinePrice, doorPrice }) {
           " text-xs text-pink-500"
         }
       >
-        <div className={"flex flex-nowrap items-center gap-2"}>
+        <div className={"flex flex-nowrap items-center gap-1"}>
           <p>Totally Free! </p>
           <HeartIcon className={"h-3 w-3"} />
         </div>
