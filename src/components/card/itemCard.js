@@ -1,19 +1,20 @@
 "use client";
 import ItemImage from "@/components/card/itemImage";
-import ItemButton from "@/components/card/itemButton";
 import Price from "@/components/card/itemPrice";
 import ItemDateTime from "@/components/card/itemDateTime";
 import ItemTitle from "@/components/card/itemTitle";
 import ItemLocation from "@/components/card/itemLocation";
+import Link from "next/link";
 
 export default function ItemCard({ item, full }) {
   return (
-    <div
+    <Link
+      href={`/gig/${item.uid}`}
       key={item.id}
       className={`${
         full ? "w-full " : "w-full max-w-[350px]"
-      } col-span-1 flex flex-col justify-between rounded-xl border
-         border-neutral-700 bg-neutral-800 p-2 md:max-w-[350px]`}
+      } col-span-1 flex cursor-pointer flex-col justify-between rounded-xl border 
+        border-neutral-700 bg-neutral-800 p-2 md:max-w-[350px]`}
     >
       <ItemImage item={item} />
       <div
@@ -28,16 +29,15 @@ export default function ItemCard({ item, full }) {
         </div>
       </div>
       <div className={"flex flex-nowrap gap-2 py-2"}>
-        <Price price={item.onlinePrice} online={true} />
-        <Price price={item.doorPrice} />
+        <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />
       </div>
-      <ItemButton
-        title={"View More"}
-        colour={"bg-neutral-900 border-neutral-700"}
-        hover={"hover:text-neutral-500"}
-        textColour={"text-neutral-600"}
-        link={`/gig/${item.uid}`}
-      />
-    </div>
+      {/*<ItemButton*/}
+      {/*  title={"View More"}*/}
+      {/*  colour={"bg-neutral-900 border-neutral-700"}*/}
+      {/*  hover={"hover:text-neutral-500"}*/}
+      {/*  textColour={"text-neutral-600"}*/}
+      {/*  link={`/gig/${item.uid}`}*/}
+      {/*/>*/}
+    </Link>
   );
 }

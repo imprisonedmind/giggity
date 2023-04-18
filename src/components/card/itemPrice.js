@@ -1,19 +1,24 @@
-export default function Price({ price, online }) {
-  const colours = online
-    ? "text-blue-500 bg-blue-500/10"
-    : "text-green-500 bg-green-500/10";
+import ItemPriceElement from "@/components/card/itemPriceElement";
 
-  if (price) {
+export default function Price({ onlinePrice, doorPrice }) {
+  if (onlinePrice || doorPrice) {
+    return (
+      <>
+        {onlinePrice !== 0 && (
+          <ItemPriceElement online={true} price={onlinePrice} />
+        )}
+        {doorPrice !== 0 && <ItemPriceElement price={doorPrice} />}
+      </>
+    );
+  } else
     return (
       <div
-        className={`${colours} 
-            my-2 flex h-fit w-fit flex-nowrap rounded-md py-1 px-2 text-xs`}
+        className={
+          "my-2 flex h-fit w-fit flex-nowrap rounded-md bg-orange-500/10 px-2 py-1" +
+          " text-xs text-orange-500"
+        }
       >
-        <p>R</p>
-        <p>{price}</p>
-        <p className={"px-1"}>·</p>
-        <p>{online ? "ONLINE" : "DOOR"}</p>
+        <p>FREE</p>
       </div>
     );
-  } else return null;
 }

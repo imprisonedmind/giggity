@@ -3,10 +3,9 @@ import Link from "next/link";
 
 export default function ItemImage({ item }) {
   return (
-    <Link
-      href={`/gig/${item.uid}`}
+    <div
       className={
-        "relative aspect-square h-[400px] overflow-hidden rounded-lg border md:h-72" +
+        "relative aspect-square h-[400px] overflow-hidden rounded-lg border md:h-96" +
         " border-1 border-neutral-700 shadow-2xl"
       }
     >
@@ -18,6 +17,6 @@ export default function ItemImage({ item }) {
         placeholder={"blur"}
         blurDataURL={item.image}
       />
-    </Link>
+    </div>
   );
 }
