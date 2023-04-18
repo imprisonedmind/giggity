@@ -44,10 +44,14 @@ export default function ItemDescription({ description }) {
   }, []);
 
   return (
-    <div className={"flex flex-col text-sm text-neutral-500 md:max-h-[215px]"}>
-      <div
-        className={`${show ? "h-full overflow-y-auto" : "h-0 overflow-hidden"}`}
-      >
+    <div
+      className={`${
+        show
+          ? "overflow-y-auto text-sm text-neutral-500"
+          : "h-0 overflow-hidden"
+      } flex grow flex-col `}
+    >
+      <div>
         <p className={"whitespace-pre-wrap"}>
           {descriptionWords
             ? descriptionWords.map((word, index) => {
