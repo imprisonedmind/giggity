@@ -80,9 +80,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: item.title,
       description: item.description,
-      // siteId: '1467726470533754880',
       creator: "@lukey_stephens",
-      // creatorId: '1467726470533754880',
       images: [
         `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
       ],
