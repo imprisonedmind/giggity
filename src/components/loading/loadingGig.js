@@ -1,6 +1,6 @@
 export default function LoadingGig() {
   return (
-    <div className={"flex h-full w-full flex-col gap-4"}>
+    <div className={"flex h-full w-full flex-col gap-4 p-2 md:p-0"}>
       {/*FIRST SECTION*/}
       <div className={"grid h-[600px] grid-cols-4 gap-4 md:h-[300px]"}>
         <div

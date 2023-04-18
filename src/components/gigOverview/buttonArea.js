@@ -32,7 +32,7 @@ export default function ButtonArea({ ticket, title }) {
     <div
       className={
         "border-1 item-center flex rounded-lg border border-neutral-700 px-4 py-6" +
-        " h-fit w-fit flex-wrap gap-4 bg-neutral-800"
+        " h-fit grow flex-wrap gap-4 bg-neutral-800 md:w-fit md:grow-0"
       }
     >
       {ticket && (

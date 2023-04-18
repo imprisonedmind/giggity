@@ -9,7 +9,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main className={"flex flex-wrap gap-8"}>
+    <main className={"flex flex-wrap gap-2 md:gap-8"}>
       {weekGigs.length > 0 && (
         <GigWeeklyWrapper
           data={weekGigs}
