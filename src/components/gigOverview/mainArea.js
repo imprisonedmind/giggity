@@ -17,7 +17,7 @@ export default function MainArea({ item }) {
         <h2 className={"text-xl"}>{item.title}</h2>
         <ItemLocation location={item.address} city={item.city} />
         <ItemDateTime eventDate={item.date} eventTime={item.time} />
-        <div className={"flex gap-4"}>
+        <div className={"mb-2 flex gap-4"}>
           <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />
         </div>
         <ItemDescription description={item.description} />

@@ -14,7 +14,7 @@ export default function Price({ onlinePrice, doorPrice }) {
     return (
       <div
         className={
-          "my-2 flex h-fit w-fit flex-nowrap rounded-md bg-orange-500/10 px-2 py-1" +
+          "mt-2 flex h-fit w-fit flex-nowrap rounded-md bg-orange-500/10 px-2 py-1" +
           " text-xs text-orange-500"
         }
       >

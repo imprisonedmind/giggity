@@ -8,7 +8,7 @@ export default function ItemPriceElement({ online, price }) {
   return (
     <div
       className={`${colours} 
-            my-2 flex h-fit w-fit flex-nowrap rounded-md px-2 py-1 text-xs`}
+            mt-2 flex h-fit w-fit flex-nowrap rounded-md px-2 py-1 text-xs`}
     >
       <p>R</p>
       <p>{price}</p>

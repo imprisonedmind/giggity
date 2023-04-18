@@ -2,6 +2,7 @@ import MainArea from "@/components/gigOverview/mainArea";
 import Map from "@/components/map/map";
 import ButtonWeatherArea from "@/components/gigOverview/buttonWeatherArea";
 import Artist from "@/components/artists/artist";
+import { useEffect, useState } from "react";
 
 const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
@@ -18,18 +19,16 @@ async function getLatLngFromAddress(address) {
 }
 
 export default function GigContent({ item }) {
-  // const [latLong, setLatLong] = useState(null);
+  const [latLong, setLatLong] = useState(null);
   const address = item.address + " , " + item.city;
-  //
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const localLtLng = await getLatLngFromAddress(address);
-  //     setLatLong(localLtLng);
-  //   };
-  //   fetchData();
-  // }, []);
 
-  const latLong = false;
+  useEffect(() => {
+    const fetchData = async () => {
+      const localLtLng = await getLatLngFromAddress(address);
+      setLatLong(localLtLng);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className={"flex flex-wrap gap-4"}>

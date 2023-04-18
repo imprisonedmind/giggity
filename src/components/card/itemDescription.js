@@ -44,7 +44,7 @@ export default function ItemDescription({ description }) {
   }, []);
 
   return (
-    <div className={"flex flex-col text-sm text-neutral-500 md:max-h-[190px]"}>
+    <div className={"flex flex-col text-sm text-neutral-500 md:max-h-[215px]"}>
       <div
         className={`${show ? "h-full overflow-y-auto" : "h-0 overflow-hidden"}`}
       >
