@@ -6,7 +6,7 @@
     "start_url": "/",
     "name": "Giggity",
     "description": "Find Local music gigs!",
-    "short_name": "Giggiy",
+    "short_name": "Giggity",
     "icons": [
         {
             "src": "/icon-192x192.png",
