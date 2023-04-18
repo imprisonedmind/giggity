@@ -48,6 +48,6 @@ export const metadata = {
     content: "Z7GA_0F_eEU5p3OX3vR2C95vrR8qXKHIhd-DKazVm8A",
   },
   manifest: "/manifest.json",
-  icon: "/icon.png",
+  icon: "/favicon.svg",
   themeColor: "#131313",
 };
