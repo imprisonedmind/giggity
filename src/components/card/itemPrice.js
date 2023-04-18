@@ -1,4 +1,5 @@
 import ItemPriceElement from "@/components/card/itemPriceElement";
+import { HeartIcon } from "@heroicons/react/24/solid";
 
 export default function Price({ onlinePrice, doorPrice }) {
   if (onlinePrice || doorPrice) {
@@ -14,11 +15,14 @@ export default function Price({ onlinePrice, doorPrice }) {
     return (
       <div
         className={
-          "mt-2 flex h-fit w-fit flex-nowrap rounded-md bg-orange-500/10 px-2 py-1" +
-          " text-xs text-orange-500"
+          "mt-2 flex h-fit w-fit flex-nowrap rounded-md bg-pink-500/10 px-2 py-1" +
+          " text-xs text-pink-500"
         }
       >
-        <p>FREE</p>
+        <div className={"flex flex-nowrap items-center gap-2"}>
+          <p>Totally Free! </p>
+          <HeartIcon className={"h-3 w-3"} />
+        </div>
       </div>
     );
 }
