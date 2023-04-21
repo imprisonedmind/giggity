@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function PrivacyPolicy() {
   return (
     <div className={"flex flex-col gap-4 font-light text-neutral-500"}>
@@ -25,7 +23,7 @@ export default function PrivacyPolicy() {
           certain technical information about your use of the website, such as
           your IP address, browser type, and operating system. This information
           is collected for the purpose of maintaining and improving the
-          website's performance and security.
+          website&apos;s performance and security.
         </p>
       </div>
 
@@ -45,8 +43,8 @@ export default function PrivacyPolicy() {
           We do not share any personal information with third parties, except as
           required by law or to protect our legal rights. We may disclose
           technical information collected by Vercel to third-party service
-          providers for the purpose of maintaining and improving the website's
-          performance and security.
+          providers for the purpose of maintaining and improving the
+          website&apos;s performance and security.
         </p>
       </div>
 
