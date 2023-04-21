@@ -74,6 +74,9 @@ export default function Footer() {
               Changelogs
             </Link>
           </div>
+          <Link href={"/privacy"} className={"w-fit"}>
+            Privacy Policy
+          </Link>
           <p className={"w-fit"}>© 2023 - {copyRightDate.getFullYear()}</p>
         </div>
       </div>
