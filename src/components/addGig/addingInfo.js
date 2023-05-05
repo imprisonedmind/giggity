@@ -1,9 +1,10 @@
 import ImageDescriptionHeader from "@/components/addGig/imageDescriptionHeader";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddGigDetails from "@/components/addGig/addGigDetails";
 import GetArtists from "@/components/addGig/getArtists";
 import { FormikProvider } from "formik";
 import { parseDateString, parseTimeString } from "../../../lib/utilities";
+import Loading from "@/components/loading/loading";
 
 export default function AddingInfo({ imgUrl, formik }) {
   const [showInputs, setShowInputs] = useState(true);
@@ -53,6 +54,7 @@ export default function AddingInfo({ imgUrl, formik }) {
           <form onSubmit={formik.handleSubmit}>
             {showInputs && (
               <>
+                {!gigData && <Loading title={"Fetching Data..."} />}
                 <ImageDescriptionHeader
                   imgUrl={imgUrl}
                   formik={formik}

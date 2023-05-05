@@ -5,10 +5,6 @@ export default function ImageDescriptionHeader({
   formik,
   handleFormInputChange,
 }) {
-  // useEffect(() => {
-  //   formik.setFieldValue("description", description);
-  // }, [description]);
-
   return (
     <div className={"flex w-full flex-nowrap gap-4"}>
       <div className={"flex min-w-[150px] grow flex-col gap-2"}>
