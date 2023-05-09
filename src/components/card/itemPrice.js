@@ -8,7 +8,9 @@ export default function Price({ onlinePrice, doorPrice }) {
         {onlinePrice !== 0 && (
           <ItemPriceElement online={true} price={onlinePrice} />
         )}
-        {doorPrice !== 0 && <ItemPriceElement price={doorPrice} />}
+        {doorPrice !== 0 && doorPrice !== null && (
+          <ItemPriceElement price={doorPrice} />
+        )}
       </>
     );
   } else
