@@ -34,6 +34,12 @@
       "purpose": "maskable"
     },
     {
+      "src": "/monochrome.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "monochrome"
+    },
+    {
       "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
