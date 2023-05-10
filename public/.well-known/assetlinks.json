@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "za.co.giggity.twa",
+      "sha256_cert_fingerprints":
+      ["C4:9A:FC:3B:36:91:4E:C9:FF:3F:66:08:DE:6D:8C:0F:80:7D:A0:0C:5D:4E:11:A6:6B:33:84:90:AC:F6:AD:CC"]
+    }
+  }
+]
