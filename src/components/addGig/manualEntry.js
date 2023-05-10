@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import Image from "next/image";
 import UploadImageToStorage from "@/components/addGig/uploadImageToStorage";
 import ChooseLocalImage from "@/components/addGig/chooseLocalImage";
+import { useAddGigContext } from "@/context/addGig";
 
-export default function ManualEntry({ setImgUrl, imgUrl, setLoading }) {
+export default function ManualEntry() {
+  const { loading, imgUrl, setImgUrl } = useAddGigContext();
+
   const [displayImage, setDisplayImage] = useState(null);
   const [displayFile, setDisplayFile] = useState(null);
+
+  if (loading) return null;
 
   if (!imgUrl) {
     return (
@@ -19,6 +24,7 @@ export default function ManualEntry({ setImgUrl, imgUrl, setLoading }) {
               src={displayImage}
               alt="selected image"
               fill={true}
+              sizes={"100%"}
               className={"object-cover"}
             />
           </div>
@@ -30,11 +36,7 @@ export default function ManualEntry({ setImgUrl, imgUrl, setLoading }) {
             setDisplayFile={(v) => setDisplayFile(v)}
             displayImage={displayImage}
           />
-          <UploadImageToStorage
-            displayFile={displayFile}
-            setPublicImg={(v) => setImgUrl(v)}
-            setLoading={setLoading}
-          />
+          <UploadImageToStorage displayFile={displayFile} />
         </div>
       </div>
     );

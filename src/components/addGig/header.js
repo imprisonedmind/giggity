@@ -1,4 +1,8 @@
-export default function Header({ imgUrl, loading }) {
+import { useAddGigContext } from "@/context/addGig";
+
+export default function Header() {
+  const { imgUrl, loading } = useAddGigContext();
+
   if (!imgUrl && !loading) {
     return (
       <div className={"max-w-[300px]"}>

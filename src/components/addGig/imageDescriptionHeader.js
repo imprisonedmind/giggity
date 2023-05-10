@@ -1,10 +1,9 @@
 import Image from "next/image";
+import { useAddGigContext } from "@/context/addGig";
 
-export default function ImageDescriptionHeader({
-  imgUrl,
-  formik,
-  handleFormInputChange,
-}) {
+export default function ImageDescriptionHeader() {
+  const { imgUrl, formik } = useAddGigContext();
+
   return (
     <div className={"flex w-full flex-nowrap gap-4"}>
       <div className={"flex min-w-[150px] grow flex-col gap-2"}>
@@ -17,8 +16,9 @@ export default function ImageDescriptionHeader({
         >
           <Image
             src={imgUrl}
-            alt={formik.values.description}
+            alt={"Header image alt text."}
             fill={true}
+            sizes={"100%"}
             className={"object-cover"}
           />
         </div>
@@ -34,7 +34,7 @@ export default function ImageDescriptionHeader({
             "automatically converted to links."
           }
           defaultValue={formik.values.description}
-          onChange={handleFormInputChange}
+          onChange={formik.handleChange}
           className={
             "h-full rounded-md bg-neutral-900 p-2 text-sm focus:outline-none"
           }

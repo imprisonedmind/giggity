@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 
 const QuickViewContext = createContext(null);
 
-export function QuickView({ children }) {
+export function QuickViewProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState(null);
 
@@ -13,7 +13,7 @@ export function QuickView({ children }) {
       value={{ isOpen, setIsOpen, setContent, content }}
     >
       {isOpen && (
-        <div className={"fixed top-0 left-0 z-50 h-screen w-screen"}>
+        <div className={"fixed left-0 top-0 z-50 h-screen w-screen"}>
           <div
             className={
               "relative flex h-full w-full items-center justify-center"

@@ -2,6 +2,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { supabaseAdmin } from "../../../lib/supabaseClient";
 import GreenButton from "@/components/buttons/greenButton";
+import { useAddGigContext } from "@/context/addGig";
 
 async function uploadImageToSupabaseStorage(displayFile) {
   try {
@@ -46,15 +47,13 @@ async function UploadToEvents(publicUrl) {
   }
 }
 
-export default function UploadImageToStorage({
-  displayFile,
-  setPublicImg,
-  setLoading,
-}) {
+export default function UploadImageToStorage({ displayFile }) {
+  const { setLoading, setImgUrl } = useAddGigContext();
+
   const handleUpload = async () => {
     setLoading(true);
     const publicImg = await uploadImageToSupabaseStorage(displayFile);
-    setPublicImg(publicImg);
+    setImgUrl(publicImg);
     setLoading(false);
   };
 

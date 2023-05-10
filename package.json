@@ -1,6 +1,6 @@
 {
   "name": "giggity-web",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
     "@ducanh2912/next-pwa": "^8.2.0",
     "@google-cloud/vision": "^3.1.2",
     "@heroicons/react": "^2.0.17",
+    "@next/font": "^13.4.1",
     "@react-google-maps/api": "^2.18.1",
     "@supabase/supabase-js": "^2.20.0",
     "@vercel/analytics": "^0.1.11",

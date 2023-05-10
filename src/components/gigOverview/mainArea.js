@@ -15,7 +15,7 @@ export default function MainArea({ item }) {
       }
     >
       <HeroImage image={item.image} imgAlt={item.description} />
-      <div className={"flex flex-col"}>
+      <div className={"flex w-full flex-col"}>
         <div className={"flex h-fit flex-col"}>
           <h2 className={"text-xl"}>{item.title}</h2>
           <ItemLocation location={item.address} city={item.city} />

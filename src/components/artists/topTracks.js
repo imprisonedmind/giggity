@@ -44,6 +44,7 @@ export default async function TopTracks({ artistId, token }) {
                 src={x.album.images[0].url}
                 alt={x.album.images[0].url}
                 fill={true}
+                sizes={"100%"}
               />
             </div>
             <p className={"text-md group-hover:text-neutral-400"}>{x.name}</p>

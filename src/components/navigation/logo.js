@@ -1,7 +1,7 @@
-import { Gochi_Hand } from "next/font/google";
 import Image from "next/image";
 import icon from "public/devil.png";
 import Link from "next/link";
+import { Gochi_Hand } from "next/font/google";
 
 const reenie = Gochi_Hand({
   weight: "400",

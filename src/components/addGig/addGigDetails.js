@@ -1,73 +1,42 @@
-import React, { useEffect } from "react";
+import React from "react";
 import FormInput from "@/components/form/input";
+import { useAddGigContext } from "@/context/addGig";
 import { TrashIcon } from "@heroicons/react/24/solid";
-import Loading from "@/components/loading/loading";
 
-async function GetTextExtraction(img) {
-  const text = await fetch("/api/textExtract", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ imgUrl: img }),
-  }).then((res) => res.json());
+export default function AddGigDetails() {
+  const {
+    formik,
+    artistsData,
+    setArtistsData,
+    setShowInputs,
+    setShowGetArtists,
+  } = useAddGigContext();
+  console.log(artistsData);
 
-  const response = await fetch("/api/convertText", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      text: await text,
-    }),
-  }).then((res) => res.json());
-
-  return await response;
-}
-
-export default function AddGigDetails({
-  imgUrl,
-  setShowInputs,
-  artistsArray,
-  setArtistsArray,
-  formik,
-  handleFormInputChange,
-  gigData,
-  setGigData,
-}) {
-  const fetchData = async () => {
-    const result = await GetTextExtraction(imgUrl);
-    if (result !== null && result !== gigData) setGigData(result);
-
-    if (result && result.artists && artistsArray.length < 1) {
-      setArtistsArray(result.artists);
-    }
-  };
-
-  useEffect(() => {
-    if (formik.values.title === null) {
-      fetchData();
-    }
-  }, [gigData]);
-
-  const handleAddArtist = () => {
-    setArtistsArray([...artistsArray, ""]);
-  };
-
-  const handleArtistChange = (event, id) => {
-    const updatedArtists = artistsArray.map((artist) => {
-      if (artist.id === id) {
+  // Method to handle artist change
+  const handleArtistChange = (event, artistId) => {
+    const updatedArtists = artistsData.map((artist) => {
+      if (artist.id === artistId) {
         return { ...artist, name: event.target.value };
-      } else {
-        return artist;
       }
+      return artist;
     });
-    setArtistsArray(updatedArtists);
+    setArtistsData(updatedArtists);
   };
 
-  const deleteArtist = (id) => {
-    const updatedArtists = artistsArray.filter((artist) => artist.id !== id);
-    setArtistsArray(updatedArtists);
+  // Method to delete an artist
+  const deleteArtist = (artistId) => {
+    const updatedArtists = artistsData.filter(
+      (artist) => artist.id !== artistId
+    );
+    setArtistsData(updatedArtists);
+  };
+
+  // Method to handle adding an artist
+  const handleAddArtist = () => {
+    const newArtist = { id: Date.now(), name: "" };
+    const updatedArtists = [...artistsData, newArtist];
+    setArtistsData(updatedArtists);
   };
 
   return (
@@ -78,7 +47,7 @@ export default function AddGigDetails({
           id={"title"}
           name={"title"}
           placeholder={"Enter event title"}
-          onChange={handleFormInputChange}
+          onChange={formik.handleChange}
           defaultValue={formik.values.title}
         />
       </div>
@@ -86,8 +55,8 @@ export default function AddGigDetails({
       <div className={"flex flex-col gap-2"}>
         <p>Artists</p>
         <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
-          {artistsArray.length > 0 &&
-            artistsArray.map((artist) => (
+          {artistsData.length > 0 &&
+            artistsData.map((artist) => (
               <div
                 key={artist.id}
                 className={"group relative flex max-w-[33%] grow items-center"}
@@ -128,14 +97,14 @@ export default function AddGigDetails({
             id={"address"}
             name={"address"}
             placeholder={"Enter a venue"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.address}
           />
           <FormInput
             id={"city"}
             name={"city"}
             placeholder={"Enter a city"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.city}
           />
         </div>
@@ -149,7 +118,7 @@ export default function AddGigDetails({
             name={"date"}
             placeholder={"Enter a date"}
             type={"date"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.date}
           />
           <FormInput
@@ -157,7 +126,7 @@ export default function AddGigDetails({
             name={"time"}
             type={"time"}
             placeholder={"Enter a time"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.time}
           />
         </div>
@@ -171,7 +140,7 @@ export default function AddGigDetails({
             name={"onlinePrice"}
             placeholder={"Enter online price"}
             type={"number"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.onlinePrice}
           />
           <FormInput
@@ -179,7 +148,7 @@ export default function AddGigDetails({
             name={"doorPrice"}
             placeholder={"Enter door price"}
             type={"number"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.doorPrice}
           />
         </div>
@@ -192,7 +161,7 @@ export default function AddGigDetails({
             id={"ticket"}
             name={"ticket"}
             placeholder={"Enter the ticket link"}
-            onChange={handleFormInputChange}
+            onChange={formik.handleChange}
             defaultValue={formik.values.ticket}
           />
         </div>
@@ -201,6 +170,7 @@ export default function AddGigDetails({
       <div
         onClick={() => {
           setShowInputs(false);
+          setShowGetArtists(true);
         }}
         className={
           "flex w-full justify-center rounded-md border bg-neutral-700 p-2" +

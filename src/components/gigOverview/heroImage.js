@@ -13,6 +13,7 @@ export default function HeroImage({ image, imgAlt }) {
         src={image}
         alt={imgAlt}
         fill={true}
+        sizes={"100%"}
         className={"object-cover"}
         placeholder={"blur"}
         blurDataURL={image}

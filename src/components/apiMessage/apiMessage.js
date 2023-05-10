@@ -1,21 +1,51 @@
 import Loading from "@/components/loading/loading";
+import { useAddGigContext } from "@/context/addGig";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
-export default function ApiMessage({ error, success, loading, msg }) {
+export default function ApiMessage({}) {
+  const { errMsg, error, success, loading } = useAddGigContext();
+
+  let tag = "drumming";
+  const apiKey = process.env.NEXT_PUBLIC_GIPHY_API_URL;
+
   let wording = "Loading";
   let colours = "bg-neutral-600 text-neutral-300";
 
   if (error) {
-    wording = msg;
+    wording = errMsg;
     colours = "bg-red-500/20 text-red-500";
+    tag = "music+sad";
   }
   if (success) {
     wording = "Success";
     colours = "bg-green-500/20 text-green-500";
   }
 
+  const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=pg-13`;
+
+  const [img, setImg] = useState(null);
+
+  useEffect(() => {
+    const getImg = async () => {
+      const res = await fetch(url);
+      const resJson = await res.json();
+      const data = resJson.data;
+      setImg(data);
+      console.log(data.images.original.webp);
+    };
+    getImg();
+  }, []);
+
   if (error || success || loading) {
-    if (loading) {
-      return <Loading title={wording} />;
+    if (loading && img) {
+      return (
+        <Loading
+          title={wording}
+          img={img.images.original.webp}
+          alt={img.title}
+        />
+      );
     } else {
       return (
         <div
