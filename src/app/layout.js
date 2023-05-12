@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/footer/footer";
 import { AddGigContextProvider } from "@/context/addGig";
 
+export const revalidate = 0;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={"bg-neutral-900"}>
