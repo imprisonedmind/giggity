@@ -4,5 +4,5 @@ import { getThisWeeksEvents } from "../../../lib/dataFetching";
 export default async function Page() {
   let data = await getThisWeeksEvents();
 
-  return <GigsWrapper data={data} />;
+  return <GigsWrapper data={data} title={"Events This Week"} />;
 }

@@ -4,5 +4,5 @@ import { getFutureAll } from "../../../lib/dataFetching";
 export default async function Page() {
   let data = await getFutureAll();
 
-  return <GigsWrapper data={data} />;
+  return <GigsWrapper data={data} title={"Upcoming Events"} />;
 }

@@ -12,7 +12,7 @@ export default function TitleHandler({ title, link }) {
         href={link}
         className={
           "cursor-pointer text-xs tracking-wide underline underline-offset-2" +
-          " hover:text-green-500 "
+          " hover:text-green-500 focus:text-green-500"
         }
       >
         SEE ALL
