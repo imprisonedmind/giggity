@@ -11,7 +11,12 @@ export default async function Page() {
   ]);
 
   return (
-    <main className={"flex flex-wrap gap-2 md:gap-4"}>
+    <main
+      className={
+        "flex h-[92%] flex-wrap gap-2 overflow-y-auto p-2 md:h-full md:gap-4 md:p-4" +
+        " md:overflow-y-visible"
+      }
+    >
       {weekGigs.length > 0 && (
         <GigWeeklyWrapper
           data={weekGigs}

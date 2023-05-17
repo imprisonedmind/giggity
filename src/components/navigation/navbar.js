@@ -18,15 +18,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={"z-50 mb-2 flex w-full flex-nowrap gap-4 p-2 md:mb-4 md:p-0"}
+      className={
+        "z-50 mb-2 hidden w-full flex-nowrap gap-4 p-2 md:mb-4 md:flex md:p-0"
+      }
     >
       {pathname !== "/" && (
         <Link
           href={"/"}
           className={
-            "flex flex-nowrap" +
-            " w-fit items-center rounded-xl bg-neutral-800 py-1 pl-2 pr-4 text-neutral-500" +
-            " border-1 text-normal cursor-pointer gap-2 border border-neutral-700"
+            "flex w-fit flex-nowrap items-center rounded-xl bg-neutral-800 py-1 pl-2" +
+            " border-1 text-normal cursor-pointer gap-2 border pr-4 text-neutral-500" +
+            " border-neutral-700"
           }
         >
           <ArrowLeftIcon className={"h-4 w-4"} /> Back

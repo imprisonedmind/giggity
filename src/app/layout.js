@@ -4,18 +4,20 @@ import Navbar from "@/components/navigation/navbar";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/footer/footer";
 import { AddGigContextProvider } from "@/context/addGig";
+import BottomBar from "@/components/navigation/bottomBar";
 
 export const revalidate = 0;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={"bg-neutral-900"}>
-      <body className={"relative m-auto max-w-[1200px] md:p-4 lg:px-2 lg:pt-4"}>
+      <body className={"h-[100svh]"}>
         <AddGigContextProvider>
           <QuickViewProvider>
             <Navbar />
             {children}
             <Analytics />
             <Footer />
+            <BottomBar />
           </QuickViewProvider>
         </AddGigContextProvider>
       </body>

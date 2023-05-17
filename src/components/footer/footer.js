@@ -6,7 +6,7 @@ const copyRightDate = new Date();
 
 export default function Footer() {
   return (
-    <footer className={"p-2 md:p-0"}>
+    <footer className={"hidden p-2 md:flex md:p-0"}>
       <div
         className={
           "border-1 left-0 mt-4 grid w-full grid-cols-1 border md:grid-cols-3" +
