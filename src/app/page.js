@@ -13,8 +13,8 @@ export default async function Page() {
   return (
     <main
       className={
-        "flex h-[92%] flex-wrap gap-2 overflow-y-auto p-2 md:h-full md:gap-4 md:p-4" +
-        " md:overflow-y-visible"
+        "flex h-[92%] flex-wrap gap-2 overflow-y-auto p-2 md:h-full md:gap-4 md:px-4" +
+        " md:overflow-y-visible md:pb-4"
       }
     >
       {weekGigs.length > 0 && (
