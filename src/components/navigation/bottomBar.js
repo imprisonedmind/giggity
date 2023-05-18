@@ -12,15 +12,15 @@ export default function BottomBar() {
   let settings = "text-neutral-500";
 
   switch (true) {
-    case pathname === "/":
+    case pathname === "/app":
       home = "text-green-500";
       break;
 
-    case pathname === "/favourites":
+    case pathname === "/app/favourites":
       heart = "text-pink-500";
       break;
 
-    case pathname === "/settings":
+    case pathname === "/app/settings":
       settings = "text-green-500";
       break;
   }
@@ -32,17 +32,17 @@ export default function BottomBar() {
         " border-neutral-600 px-12 md:hidden"
       }
     >
-      <div onClick={() => router.push("/")} className={`${home} h-8 w-8 `}>
+      <div onClick={() => router.push("/app")} className={`${home} h-8 w-8 `}>
         <HomeIcon />
       </div>
       <div
-        onClick={() => router.push("/favourites")}
+        onClick={() => router.push("/app/favourites")}
         className={`${heart} h-8 w-8 `}
       >
         <HeartIcon />
       </div>
       <div
-        onClick={() => router.push("/settings")}
+        onClick={() => router.push("/app/settings")}
         className={`${settings} h-8 w-8 `}
       >
         <Cog6ToothIcon />

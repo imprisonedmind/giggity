@@ -1,15 +1,28 @@
 "use client";
 import Link from "next/link";
-import { ArrowLeftIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
-import { usePathname } from "next/navigation";
+import {
+  ArrowLeftIcon,
+  MusicalNoteIcon,
+  UserCircleIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/solid";
+import { usePathname, useRouter } from "next/navigation";
 import Logo from "@/components/navigation/logo";
 import { UseQuickViewContext } from "@/context/quickView";
 import AddGig from "@/components/addGig/addGig";
 import GreenButton from "@/components/buttons/greenButton";
+import { useSupabase } from "@/context/auth";
 
 export default function Navbar() {
+  const router = useRouter();
   const pathname = usePathname();
   const { setContent, setIsOpen, isOpen } = UseQuickViewContext();
+
+  const { session } = useSupabase();
+
+  console.log("***********");
+  console.log("***********");
+  console.log(session);
 
   const handleGig = () => {
     setIsOpen(!isOpen);
@@ -17,13 +30,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className={"px-4 pt-4"}>
-      <div
-        className={
-          "z-50 hidden w-full flex-nowrap gap-4 p-2 md:mb-4 md:flex md:p-0"
-        }
-      >
-        {pathname !== "/" && (
+    <header className={"hidden px-4 pt-4 md:flex"}>
+      <div className={"z-50  flex w-full flex-nowrap gap-4 p-2 md:mb-4 md:p-0"}>
+        {pathname !== "/app" && (
           <Link
             href={"/"}
             className={
@@ -42,11 +51,17 @@ export default function Navbar() {
           }
         >
           <Logo />
-          {pathname === "/" && (
+          {session ? (
             <GreenButton
               title={"Add a Gig"}
               icon={<MusicalNoteIcon className={"h-4 w-4"} />}
               callBack={() => handleGig()}
+            />
+          ) : (
+            <GreenButton
+              title={"Login"}
+              icon={<UserGroupIcon className={"h-4 w-4"} />}
+              callBack={() => router.push("/login")}
             />
           )}
         </div>

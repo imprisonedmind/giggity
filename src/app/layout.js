@@ -1,26 +1,10 @@
 import "./globals.css";
-import { QuickViewProvider } from "@/context/quickView";
-import Navbar from "@/components/navigation/navbar";
-import { Analytics } from "@vercel/analytics/react";
-import Footer from "@/components/footer/footer";
-import { AddGigContextProvider } from "@/context/addGig";
-import BottomBar from "@/components/navigation/bottomBar";
 
 export const revalidate = 0;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={"bg-neutral-900"}>
-      <body className={"flex h-[100svh] flex-col md:h-full"}>
-        <AddGigContextProvider>
-          <QuickViewProvider>
-            <Navbar />
-            {children}
-            <Footer />
-            <Analytics />
-            <BottomBar />
-          </QuickViewProvider>
-        </AddGigContextProvider>
-      </body>
+      <body className={"flex h-[100svh] flex-col md:h-full"}>{children}</body>
     </html>
   );
 }

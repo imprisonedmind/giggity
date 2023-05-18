@@ -10,7 +10,7 @@ import ItemCountDown from "@/components/card/itemCountDown";
 export default function ItemCard({ item, full }) {
   return (
     <Link
-      href={`/gig/${item.uid}`}
+      href={`/app/gig/${item.uid}`}
       key={item.id}
       className={`${
         full ? "w-full " : "w-full max-w-[350px]"

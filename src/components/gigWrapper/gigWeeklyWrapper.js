@@ -1,7 +1,6 @@
 "use client";
 import ItemCard from "@/components/card/itemCard";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import ArrowLeft from "@/components/gigWrapper/arrowLeft";
 import ArrowRight from "@/components/gigWrapper/arrowRight";
 import TitleHandler from "@/components/gigWrapper/titleHandler";
