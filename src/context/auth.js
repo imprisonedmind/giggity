@@ -1,8 +1,6 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import { useRouter } from "next/navigation";
 import { supabaseAdmin } from "../../lib/supabaseClient";
 
 const Context = createContext(undefined);
@@ -32,18 +30,10 @@ export default function SupabaseProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ session }}>
+    <Context.Provider value={session}>
       <>{children}</>
     </Context.Provider>
   );
 }
 
-export const useSupabase = () => {
-  const context = useContext(Context);
-
-  if (context === undefined) {
-    throw new Error("useSupabase must be used inside SupabaseProvider");
-  }
-
-  return context;
-};
+export const useSupabase = () => useContext(Context);

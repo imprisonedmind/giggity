@@ -1,7 +1,6 @@
 import Loading from "@/components/loading/loading";
 import { useAddGigContext } from "@/context/addGig";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function ApiMessage({}) {
   const { errMsg, error, success, loading } = useAddGigContext();
@@ -15,7 +14,7 @@ export default function ApiMessage({}) {
   if (error) {
     wording = errMsg;
     colours = "bg-red-500/20 text-red-500";
-    tag = "music+sad";
+    tag = "punk+rock";
   }
   if (success) {
     wording = "Success";
@@ -32,7 +31,6 @@ export default function ApiMessage({}) {
       const resJson = await res.json();
       const data = resJson.data;
       setImg(data);
-      console.log(data.images.original.webp);
     };
     getImg();
   }, []);

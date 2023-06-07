@@ -55,7 +55,7 @@ export default function AddGigDetails() {
       <div className={"flex flex-col gap-2"}>
         <p>Artists</p>
         <div className={"flex flex-wrap gap-x-2 gap-y-4 "}>
-          {artistsData.length > 0 &&
+          {artistsData?.length > 0 &&
             artistsData.map((artist) => (
               <div
                 key={artist.id}

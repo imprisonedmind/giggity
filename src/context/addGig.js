@@ -50,7 +50,6 @@ export function AddGigContextProvider({ children }) {
           throw error;
         }
         router.refresh();
-        setIsOpen(false);
       } catch (error) {
         console.error(error);
       }

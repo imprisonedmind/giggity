@@ -8,7 +8,11 @@ import SupabaseProvider from "@/context/auth";
 
 export default function AppLayout({ children }) {
   return (
-    <div className={"flex h-[100svh] flex-col md:h-full"}>
+    <div
+      className={
+        "mx-auto flex h-[100svh] w-[100svw] max-w-[1200px] flex-col md:h-full"
+      }
+    >
       <SupabaseProvider>
         <AddGigContextProvider>
           <QuickViewProvider>

@@ -69,13 +69,13 @@ export default function Footer() {
             <div className={"flex w-fit flex-nowrap gap-2"}>
               <p>📓 </p>
               <Link
-                href={"/changelogs"}
+                href={"app/changelogs"}
                 className={"hover:text-blue-500 hover:underline"}
               >
                 Changelogs
               </Link>
             </div>
-            <Link href={"/privacy"} className={"w-fit"}>
+            <Link href={"app/privacy"} className={"w-fit"}>
               Privacy Policy
             </Link>
             <p className={"w-fit"}>© 2023 - {copyRightDate.getFullYear()}</p>
