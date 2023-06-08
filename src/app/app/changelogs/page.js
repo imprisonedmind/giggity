@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "../../../lib/supabaseClient";
+import { supabaseAdmin } from "../../../../lib/supabaseClient";
 
 async function getChangeLogs() {
   let { data } = await supabaseAdmin

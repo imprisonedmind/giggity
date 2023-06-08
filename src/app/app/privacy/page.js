@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div className={"flex flex-col gap-4 font-light text-neutral-500"}>
+    <div className={"flex flex-col gap-4 p-4 font-light text-neutral-500"}>
       <div>
         <h1 className={"text-lg font-medium"}>
           Privacy Policy for giggity.co.za:

@@ -4,8 +4,10 @@ import { MusicalNoteIcon, UserGroupIcon } from "@heroicons/react/24/solid";
 import { useSupabase } from "@/context/auth";
 import AddGig from "@/components/addGig/addGig";
 import { UseQuickViewContext } from "@/context/quickView";
+import { useRouter } from "next/navigation";
 
 export default function LoginOrAddGig() {
+  const router = useRouter();
   const session = useSupabase();
   console.log("***********");
   console.log(session);
@@ -18,11 +20,11 @@ export default function LoginOrAddGig() {
     setContent(<AddGig />);
   };
 
-  if (session === null) {
-    return (
-      <div className={"h-11 w-32 animate-pulse rounded-md bg-neutral-700"} />
-    );
-  }
+  // if (session === null) {
+  //   return (
+  //     <div className={"h-11 w-32 animate-pulse rounded-md bg-neutral-700"} />
+  //   );
+  // }
 
   return (
     <>
