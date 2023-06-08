@@ -36,7 +36,7 @@ export default function LoginOrAddGig() {
         />
       ) : (
         <GreenButton
-          title={"Login"}
+          title={"Log In"}
           icon={<UserGroupIcon className={"h-4 w-4"} />}
           callBack={() => router.push("onboard/login")}
         />

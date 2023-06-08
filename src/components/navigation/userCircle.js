@@ -1,11 +1,9 @@
 "use client";
 import { useSupabase } from "@/context/auth";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import PopUpMenu from "@/components/navigation/popUpMenu/popUpMenu";
 
 export default function UserCircle() {
-  const router = useRouter();
   const session = useSupabase();
 
   const initials = session?.user.email.charAt(0).toUpperCase();

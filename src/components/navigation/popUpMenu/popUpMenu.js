@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 
 export default function PopUpMenu({ menu, showMenu }) {
   const router = useRouter();
+
+  const version = process.env.APP_VERSION;
+  const copyRightDate = new Date();
+
   const signOut = () => {
     supabaseAdmin.auth.signOut();
     router.refresh();
@@ -41,8 +45,8 @@ export default function PopUpMenu({ menu, showMenu }) {
         <PopUpMenuItem title={"Privacy Policy"} link={"app/privacy"} />
         <div className={"w-full border border-neutral-700"} />
         <div className={"flex flex-col gap-2 px-4 py-2"}>
-          <p>Copy Right 2023</p>
-          <p>Version 1.0.3</p>
+          <p>© 2023 - {copyRightDate.getFullYear()}</p>
+          <p>Version {version}</p>
         </div>
       </div>
     );
