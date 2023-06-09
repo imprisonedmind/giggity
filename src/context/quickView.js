@@ -13,7 +13,7 @@ export function QuickViewProvider({ children }) {
       value={{ isOpen, setIsOpen, setContent, content }}
     >
       {isOpen && (
-        <div className={"fixed left-0 top-0 z-50 h-screen w-screen"}>
+        <div className={"fixed left-0 top-0 z-[100] h-screen w-screen"}>
           <div
             className={
               "relative flex h-full w-full items-center justify-center"

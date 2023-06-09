@@ -2,6 +2,7 @@ import PopUpMenuItem from "@/components/navigation/popUpMenu/popUpMenuItem";
 import { useEffect } from "react";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
+import PopUpItems from "@/components/navigation/popUpMenu/popUpItems";
 
 export default function PopUpMenu({ menu, showMenu }) {
   const router = useRouter();
@@ -37,17 +38,7 @@ export default function PopUpMenu({ menu, showMenu }) {
           " w-max overflow-hidden bg-neutral-800 text-sm text-neutral-500 shadow-sm"
         }
       >
-        <PopUpMenuItem title={"Profile"} link={"app/profile"} />
-        <PopUpMenuItem title={"Sign Out"} callback={() => signOut()} />
-        <div className={"w-full border border-neutral-700"} />
-        <PopUpMenuItem title={"Creator"} />
-        <PopUpMenuItem title={"Change Logs"} link={"app/changelogs"} />
-        <PopUpMenuItem title={"Privacy Policy"} link={"app/privacy"} />
-        <div className={"w-full border border-neutral-700"} />
-        <div className={"flex flex-col gap-2 px-4 py-2"}>
-          <p>© 2023 - {copyRightDate.getFullYear()}</p>
-          <p>Version {version}</p>
-        </div>
+        <PopUpItems version={version} copyRightDate={copyRightDate} />
       </div>
     );
 }

@@ -21,6 +21,7 @@ module.exports = withPwa({
       "media2.giphy.com",
       "media3.giphy.com",
       "media4.giphy.com",
+      "source.unsplash.com",
     ],
   },
   reactStrictMode: false,
