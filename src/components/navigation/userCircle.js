@@ -13,17 +13,6 @@ export default function UserCircle() {
 
   const url = "https://source.unsplash.com/random/?punkrock";
 
-  // if (session === null) {
-  //   return (
-  //     <div
-  //       className={
-  //         "flex h-11 w-11 items-center justify-center rounded-lg border" +
-  //         " animate-pulse cursor-pointer border-neutral-700 bg-neutral-700"
-  //       }
-  //     ></div>
-  //   );
-  // }
-
   if (session)
     return (
       <div className={"relative"}>

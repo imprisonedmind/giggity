@@ -9,9 +9,6 @@ import { useRouter } from "next/navigation";
 export default function LoginOrAddGig() {
   const router = useRouter();
   const session = useSupabase();
-  console.log("***********");
-  console.log(session);
-  console.log("***********");
 
   const { setContent, setIsOpen, isOpen } = UseQuickViewContext();
 
@@ -19,12 +16,6 @@ export default function LoginOrAddGig() {
     setIsOpen(!isOpen);
     setContent(<AddGig />);
   };
-
-  // if (session === null) {
-  //   return (
-  //     <div className={"h-11 w-32 animate-pulse rounded-md bg-neutral-700"} />
-  //   );
-  // }
 
   return (
     <>

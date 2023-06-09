@@ -1,7 +1,12 @@
+"use client";
 import Image from "next/image";
 import GreenButton from "@/components/buttons/greenButton";
+import { UseQuickViewContext } from "@/context/quickView";
+import EditProfile from "@/components/profile/editProfile";
 
 export default function ProfileBanner({ user }) {
+  const { setIsOpen, setContent } = UseQuickViewContext();
+
   return (
     <div className={"relative mb-12"}>
       <div
@@ -38,7 +43,13 @@ export default function ProfileBanner({ user }) {
           />
         </div>
         {/*Edit*/}
-        <GreenButton title={"Edit Profile"} />
+        <GreenButton
+          title={"Edit Profile"}
+          callBack={() => {
+            setContent(<EditProfile user={user} />);
+            setIsOpen(true);
+          }}
+        />
       </div>
     </div>
   );
