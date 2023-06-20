@@ -48,8 +48,8 @@ export default function ItemCountDown({ date, time }) {
   return (
     <div
       className={
-        "mt-2 flex h-fit w-fit flex-nowrap rounded-md bg-yellow-500/10 px-2 py-1" +
-        " text-xs text-yellow-500"
+        "flex h-fit w-fit flex-nowrap rounded-md bg-yellow-500/10 px-2 py-1 text-xs" +
+        " text-yellow-500"
       }
     >
       <p className={"text-xs"}>{countdownText}</p>
