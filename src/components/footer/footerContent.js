@@ -79,7 +79,7 @@ export default function FooterContent({ version }) {
                 Changelogs
               </Link>
             </div>
-            <Link href={"app/privacy"} className={"w-fit"}>
+            <Link href={"/privacy"} className={"w-fit"}>
               Privacy Policy
             </Link>
             <p className={"w-fit"}>© 2023 - {copyRightDate.getFullYear()}</p>

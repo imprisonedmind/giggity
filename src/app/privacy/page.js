@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div className={"px-2 md:px-4"}>
+    <div className={"p-2 md:p-4"}>
       <div
         className={
           "flex flex-col gap-4 rounded-lg bg-neutral-800 p-4 font-light text-neutral-500" +
