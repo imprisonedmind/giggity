@@ -1,4 +1,3 @@
-"use client";
 import ItemImage from "@/components/card/itemImage";
 import Price from "@/components/card/itemPrice";
 import ItemDateTime from "@/components/card/itemDateTime";

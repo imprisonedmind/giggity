@@ -29,7 +29,7 @@ export default function BottomBar() {
     <div
       className={
         "flex h-[8%] w-[100svw] items-center justify-between border-t bg-neutral-800" +
-        " border-neutral-600 px-12 md:hidden"
+        " z-20 border-neutral-600 px-12 md:hidden"
       }
     >
       <div onClick={() => router.push("app")} className={`${home} h-8 w-8 `}>
