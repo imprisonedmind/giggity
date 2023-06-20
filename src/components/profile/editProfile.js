@@ -11,74 +11,56 @@ export default function EditProfile({ user }) {
 
   const handleBannerImageUpload = async (event) => {
     const file = event.target.files[0];
-    const fileName = `${user.username}_banner`; // Desired file name
+    const fileName = `${user.username}_banner`;
 
-    try {
-      const { data, error } = await supabaseAdmin.storage
-        .from("user-images")
-        .upload(fileName, file);
+    const { data, error } = await supabaseAdmin.storage
+      .from("user-images")
+      .upload(fileName, file, { upsert: true });
 
-      if (error?.statusCode === "409") {
-        // Remove the original file
-        await supabaseAdmin.storage.from("user-images").remove([fileName]);
-
-        // Upload again
-        const { error: uploadError } = await supabaseAdmin.storage
-          .from("user-images")
-          .upload(fileName, file);
-      }
-
-      const {
-        data: { publicUrl },
-      } = supabaseAdmin.storage.from("user-images").getPublicUrl(fileName);
-      setProfileImage(publicUrl);
-
-      // Update Supabase user metadata with the image URL
-      await supabaseAdmin.auth.updateUser({
-        data: {
-          banner_img: publicUrl,
-        },
-      });
-    } catch (error) {
-      // Handle exceptions
-      console.error(error);
+    if (error) {
+      console.log(error);
     }
+
+    const {
+      data: { publicUrl },
+    } = supabaseAdmin.storage.from("user-images").getPublicUrl(fileName);
+    setBannerImage(publicUrl);
+
+    // Update Supabase user metadata with the image URL
+    await supabaseAdmin.auth.updateUser({
+      data: {
+        banner_img: publicUrl,
+      },
+    });
+
+    await supabaseAdmin.auth.refreshSession();
   };
 
   const handleProfileImageUpload = async (event) => {
     const file = event.target.files[0];
-    const fileName = `${user.username}_profile`; // Desired file name
+    const fileName = `${user.username}_profile`;
 
-    try {
-      const { data, error } = await supabaseAdmin.storage
-        .from("user-images")
-        .upload(fileName, file);
+    const { data, error } = await supabaseAdmin.storage
+      .from("user-images")
+      .upload(fileName, file, { upsert: true });
 
-      if (error?.statusCode === "409") {
-        // Remove the original file
-        await supabaseAdmin.storage.from("user-images").remove([fileName]);
-
-        // Upload again
-        const { error: uploadError } = await supabaseAdmin.storage
-          .from("user-images")
-          .upload(fileName, file);
-      }
-
-      const {
-        data: { publicUrl },
-      } = supabaseAdmin.storage.from("user-images").getPublicUrl(fileName);
-      setProfileImage(publicUrl);
-
-      // Update Supabase user metadata with the image URL
-      await supabaseAdmin.auth.updateUser({
-        data: {
-          profile_img: publicUrl,
-        },
-      });
-    } catch (error) {
-      // Handle exceptions
-      console.error(error);
+    if (error) {
+      console.log(error);
     }
+
+    const {
+      data: { publicUrl },
+    } = supabaseAdmin.storage.from("user-images").getPublicUrl(fileName);
+    setProfileImage(publicUrl);
+
+    // Update Supabase user metadata with the image URL
+    await supabaseAdmin.auth.updateUser({
+      data: {
+        profile_img: publicUrl,
+      },
+    });
+
+    await supabaseAdmin.auth.refreshSession();
   };
 
   const formik = useFormik({

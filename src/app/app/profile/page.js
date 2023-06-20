@@ -3,8 +3,6 @@ import ProfileBanner from "@/components/profile/banner";
 import ProfileInformation from "@/components/profile/information";
 import { useSupabase } from "@/context/auth";
 
-export const revalidate = 0;
-
 export default function Profile() {
   const session = useSupabase();
   const user = session?.user;
