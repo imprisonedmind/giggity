@@ -20,7 +20,7 @@ export default function NavBack({ title }) {
         <p
           className={
             "absolute left-1/2 top-1/2 w-[55%] -translate-x-1/2 -translate-y-1/2" +
-            " transform truncate text-lg"
+            " transform truncate text-center text-lg"
           }
         >
           {title}

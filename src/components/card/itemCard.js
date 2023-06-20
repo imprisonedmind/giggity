@@ -12,9 +12,9 @@ export default function ItemCard({ item, full }) {
       href={`/app/gig/${item.uid}`}
       key={item.id}
       className={`${
-        full ? "w-full " : "w-full max-w-[350px]"
+        full ? "w-full " : "w-fit"
       } col-span-1 flex cursor-pointer flex-col justify-between rounded-xl border 
-        border-neutral-700 bg-neutral-800 p-2 md:max-w-[350px]`}
+        border-neutral-700 bg-neutral-800 p-2 md:max-w-[300px]`}
     >
       <ItemImage item={item} />
       <div
@@ -28,7 +28,7 @@ export default function ItemCard({ item, full }) {
           <ItemDateTime eventDate={item.date} eventTime={item.time} />
         </div>
       </div>
-      <div className={"flex flex-nowrap gap-2 py-2"}>
+      <div className={"flex w-fit flex-nowrap gap-2 py-2"}>
         <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />
         <ItemCountDown date={item.date} time={item.time} />
       </div>
