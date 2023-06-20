@@ -8,8 +8,7 @@ export default function NavBack() {
   return (
     <div
       className={
-        "sticky left-0 top-0 z-20  h-fit w-full bg-green-500/80" +
-        " p-2 text-white backdrop-blur-sm md:hidden"
+        "sticky left-0 top-0 z-20  h-fit w-full bg-green-500 p-2 text-white md:hidden"
       }
     >
       <div onClick={() => router.back()} className={"flex flex-nowrap gap-2"}>

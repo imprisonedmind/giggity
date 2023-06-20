@@ -48,6 +48,6 @@ export const metadata = {
     shortcut: "/favicon.svg",
     apple: "/icon-512x512.png",
   },
-  themeColor: "#22c55e",
+  themeColor: "#171717",
   background_color: "#171717",
 };
