@@ -13,7 +13,7 @@ export const revalidate = 120;
 export default async function ChangeLogs() {
   const changeLogs = await getChangeLogs();
   return (
-    <div className={"flex flex-wrap gap-4"}>
+    <div className={"flex flex-wrap gap-4 px-2 md:px-4"}>
       {Object.values(changeLogs).map((log) => (
         <div
           key={log.id}
