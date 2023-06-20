@@ -19,6 +19,7 @@ export default function ProfileBanner({ user }) {
           src={user?.banner_img}
           alt={"Profile cover image"}
           fill={true}
+          sizes={"100%"}
           className={"object-cover"}
         />
       </div>
@@ -39,6 +40,7 @@ export default function ProfileBanner({ user }) {
             src={user?.profile_img}
             alt={"User profile Image"}
             fill={true}
+            sizes={"100%"}
             className={"object-cover"}
           />
         </div>

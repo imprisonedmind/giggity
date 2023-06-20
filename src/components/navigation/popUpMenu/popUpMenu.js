@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import PopUpItems from "@/components/navigation/popUpMenu/popUpItems";
 
@@ -8,11 +7,6 @@ export default function PopUpMenu({ menu, showMenu }) {
 
   const version = process.env.APP_VERSION;
   const copyRightDate = new Date();
-
-  const signOut = () => {
-    supabaseAdmin.auth.signOut();
-    router.refresh();
-  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {

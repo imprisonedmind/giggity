@@ -25,9 +25,6 @@ async function getArtists(artists) {
     artistData.push(data);
   }
 
-  console.log(">>>>>>>>>>");
-  console.log(artistData);
-  console.log(">>>>>>>>>>");
   return artistData;
 }
 

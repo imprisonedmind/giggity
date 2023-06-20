@@ -10,6 +10,7 @@ export default function FormInput(props) {
       type={props.type}
       min={props.min}
       max={props.max}
+      autoComplete={props.autoComplete}
       maxLength={props.maxLength}
       onChange={props.onChange}
       value={props.value}

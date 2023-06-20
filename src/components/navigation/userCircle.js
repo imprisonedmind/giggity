@@ -31,6 +31,7 @@ export default function UserCircle() {
               src={url}
               alt={"User profile Image"}
               fill={true}
+              sizes={"100%"}
               className={"object-cover"}
             />
           ) : (

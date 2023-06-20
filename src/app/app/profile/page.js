@@ -1,15 +1,16 @@
-import { supabaseAdmin } from "../../../../../lib/supabaseClient";
+"use client";
 import ProfileBanner from "@/components/profile/banner";
 import ProfileInformation from "@/components/profile/information";
+import { useSupabase } from "@/context/auth";
+
+export const revalidate = 0;
 
 export default async function Profile({ params }) {
-  const { uuid } = params;
-  const { data } = await supabaseAdmin
-    .from("users")
-    .select()
-    .match({ uuid: uuid });
+  const session = useSupabase();
+  const user = session?.user;
+  const data = user?.user_metadata;
 
-  const user = data[0];
+  console.log(data);
 
   return (
     <div className={"flex w-full flex-col gap-4 px-4 text-neutral-500"}>
@@ -20,8 +21,8 @@ export default async function Profile({ params }) {
           " bg-neutral-800 p-4"
         }
       >
-        <ProfileBanner user={user} />
-        <ProfileInformation user={user} />
+        <ProfileBanner user={data} />
+        <ProfileInformation user={data} />
       </div>
       {/*<div*/}
       {/*  className={*/}

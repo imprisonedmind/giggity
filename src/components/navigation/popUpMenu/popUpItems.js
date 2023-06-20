@@ -5,23 +5,19 @@ import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
 
 export default function PopUpItems({ copyRightDate, version }) {
-  const session = useSupabase();
-  const user = session?.user;
-  const uuid = user?.id;
-
   const router = useRouter();
 
   const signOut = () =>
-    supabaseAdmin.auth.signOut().then((res) => router.push("onboard"));
+    supabaseAdmin.auth.signOut().then((res) => router.push("/app"));
 
   return (
     <>
-      <PopUpMenuItem title={"Profile"} link={`app/profile/${uuid}`} />
+      <PopUpMenuItem title={"Profile"} link={"/app/profile"} />
       <PopUpMenuItem title={"Sign Out"} callback={() => signOut()} />
       <div className={"w-full border border-neutral-700"} />
       <PopUpMenuItem title={"Creator"} />
-      <PopUpMenuItem title={"Change Logs"} link={"app/changelogs"} />
-      <PopUpMenuItem title={"Privacy Policy"} link={"app/privacy"} />
+      <PopUpMenuItem title={"Change Logs"} link={"/app/changelogs"} />
+      <PopUpMenuItem title={"Privacy Policy"} link={"/app/privacy"} />
       <div className={"w-full border border-neutral-700"} />
       <div className={"flex flex-col gap-2 px-4 py-2"}>
         <p>© 2023 - {copyRightDate.getFullYear()}</p>

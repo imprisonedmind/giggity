@@ -45,7 +45,7 @@ export default function ProfileInformation({ user }) {
           )}
           <div className={"flex flex-nowrap gap-1"}>
             <CalendarDaysIcon className={"h-4 w-4"} />
-            <p>Joined {convertToMonthYear(user?.created_at)}</p>
+            <p>Joined {convertToMonthYear(user?.createdAt)}</p>
           </div>
         </div>
       </div>
