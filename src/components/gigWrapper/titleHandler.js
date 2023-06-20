@@ -7,7 +7,7 @@ export default function TitleHandler({ title, link, seeAll }) {
         "z-10 flex w-full flex-nowrap items-center justify-between px-2 text-neutral-500"
       }
     >
-      <h3 className={""}>{title}</h3>
+      <h3 className={"select-none"}>{title}</h3>
       {seeAll && (
         <Link
           href={link}
