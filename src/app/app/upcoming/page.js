@@ -1,15 +1,16 @@
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import { getFutureAll } from "/lib/dataFetching";
 import NavBack from "@/components/gigOverview/navBack";
+import ListWrapper from "@/components/wrappers/listWrapper";
 
 export default async function Page() {
   let data = await getFutureAll();
 
   return (
-    <div className={"h-[92%] md:h-full"}>
+    <ListWrapper>
       <NavBack title={"Upcoming Gigs"} />
-      <GigsWrapper data={data} title={"Upcoming Events"} />;
-    </div>
+      <GigsWrapper data={data} title={"Upcoming Events"} />
+    </ListWrapper>
   );
 }
 

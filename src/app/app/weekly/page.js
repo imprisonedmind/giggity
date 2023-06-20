@@ -1,15 +1,16 @@
 import GigsWrapper from "@/components/gigWrapper/gigsWrapper";
 import { getThisWeeksEvents } from "/lib/dataFetching";
 import NavBack from "@/components/gigOverview/navBack";
+import ListWrapper from "@/components/wrappers/listWrapper";
 
 export default async function Page() {
   let data = await getThisWeeksEvents();
 
   return (
-    <div className={"h-[92%] md:h-full"}>
+    <ListWrapper>
       <NavBack title={"Gigs This Week"} />
-      <GigsWrapper data={data} title={"Gigs This Week"} />;
-    </div>
+      <GigsWrapper data={data} title={"Gigs This Week"} />
+    </ListWrapper>
   );
 }
 
