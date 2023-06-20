@@ -1,6 +1,4 @@
 "use client";
-import GreenButton from "@/components/buttons/greenButton";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 
 export default function ComingSoon() {
