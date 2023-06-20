@@ -39,7 +39,12 @@ export default function ItemDateTime({ eventDate, eventTime }) {
   const dateOfMonth = dateObj.getDate();
 
   return (
-    <div className="relative flex h-fit flex-shrink-0 flex-nowrap overflow-hidden text-xs text-neutral-500">
+    <div
+      className={
+        "relative flex h-fit flex-shrink-0 flex-nowrap overflow-hidden text-sm" +
+        "  text-neutral-500 md:text-xs"
+      }
+    >
       <p>
         {dayOfWeek}, {month} {dateOfMonth}
       </p>
