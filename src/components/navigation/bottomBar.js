@@ -32,17 +32,17 @@ export default function BottomBar() {
         " border-neutral-600 px-12 md:hidden"
       }
     >
-      <div onClick={() => router.push("/app")} className={`${home} h-8 w-8 `}>
+      <div onClick={() => router.push("app")} className={`${home} h-8 w-8 `}>
         <HomeIcon />
       </div>
       <div
-        onClick={() => router.push("/app/favourites")}
+        onClick={() => router.push("app/favourites")}
         className={`${heart} h-8 w-8 `}
       >
         <HeartIcon />
       </div>
       <div
-        onClick={() => router.push("/app/settings")}
+        onClick={() => router.push("app/settings")}
         className={`${settings} h-8 w-8 `}
       >
         <Cog6ToothIcon />

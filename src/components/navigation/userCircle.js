@@ -21,7 +21,7 @@ export default function UserCircle() {
           onClick={() => showMenu(!menu)}
           className={
             "relative flex h-11 w-11 cursor-pointer items-center justify-center" +
-            " overflow-hidden rounded-lg border border-neutral-700 bg-neutral-900" +
+            " overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900" +
             " text-neutral-600 hover:border-neutral-500 hover:text-neutral-500" +
             " hover:shadow-lg"
           }

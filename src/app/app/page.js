@@ -24,11 +24,13 @@ export default async function Home() {
           link={"/app/weekly"}
         />
       )}
-      <GigWeeklyWrapper
-        data={futureGigs}
-        title={"Upcoming Events"}
-        link={"/app/upcoming"}
-      />
+      {futureGigs.length > 0 && (
+        <GigWeeklyWrapper
+          data={futureGigs}
+          title={"Upcoming Events"}
+          link={"/app/upcoming"}
+        />
+      )}
       <GigWeeklyWrapper
         data={pastGigs}
         title={"Previous Events"}
