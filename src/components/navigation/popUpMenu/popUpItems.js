@@ -1,11 +1,18 @@
 "use client";
 import PopUpMenuItem from "@/components/navigation/popUpMenu/popUpMenuItem";
 import { useSupabase } from "@/context/auth";
+import { supabaseAdmin } from "../../../../lib/supabaseClient";
+import { useRouter } from "next/navigation";
 
 export default function PopUpItems({ copyRightDate, version }) {
   const session = useSupabase();
   const user = session?.user;
   const uuid = user?.id;
+
+  const router = useRouter();
+
+  const signOut = () =>
+    supabaseAdmin.auth.signOut().then((res) => router.push("onboard"));
 
   return (
     <>

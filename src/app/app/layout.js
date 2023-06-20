@@ -10,7 +10,7 @@ export default function AppLayout({ children }) {
   return (
     <div
       className={
-        "mx-auto flex h-[100svh] w-[100svw] max-w-[1280px] flex-col md:h-full"
+        "mx-auto flex h-[100svh] w-full max-w-[1280px] flex-col md:h-full"
       }
     >
       <SupabaseProvider>

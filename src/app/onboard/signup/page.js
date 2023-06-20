@@ -5,8 +5,16 @@ import GreenButton from "@/components/buttons/greenButton";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { useFormik } from "formik";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
+import OnBoardError from "@/components/error/onBoardError";
+import { useState } from "react";
+import { router } from "next/client";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+  const router = useRouter();
+
+  const [err, setErr] = useState(null);
+
   const formik = useFormik({
     initialValues: {
       email: null,
@@ -19,15 +27,18 @@ export default function SignUp() {
           password: formik.values.password,
         })
         .then((res) => {
-          console.log(res.data);
-        })
-        .catch((error) => {
-          console.log(error.response.data.error_description);
+          console.log(res);
+          if (res.error) {
+            setErr(res.error);
+          } else {
+            router.push("onboard/login");
+          }
         }),
   });
 
   return (
     <form className="bg-neutral-750 flex h-fit w-full flex-col gap-2 rounded-md p-4">
+      {err && <OnBoardError err={err} />}
       <FormInput
         id={"email"}
         name={"email"}

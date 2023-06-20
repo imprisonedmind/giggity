@@ -8,9 +8,9 @@ export default function BackButton({ title }) {
     <div
       onClick={() => router.back()}
       className={
-        "mt-2 flex flex-nowrap items-center gap-2 text-neutral-500 md:hidden" +
-        " cursor-pointer tracking-wide underline underline-offset-2" +
-        " w-fit hover:text-green-500 focus:text-green-500"
+        "mt-2 flex h-fit flex-nowrap items-center gap-2 text-neutral-500 md:hidden" +
+        " w-fit cursor-pointer tracking-wide underline underline-offset-2" +
+        " hover:text-green-500 focus:text-green-500"
       }
     >
       <ArrowLeftIcon className={"h-4 w-4"} />

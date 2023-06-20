@@ -6,11 +6,11 @@ import ItemDescription from "@/components/card/itemDescription";
 import Price from "@/components/card/itemPrice";
 import ItemCountDown from "@/components/card/itemCountDown";
 import BackButton from "@/components/buttons/backButton";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 export default function MainArea({ item }) {
   return (
     <>
-      <BackButton title={"Back"} />
       <div
         className={
           "border-1 relative col-span-3 row-span-1 flex flex-wrap text-neutral-400" +
@@ -24,7 +24,7 @@ export default function MainArea({ item }) {
             <h2 className={"text-xl"}>{item.title}</h2>
             <ItemLocation location={item.address} city={item.city} />
             <ItemDateTime eventDate={item.date} eventTime={item.time} />
-            <div className={"mb-2 flex gap-4"}>
+            <div className={"mb-2 flex gap-2"}>
               <Price
                 onlinePrice={item.onlinePrice}
                 doorPrice={item.doorPrice}

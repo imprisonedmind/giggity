@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function TitleHandler({ title, link }) {
+export default function TitleHandler({ title, link, seeAll }) {
   return (
     <div
       className={
@@ -8,15 +8,17 @@ export default function TitleHandler({ title, link }) {
       }
     >
       <h3 className={""}>{title}</h3>
-      <Link
-        href={link}
-        className={
-          "cursor-pointer text-xs tracking-wide underline underline-offset-2" +
-          " hover:text-green-500 focus:text-green-500"
-        }
-      >
-        SEE ALL
-      </Link>
+      {seeAll && (
+        <Link
+          href={link}
+          className={
+            "cursor-pointer text-xs tracking-wide underline underline-offset-2" +
+            " hover:text-green-500 focus:text-green-500"
+          }
+        >
+          SEE ALL
+        </Link>
+      )}
     </div>
   );
 }

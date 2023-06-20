@@ -45,14 +45,14 @@ export default function ItemDescription({ description }) {
 
   return (
     <div
-      className={`${
-        show
-          ? "overflow-y-auto text-sm text-neutral-500"
-          : "h-0 overflow-hidden"
-      } flex grow flex-col `}
+      className={"flex grow flex-col overflow-auto text-sm text-neutral-500"}
     >
       <div>
-        <p className={"whitespace-pre-wrap"}>
+        <p
+          className={`${
+            show ? "" : "h-14 overflow-hidden"
+          } whitespace-pre-wrap`}
+        >
           {descriptionWords
             ? descriptionWords.map((word, index) => {
                 if (usernameRegex.test(word)) {
@@ -82,7 +82,7 @@ export default function ItemDescription({ description }) {
           " border-1 mt-2 cursor-pointer border-neutral-600 md:hidden"
         }
       >
-        <p>{show ? "Hide Description" : "Show Description"}</p>
+        <p>{show ? "Show Less" : "Show More"}</p>
       </div>
     </div>
   );

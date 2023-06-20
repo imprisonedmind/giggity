@@ -10,7 +10,7 @@ export default function ProfileInformation({ user }) {
   return (
     <div className={"flex flex-col gap-4"}>
       <div>
-        {user.first_name && user.last_name ? (
+        {user?.first_name && user?.last_name ? (
           <p className={"text-lg"}>
             {user.first_name} {user.last_name}
           </p>
@@ -19,13 +19,13 @@ export default function ProfileInformation({ user }) {
         )}
       </div>
       <div className={"flex flex-col gap-1"}>
-        {user.bio && (
+        {user?.bio && (
           <div className={"text-sm"}>
             <p>{user.bio}</p>
           </div>
         )}
         <div className={"flex flex-nowrap gap-2 text-xs"}>
-          {user.link && (
+          {user?.link && (
             <div
               className={
                 "flex flex-nowrap gap-1 text-green-500 underline-offset-4 hover:underline"
@@ -37,7 +37,7 @@ export default function ProfileInformation({ user }) {
               </Link>
             </div>
           )}
-          {user.location && (
+          {user?.location && (
             <div className={"flex flex-nowrap gap-1"}>
               <MapPinIcon className={"h-4 w-4"} />
               <p>{user.location}</p>
@@ -45,7 +45,7 @@ export default function ProfileInformation({ user }) {
           )}
           <div className={"flex flex-nowrap gap-1"}>
             <CalendarDaysIcon className={"h-4 w-4"} />
-            <p>Joined {convertToMonthYear(user.created_at)}</p>
+            <p>Joined {convertToMonthYear(user?.created_at)}</p>
           </div>
         </div>
       </div>

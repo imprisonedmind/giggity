@@ -2,14 +2,12 @@
 import FormInput from "@/components/form/input";
 import Link from "next/link";
 import GreenButton from "@/components/buttons/greenButton";
-import {
-  ArrowRightIcon,
-  ExclamationTriangleIcon,
-} from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { useFormik } from "formik";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import OnBoardError from "@/components/error/onBoardError";
 
 export default function Login() {
   const router = useRouter();
@@ -38,21 +36,9 @@ export default function Login() {
     },
   });
 
-  console.log(err);
-
   return (
     <form className="bg-neutral-750 flex h-fit w-full flex-col gap-2 rounded-md p-4">
-      {err && (
-        <div
-          className={
-            "mb-6 flex w-full flex-nowrap gap-4 rounded-xl border border-red-500 p-4" +
-            " bg-red-500/10 text-red-500"
-          }
-        >
-          <ExclamationTriangleIcon className={"h-6 w-6"} />
-          <p>{err.message}</p>
-        </div>
-      )}
+      {err && <OnBoardError err={err} />}
       <FormInput
         id={"email"}
         name={"email"}

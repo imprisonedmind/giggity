@@ -1,10 +1,15 @@
 import "./globals.css";
 
-export const revalidate = 0;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={"bg-neutral-900"}>
-      <body className={"flex h-[100svh] flex-col md:h-full"}>{children}</body>
+      <body
+        className={
+          "flex h-[100svh] w-[100svw] flex-col overflow-x-hidden md:h-full"
+        }
+      >
+        {children}
+      </body>
     </html>
   );
 }

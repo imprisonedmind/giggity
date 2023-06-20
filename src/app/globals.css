@@ -9,6 +9,7 @@
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
+    @apply hidden md:inline
 }
 
 /* Track */

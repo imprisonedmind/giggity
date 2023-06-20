@@ -40,7 +40,7 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
 
   return (
     <div className={`${m} relative flex w-full flex-col gap-2`}>
-      <TitleHandler title={title} link={link} />
+      <TitleHandler title={title} link={link} seeAll={data.length > 1} />
       <div
         className={
           "absolute flex h-full w-full select-none justify-between pt-8"

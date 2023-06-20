@@ -17,7 +17,7 @@ export default function Login() {
       <GreenButton
         title={"Log In"}
         icon={<ArrowRightIcon className={"h-6 w-6"} />}
-        callBack={() => router.push("onboard/onboard")}
+        callBack={() => router.push("onboard/login")}
       />
     </div>
   );
