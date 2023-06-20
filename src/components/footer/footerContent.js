@@ -73,7 +73,7 @@ export default function FooterContent({ version }) {
             <div className={"flex w-fit flex-nowrap gap-2"}>
               <p>📓 </p>
               <Link
-                href={"app/changelogs"}
+                href={"/app/changelogs"}
                 className={"hover:text-blue-500 hover:underline"}
               >
                 Changelogs
