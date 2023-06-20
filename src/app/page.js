@@ -1,5 +1,11 @@
+import TempReRoute from "@/components/tempReRoute";
+
 export default function Page() {
-  return <main></main>;
+  return (
+    <main>
+      <TempReRoute />
+    </main>
+  );
 }
 
 export async function generateMetadata() {
