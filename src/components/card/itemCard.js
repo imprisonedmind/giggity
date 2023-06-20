@@ -23,7 +23,7 @@ export default function ItemCard({ item, full }) {
         <ItemLocation city={item.city} location={item.address} />
         <ItemDateTime eventDate={item.date} eventTime={item.time} />
       </div>
-      <div className={"flex w-fit flex-nowrap gap-2 pt-1"}>
+      <div className={"flex flex-nowrap gap-2 pt-1"}>
         <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />
         <ItemCountDown date={item.date} time={item.time} />
       </div>

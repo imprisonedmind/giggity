@@ -45,7 +45,9 @@ export default function ItemDescription({ description }) {
 
   return (
     <div
-      className={"flex grow flex-col overflow-auto text-sm text-neutral-500"}
+      className={
+        "flex h-full w-full grow flex-col overflow-auto text-sm text-neutral-500"
+      }
     >
       <div>
         <p

@@ -39,7 +39,7 @@ export default async function Gig({ params }) {
         <NavBack title={item.title} />
         <div
           className={
-            "flex w-full grid-rows-1 flex-wrap gap-4 sm:grid md:h-[350px]" +
+            "flex w-full grid-rows-1 flex-wrap gap-4 md:grid md:h-[350px]" +
             " p-2 pb-0 pt-0 md:grid-cols-4 md:p-0"
           }
         >
