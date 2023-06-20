@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^8.7.1",
+    "@ducanh2912/next-pwa": "^9.0.0",
     "@google-cloud/vision": "^3.1.3",
     "@heroicons/react": "^2.0.18",
     "@react-google-maps/api": "^2.18.1",
     "@supabase/auth-helpers-nextjs": "^0.7.2",
     "@supabase/supabase-js": "^2.25.0",
-    "@vercel/analytics": "^0.1.11",
+    "@vercel/analytics": "^1.0.1",
     "@vercel/og": "^0.5.7",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
