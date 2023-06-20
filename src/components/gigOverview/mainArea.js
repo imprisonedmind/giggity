@@ -4,8 +4,6 @@ import ItemDateTime from "@/components/card/itemDateTime";
 import ItemDescription from "@/components/card/itemDescription";
 import Price from "@/components/card/itemPrice";
 import ItemCountDown from "@/components/card/itemCountDown";
-import BackButton from "@/components/buttons/backButton";
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 export default function MainArea({ item }) {
   return (

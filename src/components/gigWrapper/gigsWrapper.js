@@ -1,6 +1,5 @@
 "use client";
 import ItemCard from "@/components/card/itemCard";
-import BackButton from "@/components/buttons/backButton";
 
 export default function GigsWrapper({ data, m, title }) {
   return (

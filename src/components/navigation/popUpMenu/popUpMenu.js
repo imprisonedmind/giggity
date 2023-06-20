@@ -1,4 +1,3 @@
-import PopUpMenuItem from "@/components/navigation/popUpMenu/popUpMenuItem";
 import { useEffect } from "react";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";

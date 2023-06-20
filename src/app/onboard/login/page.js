@@ -77,7 +77,7 @@ export default function Login() {
           href={"onboard/signup"}
           className={"group w-full text-center text-sm text-neutral-500"}
         >
-          Don't have an account?{" "}
+          test
           <span
             className={
               "underline underline-offset-4 group-hover:text-green-500"

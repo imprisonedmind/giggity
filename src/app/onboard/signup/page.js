@@ -7,7 +7,6 @@ import { useFormik } from "formik";
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import OnBoardError from "@/components/error/onBoardError";
 import { useState } from "react";
-import { router } from "next/client";
 import { useRouter } from "next/navigation";
 
 export default function SignUp() {

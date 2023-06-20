@@ -1,4 +1,5 @@
 import { ImageResponse } from "@vercel/og";
+import Image from "next/image";
 
 export const config = {
   runtime: "edge",
@@ -132,7 +133,7 @@ export default async function (params) {
                 " border-[5px] border-neutral-600 shadow-lg m-auto"
               }
             >
-              <img src={gigImg} tw={"w-full h-full"} alt={title} />
+              <Image src={gigImg} tw={"w-full h-full"} alt={title} />
             </div>
             <div tw={"flex text-neutral-500 text-[30px] text-center m-auto"}>
               <p tw={"m-auto"}>{title}</p>
