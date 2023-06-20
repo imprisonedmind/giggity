@@ -39,3 +39,9 @@ export default async function Home() {
     </div>
   );
 }
+
+export async function generateMetadata() {
+  return {
+    theme_color: "#171717",
+  };
+}

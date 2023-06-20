@@ -21,17 +21,7 @@ export const metadata = {
   },
   description:
     "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
-  keywords: [
-    "Giggity",
-    "Disctrict",
-    "Surfa Rosa",
-    "Foul Play",
-    "Mosh Responsibly",
-    "Fuzz Nights",
-    "Psych Night",
-    "Evol",
-    "Colourbox Studios",
-  ],
+  keywords: ["Giggity", "District", "Surfa Rosa", "Cape Town", "Gigs"],
   generator: "Next.js",
   applicationName: "Giggity",
   robots: {
@@ -49,5 +39,5 @@ export const metadata = {
     apple: "/icon-512x512.png",
   },
   themeColor: "#171717",
-  background_color: "#171717",
+  backgroundColor: "#171717",
 };

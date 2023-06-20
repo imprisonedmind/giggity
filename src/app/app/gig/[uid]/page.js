@@ -92,6 +92,6 @@ export async function generateMetadata({ params }) {
         `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
       ],
     },
-    theme_color: "#22c55e",
+    themeColor: "#22c55e",
   };
 }
