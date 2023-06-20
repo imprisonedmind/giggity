@@ -8,7 +8,7 @@ export default function NavBack({ title }) {
   return (
     <div
       className={
-        "sticky left-0 top-0 z-20 flex  h-fit w-full bg-green-500 p-2 text-white" +
+        "sticky left-0 top-0 z-20 flex  h-fit w-full bg-green-500 p-2 text-neutral-900" +
         " md:hidden"
       }
     >
