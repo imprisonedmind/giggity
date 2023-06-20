@@ -28,7 +28,7 @@ export default function UserCircle() {
         >
           {session ? (
             <Image
-              src={url}
+              src={session.user.user_metadata.profile_img}
               alt={"User profile Image"}
               fill={true}
               sizes={"100%"}

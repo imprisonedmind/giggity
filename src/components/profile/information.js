@@ -9,14 +9,19 @@ import { convertToMonthYear } from "../../../lib/utilities";
 export default function ProfileInformation({ user }) {
   return (
     <div className={"flex flex-col gap-4"}>
-      <div>
-        {user?.first_name && user?.last_name ? (
-          <p className={"text-lg"}>
-            {user.first_name} {user.last_name}
-          </p>
-        ) : (
-          <p>Edit your profile and give yourself a name.</p>
-        )}
+      <div className={"flex flex-col "}>
+        <div>
+          {user?.first_name && user?.last_name ? (
+            <p className={"text-lg capitalize"}>
+              {user.first_name} {user.last_name}
+            </p>
+          ) : (
+            <p>Edit your profile and give yourself a name.</p>
+          )}
+        </div>
+        <div>
+          {user?.username && <p className={"text-sm"}>@{user.username}</p>}
+        </div>
       </div>
       <div className={"flex flex-col gap-1"}>
         {user?.bio && (

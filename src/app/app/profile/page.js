@@ -5,12 +5,10 @@ import { useSupabase } from "@/context/auth";
 
 export const revalidate = 0;
 
-export default async function Profile({ params }) {
+export default function Profile() {
   const session = useSupabase();
   const user = session?.user;
   const data = user?.user_metadata;
-
-  console.log(data);
 
   return (
     <div className={"flex w-full flex-col gap-4 px-4 text-neutral-500"}>

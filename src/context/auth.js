@@ -9,6 +9,10 @@ export default function SupabaseProvider({ children }) {
   const [session, setSession] = useState(null);
   const [authSubscription, setAuthSubscription] = useState(null); // New state for storing subscription
 
+  console.log("************");
+  console.log(session);
+  console.log("************");
+
   useEffect(() => {
     supabaseAdmin.auth.getSession().then(({ data: session }) => {
       setSession(session);
