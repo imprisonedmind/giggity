@@ -40,7 +40,7 @@ export default function UserCard() {
     return (
       <Link
         href={"/app/profile"}
-        prefetch={true}
+        passHref={true}
         className={
           "item flex rounded-xl border border-neutral-700 bg-neutral-800 p-2" +
           " items-center justify-between text-neutral-500"
