@@ -1,3 +1,4 @@
+"use client";
 import ProfileBanner from "@/components/profile/banner";
 import ProfileInformation from "@/components/profile/information";
 import { useSupabase } from "@/context/auth";
