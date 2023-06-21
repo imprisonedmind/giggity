@@ -7,6 +7,7 @@ import SignOutSettingsItem from "@/components/settings/signOutSettingsItem";
 import CopyRightSettingsItem from "@/components/settings/copyRightSettingsItem";
 import AppVersionSettingsItem from "@/components/settings/appVersionSettingsItem";
 import TechnologySettingsWrapper from "@/components/settings/technologySettingsWrapper";
+import CreatorSettingsWrapper from "@/components/settings/creatorSettingsWrapper";
 
 export default function Settings() {
   return (
@@ -25,6 +26,7 @@ export default function Settings() {
           <AppVersionSettingsItem />
         </SettingsItemWrapper>
         <TechnologySettingsWrapper />
+        <CreatorSettingsWrapper />
       </div>
     </ListWrapper>
   );
