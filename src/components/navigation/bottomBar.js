@@ -43,26 +43,26 @@ export default function BottomBar() {
         " z-20 border-t border-neutral-600 bg-neutral-800 px-12 md:hidden"
       }
     >
-      <Link href={"/app"} passHref={true} className={`${home} h-8 w-8 `}>
+      <Link href={"/app"} prefetch={true} className={`${home} h-8 w-8 `}>
         <HomeIcon />
       </Link>
       <Link
         href={"/app/favourites"}
-        passHref={true}
+        prefetch={true}
         className={`${heart} h-8 w-8 `}
       >
         <HeartIcon />
       </Link>
       <Link
         href={"/app/addGig"}
-        passHref={true}
+        prefetch={true}
         className={`${addGig} h-8 w-8 `}
       >
         <PlusCircleIcon />
       </Link>
       <Link
         href={"/app/settings"}
-        passHref={true}
+        prefetch={true}
         className={`${settings} h-8 w-8 `}
       >
         <Cog6ToothIcon />

@@ -9,7 +9,7 @@ import ItemCountDown from "@/components/card/itemCountDown";
 export default function ItemCard({ item, full }) {
   return (
     <Link
-      passHref={true}
+      prefetch={true}
       href={`/app/gig/${item.uid}`}
       key={item.id}
       className={`${
