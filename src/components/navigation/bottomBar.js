@@ -1,5 +1,10 @@
 "use client";
-import { Cog6ToothIcon, HeartIcon, HomeIcon } from "@heroicons/react/24/solid";
+import {
+  Cog6ToothIcon,
+  HeartIcon,
+  HomeIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/solid";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -11,6 +16,7 @@ export default function BottomBar() {
   let home = "text-neutral-500";
   let heart = "text-neutral-500";
   let settings = "text-neutral-500";
+  let addGig = "text-neutral-500";
 
   switch (true) {
     case pathname === "/app":
@@ -23,6 +29,10 @@ export default function BottomBar() {
 
     case pathname === "/app/settings":
       settings = "text-green-500";
+      break;
+
+    case pathname === "/app/addGig":
+      addGig = "text-green-500";
       break;
   }
 
@@ -42,6 +52,13 @@ export default function BottomBar() {
         className={`${heart} h-8 w-8 `}
       >
         <HeartIcon />
+      </Link>
+      <Link
+        href={"/app/addGig"}
+        prefetch={true}
+        className={`${addGig} h-8 w-8 `}
+      >
+        <PlusCircleIcon />
       </Link>
       <Link
         href={"/app/settings"}

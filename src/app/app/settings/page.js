@@ -6,7 +6,8 @@ import { MusicalNoteIcon } from "@heroicons/react/24/solid";
 import SignOutSettingsItem from "@/components/settings/signOutSettingsItem";
 import CopyRightSettingsItem from "@/components/settings/copyRightSettingsItem";
 import AppVersionSettingsItem from "@/components/settings/appVersionSettingsItem";
-
+import Image from "next/image";
+import openAi from "public/logos/openai.svg";
 export default function Settings() {
   return (
     <ListWrapper>
@@ -22,6 +23,16 @@ export default function Settings() {
           <SettingsItem title={"Privacy Policy"} />
           <CopyRightSettingsItem />
           <AppVersionSettingsItem />
+        </SettingsItemWrapper>
+        <SettingsItemWrapper>
+          <SettingsItem title={"Technology this website uses"} />
+          <SettingsItem
+            title={"Open AI gpt-3"}
+            icon={<Image src={openAi} alt={"Open Ai Logo"} />}
+          />
+          <SettingsItem title={"Google Cloud Vision"} />
+          <SettingsItem title={"Supabase"} />
+          <SettingsItem title={"NextJs"} />
         </SettingsItemWrapper>
       </div>
     </ListWrapper>
