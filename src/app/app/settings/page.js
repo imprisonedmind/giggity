@@ -19,14 +19,14 @@ export default function Settings() {
           <SettingsItem title={"Add a Gig"} icon={<MusicalNoteIcon />} />
           <SignOutSettingsItem />
         </SettingsItemWrapper>
+        <CreatorSettingsWrapper />
+        <TechnologySettingsWrapper />
         <SettingsItemWrapper>
           <SettingsItem title={"Terms and Conditions"} />
           <SettingsItem title={"Privacy Policy"} />
           <CopyRightSettingsItem />
           <AppVersionSettingsItem />
         </SettingsItemWrapper>
-        <TechnologySettingsWrapper />
-        <CreatorSettingsWrapper />
       </div>
     </ListWrapper>
   );
