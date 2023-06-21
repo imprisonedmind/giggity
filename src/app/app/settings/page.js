@@ -1,9 +1,15 @@
-import ComingSoon from "@/components/alert/coming soon";
+import UserCard from "@/components/settings/userCard";
+import ListWrapper from "@/components/wrappers/listWrapper";
+import SettingsItemWrapper from "@/components/settings/settingsItemWrapper";
 
-export default function Favourites() {
+export default function Settings() {
   return (
-    <div className={"h-[92%] p-4 md:h-full"}>
-      <ComingSoon />
-    </div>
+    <ListWrapper>
+      {/*<NavBack title={"Settings"} />*/}
+      <div className={"flex flex-col gap-4 p-2"}>
+        <UserCard />
+        <SettingsItemWrapper />
+      </div>
+    </ListWrapper>
   );
 }

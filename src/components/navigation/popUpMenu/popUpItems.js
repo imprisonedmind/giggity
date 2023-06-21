@@ -1,19 +1,15 @@
 "use client";
 import PopUpMenuItem from "@/components/navigation/popUpMenu/popUpMenuItem";
-import { useSupabase } from "@/context/auth";
-import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
+import { signOut } from "../../../../lib/utilities";
 
 export default function PopUpItems({ copyRightDate, version }) {
   const router = useRouter();
 
-  const signOut = () =>
-    supabaseAdmin.auth.signOut().then((res) => router.push("/app"));
-
   return (
     <>
       <PopUpMenuItem title={"Profile"} link={"/app/profile"} />
-      <PopUpMenuItem title={"Sign Out"} callback={() => signOut()} />
+      <PopUpMenuItem title={"Sign Out"} callback={() => signOut(router)} />
       <div className={"w-full border border-neutral-700"} />
       <PopUpMenuItem title={"Creator"} />
       <PopUpMenuItem title={"Change Logs"} link={"/app/changelogs"} />
