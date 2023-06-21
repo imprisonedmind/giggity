@@ -4,6 +4,7 @@ import GreenButton from "@/components/buttons/greenButton";
 import { UseQuickViewContext } from "@/context/quickView";
 import EditProfile from "@/components/profile/editProfile";
 import { copyToClipboard } from "../../../lib/utilities";
+import ProfileBannerImg from "@/components/profile/profileBannerImg";
 
 export default function ProfileBanner({ userObj, userUid }) {
   const { setIsOpen, setContent } = UseQuickViewContext();
@@ -28,17 +29,7 @@ export default function ProfileBanner({ userObj, userUid }) {
   return (
     <div className={"relative mb-12"}>
       <div className={"relative h-60 w-full overflow-hidden"}>
-        <Image
-          src={
-            user
-              ? user.banner_img
-              : "https://source.unsplash.com/random/?hardcore"
-          }
-          alt={"Profile cover image"}
-          fill={true}
-          sizes={"100%"}
-          className={"object-cover"}
-        />
+        <ProfileBannerImg user={user} />
       </div>
       {/*Bio container*/}
       <div
@@ -53,17 +44,7 @@ export default function ProfileBanner({ userObj, userUid }) {
             " bg-neutral-900 shadow-xl"
           }
         >
-          <Image
-            src={
-              user
-                ? user.profile_img
-                : "https://source.unsplash.com/random/?punkrock"
-            }
-            alt={"User profile Image"}
-            fill={true}
-            sizes={"100%"}
-            className={"object-cover"}
-          />
+          <ProfileBannerImg user={user} />
         </div>
         {/*Edit*/}
         {userUid && userUid !== userObj?.id ? (
