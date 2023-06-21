@@ -5,11 +5,15 @@ import {
   HomeIcon,
   PlusCircleIcon,
 } from "@heroicons/react/24/solid";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
+import { useSupabase } from "@/context/auth";
 
 export default function BottomBar() {
-  const router = useRouter();
+  const session = useSupabase();
+  const user = session?.user;
+
   const pathname = usePathname();
 
   let back = "text-neutral-500";
@@ -53,13 +57,15 @@ export default function BottomBar() {
       >
         <HeartIcon />
       </Link>
-      <Link
-        href={"/app/addGig"}
-        prefetch={true}
-        className={`${addGig} h-8 w-8 `}
-      >
-        <PlusCircleIcon />
-      </Link>
+      {user && (
+        <Link
+          href={"/app/addGig"}
+          prefetch={true}
+          className={`${addGig} h-8 w-8 `}
+        >
+          <PlusCircleIcon />
+        </Link>
+      )}
       <Link
         href={"/app/settings"}
         prefetch={true}
