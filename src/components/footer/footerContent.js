@@ -3,11 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import lukey from "../../../public/logo.png";
 import { useSupabase } from "@/context/auth";
+import { copyRightDate } from "../../../lib/utilities";
 
 export default function FooterContent({ version }) {
   const session = useSupabase();
-
-  const copyRightDate = new Date();
 
   if (!session)
     return (

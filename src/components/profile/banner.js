@@ -9,11 +9,7 @@ export default function ProfileBanner({ user }) {
 
   return (
     <div className={"relative mb-12"}>
-      <div
-        className={
-          "relative h-60 w-full overflow-hidden border border-neutral-700 bg-neutral-900"
-        }
-      >
+      <div className={"relative h-60 w-full overflow-hidden"}>
         <Image
           src={
             user
