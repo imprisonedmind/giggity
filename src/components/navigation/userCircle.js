@@ -11,8 +11,6 @@ export default function UserCircle() {
 
   const [menu, showMenu] = useState(false);
 
-  const url = "https://source.unsplash.com/random/?punkrock";
-
   if (session)
     return (
       <div className={"relative"}>
@@ -20,8 +18,8 @@ export default function UserCircle() {
         <div
           onClick={() => showMenu(!menu)}
           className={
-            "relative flex h-11 w-11 cursor-pointer items-center justify-center" +
-            " overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900" +
+            "relative flex h-9 w-9 cursor-pointer items-center justify-center" +
+            " overflow-hidden rounded-full border border-neutral-700 bg-neutral-900" +
             " text-neutral-600 hover:border-neutral-500 hover:text-neutral-500" +
             " hover:shadow-lg"
           }

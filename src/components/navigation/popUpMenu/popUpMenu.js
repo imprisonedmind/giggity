@@ -27,7 +27,7 @@ export default function PopUpMenu({ menu, showMenu }) {
       <div
         itemRef={"popUpMenu"}
         className={
-          "absolute -right-2 top-16 rounded-xl border border-neutral-700" +
+          "absolute -right-4 top-14 rounded-xl border border-neutral-700" +
           " w-max overflow-hidden bg-neutral-800 text-sm text-neutral-500 shadow-sm"
         }
       >

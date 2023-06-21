@@ -16,7 +16,11 @@ export default function ProfileBanner({ user }) {
         }
       >
         <Image
-          src={user?.banner_img}
+          src={
+            user
+              ? user.banner_img
+              : "https://source.unsplash.com/random/?hardcore"
+          }
           alt={"Profile cover image"}
           fill={true}
           sizes={"100%"}
@@ -37,7 +41,11 @@ export default function ProfileBanner({ user }) {
           }
         >
           <Image
-            src={user?.profile_img}
+            src={
+              user
+                ? user.profile_img
+                : "https://source.unsplash.com/random/?punkrock"
+            }
             alt={"User profile Image"}
             fill={true}
             sizes={"100%"}

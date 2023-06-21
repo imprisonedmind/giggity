@@ -1,6 +1,7 @@
 "use client";
 import { Cog6ToothIcon, HeartIcon, HomeIcon } from "@heroicons/react/24/solid";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function BottomBar() {
   const router = useRouter();
@@ -28,25 +29,27 @@ export default function BottomBar() {
   return (
     <div
       className={
-        "flex h-[8%] w-[100svw] items-center justify-between border-t bg-neutral-800" +
-        " z-20 border-neutral-600 px-12 md:hidden"
+        "absolute bottom-0 flex h-[8%] w-[100svw] items-center justify-between" +
+        " z-20 border-t border-neutral-600 bg-neutral-800 px-12 md:hidden"
       }
     >
-      <div onClick={() => router.push("/app")} className={`${home} h-8 w-8 `}>
+      <Link href={"/app"} prefetch={true} className={`${home} h-8 w-8 `}>
         <HomeIcon />
-      </div>
-      <div
-        onClick={() => router.push("/app/favourites")}
+      </Link>
+      <Link
+        href={"/app/favourites"}
+        prefetch={true}
         className={`${heart} h-8 w-8 `}
       >
         <HeartIcon />
-      </div>
-      <div
-        onClick={() => router.push("/app/settings")}
+      </Link>
+      <Link
+        href={"/app/settings"}
+        prefetch={true}
         className={`${settings} h-8 w-8 `}
       >
         <Cog6ToothIcon />
-      </div>
+      </Link>
     </div>
   );
 }

@@ -11,6 +11,7 @@ export default function ItemCard({ item, full }) {
     <Link
       href={`/app/gig/${item.uid}`}
       key={item.id}
+      prefetch={true}
       className={`${
         full ? "w-full " : "w-fit max-w-[300px]"
       } col-span-1 flex cursor-pointer flex-col justify-between gap-2 rounded-xl 

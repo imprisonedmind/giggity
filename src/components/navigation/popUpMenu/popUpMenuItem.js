@@ -5,6 +5,7 @@ export default function PopUpMenuItem({ title, link, callback }) {
     return (
       <Link
         href={link}
+        prefetch={true}
         className={
           "flex w-full cursor-pointer px-4 py-2 hover:bg-neutral-700 hover:text-green-500"
         }
