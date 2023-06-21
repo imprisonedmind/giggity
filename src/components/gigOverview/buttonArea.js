@@ -1,18 +1,9 @@
 "use client";
 import ItemButton from "@/components/card/itemButton";
 import { ShareIcon, TicketIcon } from "@heroicons/react/24/solid";
+import { copyToClipboard } from "../../../lib/utilities";
 
 export default function ButtonArea({ ticket, title }) {
-  const copyToClipboard = () => {
-    const input = document.createElement("input");
-    input.value = window.location.href;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand("copy");
-    document.body.removeChild(input);
-    console.log("Copied to clipboard:", window.location.href);
-  };
-
   const share = () => {
     if (navigator.share) {
       navigator

@@ -3,9 +3,27 @@ import Image from "next/image";
 import GreenButton from "@/components/buttons/greenButton";
 import { UseQuickViewContext } from "@/context/quickView";
 import EditProfile from "@/components/profile/editProfile";
+import { copyToClipboard } from "../../../lib/utilities";
 
-export default function ProfileBanner({ user }) {
+export default function ProfileBanner({ userObj, userUid }) {
   const { setIsOpen, setContent } = UseQuickViewContext();
+
+  const user = userObj?.user_metadata;
+
+  const share = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Giggity user profile",
+          text: `Check out this user's profile on Giggity.`,
+          url: window.location.href,
+        })
+        .then(() => console.log("Shared successfully."))
+        .catch((error) => console.log("Error sharing:", error));
+    } else {
+      copyToClipboard();
+    }
+  };
 
   return (
     <div className={"relative mb-12"}>
@@ -48,13 +66,17 @@ export default function ProfileBanner({ user }) {
           />
         </div>
         {/*Edit*/}
-        <GreenButton
-          title={"Edit Profile"}
-          callBack={() => {
-            setContent(<EditProfile user={user} />);
-            setIsOpen(true);
-          }}
-        />
+        {userUid === userObj?.id ? (
+          <GreenButton
+            title={"Edit Profile"}
+            callBack={() => {
+              setContent(<EditProfile user={user} />);
+              setIsOpen(true);
+            }}
+          />
+        ) : (
+          <GreenButton title={"Share Profile"} callBack={() => share()} />
+        )}
       </div>
     </div>
   );
