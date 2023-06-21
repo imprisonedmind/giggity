@@ -1,10 +1,7 @@
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import PopUpItems from "@/components/navigation/popUpMenu/popUpItems";
 
 export default function PopUpMenu({ menu, showMenu }) {
-  const router = useRouter();
-
   const version = process.env.APP_VERSION;
   const copyRightDate = new Date();
 

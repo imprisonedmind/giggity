@@ -10,14 +10,14 @@ export default async function UsersPage() {
   return (
     <div className={"flex flex-wrap gap-4 px-4"}>
       {data.users.map((item) => {
-        // console.log(item);
         return (
           <Link
             href={`/app/profile/${item.id}`}
             key={item?.id}
             className={
               "relative w-full rounded-lg border border-neutral-700 md:w-1/4" +
-              " overflow-hidden bg-neutral-800 text-neutral-500 md:max-w-[300px]"
+              " group overflow-hidden bg-neutral-800 text-neutral-500 md:max-w-[300px]" +
+              " hover:border-green-500 hover:shadow-xl"
             }
           >
             <div className={"relative mb-14 h-fit w-full"}>
@@ -34,7 +34,8 @@ export default async function UsersPage() {
                 className={
                   "absolute h-24 w-24 overflow-hidden rounded-2xl border" +
                   " bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 transform" +
-                  " border-neutral-700 bg-neutral-900 shadow-xl"
+                  " border-neutral-700 bg-neutral-900 shadow-xl" +
+                  " group-hover:border-green-500 group-hover:shadow-xl"
                 }
               >
                 <Image
