@@ -11,8 +11,7 @@ export default function ProfileBanner({ user }) {
     <div className={"relative mb-12"}>
       <div
         className={
-          "relative h-60 w-full overflow-hidden rounded-md border" +
-          " border-neutral-700 bg-neutral-900"
+          "relative h-60 w-full overflow-hidden border border-neutral-700 bg-neutral-900"
         }
       >
         <Image
@@ -30,7 +29,7 @@ export default function ProfileBanner({ user }) {
       {/*Bio container*/}
       <div
         className={
-          "absolute -bottom-12 flex w-full items-center justify-between px-4"
+          "absolute -bottom-12 flex w-full items-center justify-between px-2 md:px-4"
         }
       >
         {/*Image*/}

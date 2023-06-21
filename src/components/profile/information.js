@@ -8,7 +8,7 @@ import { convertToMonthYear } from "../../../lib/utilities";
 
 export default function ProfileInformation({ user }) {
   return (
-    <div className={"flex flex-col gap-4"}>
+    <div className={"flex flex-col gap-4 px-2 pb-4 md:px-4"}>
       <div className={"flex flex-col "}>
         <div>
           {user?.first_name && user?.last_name ? (

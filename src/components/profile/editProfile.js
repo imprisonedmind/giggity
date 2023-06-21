@@ -133,37 +133,49 @@ export default function EditProfile({ user }) {
           <FormInput
             id={"username"}
             name={"username"}
-            placeholder={user.username ?? "Enter a Username"}
+            label={"username"}
+            placeholder={"Enter a Username"}
+            defaultValue={user?.username}
             onChange={formik.handleChange}
           />
           <FormInput
             id={"firstName"}
             name={"firstName"}
-            placeholder={user.first_name ?? "Enter a First Name"}
+            label={"First Name"}
+            placeholder={"Enter a First Name"}
+            defaultValue={user?.first_name}
             onChange={formik.handleChange}
           />
           <FormInput
             id={"lastName"}
             name={"lastName"}
-            placeholder={user.last_name ?? "Enter a Last Name"}
+            label={"Last Name"}
+            placeholder={"Enter a Last Name"}
+            defaultValue={user?.last_name}
             onChange={formik.handleChange}
           />
           <FormInput
             id={"bio"}
             name={"bio"}
-            placeholder={user.bio ?? "Enter a bio"}
+            label={"Bio"}
+            placeholder={"Enter a bio"}
+            defaultValue={user?.bio}
             onChange={formik.handleChange}
           />
           <FormInput
             id={"link"}
             name={"link"}
-            placeholder={user.link ?? "Enter a link"}
+            label={"Link"}
+            placeholder={"Enter a link"}
+            defaultValue={user?.link}
             onChange={formik.handleChange}
           />
           <FormInput
             id={"location"}
             name={"location"}
-            placeholder={user.location ?? "Enter a location"}
+            label={"Location"}
+            placeholder={"Enter a location"}
+            defaultValue={user?.location}
             onChange={formik.handleChange}
           />
           <div className="mt-4">
