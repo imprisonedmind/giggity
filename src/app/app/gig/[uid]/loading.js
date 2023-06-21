@@ -1,5 +1,5 @@
-import LoadingGig from "@/components/loading/loadingGig";
+import CircleLoadingSpinner from "@/components/loading/spinner";
 
 export default function loading() {
-  return <LoadingGig />;
+  return <CircleLoadingSpinner />;
 }

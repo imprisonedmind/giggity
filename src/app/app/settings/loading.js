@@ -1,5 +1,5 @@
-import Image from "next/image";
+import CircleLoadingSpinner from "@/components/loading/spinner";
 
 export default function Loading() {
-  return <div></div>;
+  return <CircleLoadingSpinner />;
 }
