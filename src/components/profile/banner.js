@@ -25,8 +25,6 @@ export default function ProfileBanner({ userObj, userUid }) {
     }
   };
 
-  console.log("->>>>>>>>>>>>>", userUid, userObj.id);
-
   return (
     <div className={"relative mb-12"}>
       <div className={"relative h-60 w-full overflow-hidden"}>
@@ -51,8 +49,8 @@ export default function ProfileBanner({ userObj, userUid }) {
         {/*Image*/}
         <div
           className={
-            "relative h-24 w-24 overflow-hidden rounded-2xl border" +
-            " border-neutral-700 bg-neutral-900 shadow-xl"
+            "relative h-24 w-24 overflow-hidden rounded-2xl border border-neutral-700" +
+            " bg-neutral-900 shadow-xl"
           }
         >
           <Image
