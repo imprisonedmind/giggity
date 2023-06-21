@@ -28,21 +28,21 @@ export default function MainArea({ item }) {
 
           <Link
             href={
-              item.user
-                ? `/app/profile/${item.user}`
+              item.user_id
+                ? `/app/profile/${item.user_id}`
                 : `/app/profile/8e0b48e6-ba2c-431f-98ab-c82c8d4d182d`
             }
             className={
               "group" + " cursor-pointer" + " text-xs text-neutral-500"
             }
           >
-            Post by{" "}
+            Posted by{" "}
             <span
               className={
                 "capitalize text-green-500 underline-offset-4 group-hover:underline"
               }
             >
-              @{item.user ? item.user : "luke"}
+              @{item.username ? item.username : "luke"}
             </span>
           </Link>
 

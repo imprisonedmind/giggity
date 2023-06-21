@@ -25,6 +25,8 @@ export default function ProfileBanner({ userObj, userUid }) {
     }
   };
 
+  console.log("->>>>>>>>>>>>>", userUid, userObj.id);
+
   return (
     <div className={"relative mb-12"}>
       <div className={"relative h-60 w-full overflow-hidden"}>
@@ -66,7 +68,9 @@ export default function ProfileBanner({ userObj, userUid }) {
           />
         </div>
         {/*Edit*/}
-        {userUid === userObj?.id ? (
+        {userUid && userUid !== userObj?.id ? (
+          <GreenButton title={"Share Profile"} callBack={() => share()} />
+        ) : (
           <GreenButton
             title={"Edit Profile"}
             callBack={() => {
@@ -74,8 +78,6 @@ export default function ProfileBanner({ userObj, userUid }) {
               setIsOpen(true);
             }}
           />
-        ) : (
-          <GreenButton title={"Share Profile"} callBack={() => share()} />
         )}
       </div>
     </div>

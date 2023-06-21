@@ -12,7 +12,6 @@ import CreatorSettingsWrapper from "@/components/settings/creatorSettingsWrapper
 export default function Settings() {
   return (
     <ListWrapper>
-      {/*<NavBack title={"Settings"} />*/}
       <div className={"flex flex-col gap-4 p-2"}>
         <UserCard />
         <SettingsItemWrapper>
