@@ -4,6 +4,7 @@ import ItemDateTime from "@/components/card/itemDateTime";
 import ItemDescription from "@/components/card/itemDescription";
 import Price from "@/components/card/itemPrice";
 import ItemCountDown from "@/components/card/itemCountDown";
+import Link from "next/link";
 
 export default function MainArea({ item }) {
   return (
@@ -24,6 +25,22 @@ export default function MainArea({ item }) {
             <ItemLocation location={item.address} city={item.city} />
             <ItemDateTime eventDate={item.date} eventTime={item.time} />
           </div>
+
+          <Link
+            href={item.user ? `/app/profile/${item.user}` : "/app/profile/luke"}
+            className={
+              "group" + " cursor-pointer" + " text-xs text-neutral-500"
+            }
+          >
+            Post by{" "}
+            <span
+              className={
+                "capitalize text-green-500 underline-offset-4 group-hover:underline"
+              }
+            >
+              @{item.user ? item.user : "luke"}
+            </span>
+          </Link>
 
           <div className={"flex gap-2 md:mb-2"}>
             <Price onlinePrice={item.onlinePrice} doorPrice={item.doorPrice} />

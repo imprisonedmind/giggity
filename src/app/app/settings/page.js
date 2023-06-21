@@ -18,11 +18,8 @@ export default function Settings() {
           <SignOutSettingsItem />
         </SettingsItemWrapper>
         <SettingsItemWrapper>
-          <SettingsItem
-            title={"Terms and Conditions"}
-            icon={<MusicalNoteIcon />}
-          />
-          <SettingsItem title={"Privacy Policy"} icon={<MusicalNoteIcon />} />
+          <SettingsItem title={"Terms and Conditions"} />
+          <SettingsItem title={"Privacy Policy"} />
           <CopyRightSettingsItem />
           <AppVersionSettingsItem />
         </SettingsItemWrapper>

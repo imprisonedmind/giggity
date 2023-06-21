@@ -4,9 +4,6 @@ import { copyRightDate } from "../../../lib/utilities";
 
 export default function CopyRightSettingsItem() {
   return (
-    <SettingsItem
-      title={`Copyright © 2023 - ${copyRightDate.getFullYear()}`}
-      icon={<MusicalNoteIcon />}
-    />
+    <SettingsItem title={`Copyright © 2023 - ${copyRightDate.getFullYear()}`} />
   );
 }

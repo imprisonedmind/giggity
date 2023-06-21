@@ -2,11 +2,16 @@
 import ProfileBanner from "@/components/profile/banner";
 import ProfileInformation from "@/components/profile/information";
 import { useSupabase } from "@/context/auth";
+import { supabaseAdmin } from "../../../lib/supabaseClient";
 
-export default function ProfileContent() {
+export default function ProfileContent({ fetch }) {
   const session = useSupabase();
   const user = session?.user;
   const data = user?.user_metadata;
+
+  if (fetch) {
+    const { data, error } = supabaseAdmin.auth.getUser();
+  }
 
   return (
     <div
