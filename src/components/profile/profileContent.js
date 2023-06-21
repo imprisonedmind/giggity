@@ -1,29 +1,7 @@
-"use client";
 import ProfileBanner from "@/components/profile/banner";
 import ProfileInformation from "@/components/profile/information";
-import { useSupabase } from "@/context/auth";
-import { supabaseAdmin } from "../../../lib/supabaseClient";
-import { useEffect, useState } from "react";
 
-export default function ProfileContent({ params }) {
-  const session = useSupabase();
-  const user = session?.user;
-  const [data, setData] = useState(user?.user);
-
-  const uid = params?.uid;
-
-  useEffect(() => {
-    if (uid) {
-      supabaseAdmin.auth.admin
-        .getUserById(uid ? uid : "8e0b48e6-ba2c-431f-98ab-c82c8d4d182d")
-        .then((res) => {
-          setData(res.data.user);
-        });
-    } else {
-      setData(user);
-    }
-  }, [uid]);
-
+export default function ProfileContent({ data, uid }) {
   return (
     <div
       className={

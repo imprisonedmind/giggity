@@ -27,7 +27,11 @@ export default function MainArea({ item }) {
           </div>
 
           <Link
-            href={item.user ? `/app/profile/${item.user}` : "/app/profile/luke"}
+            href={
+              item.user
+                ? `/app/profile/${item.user}`
+                : `/app/profile/8e0b48e6-ba2c-431f-98ab-c82c8d4d182d`
+            }
             className={
               "group" + " cursor-pointer" + " text-xs text-neutral-500"
             }

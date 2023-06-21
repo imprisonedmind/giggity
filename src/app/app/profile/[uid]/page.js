@@ -1,12 +1,10 @@
 import ListWrapper from "@/components/wrappers/listWrapper";
-import NavBack from "@/components/gigOverview/navBack";
-import ProfileContent from "@/components/profile/profileContent";
+import FetchProfileContent from "@/components/profile/fetchProfileContent";
 
 export default function Profile({ params }) {
   return (
     <ListWrapper>
-      <NavBack title={"Your Profile"} />
-      <ProfileContent params={params} />
+      <FetchProfileContent params={params} />
     </ListWrapper>
   );
 }
