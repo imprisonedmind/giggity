@@ -4,7 +4,7 @@ import mouse from "../../../../public/screens/mouse.png";
 
 export default function BentoSpotifyStream() {
   return (
-    <div className={"flex h-[569.02px] w-[632.47px] gap-[14px]"}>
+    <div className={"flex h-[569.02px] w-[632.47px] gap-[14px] pl-4"}>
       <Image
         className={
           "h-[555.81px] w-[274.04px] origin-top-left rotate-[2.91deg] rounded-lg"

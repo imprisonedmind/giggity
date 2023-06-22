@@ -13,7 +13,7 @@ export default function BentoCard({
     >
       <div
         className={`${
-          large ? "p-4" : "max-h-[350px] pl-4 pt-4 "
+          large ? "p-4" : "max-h-[370px] pl-4 pt-4 "
         } flex w-1/2 grow overflow-hidden rounded-lg border 
           border-neutral-700 bg-neutral-800 `}
       >
