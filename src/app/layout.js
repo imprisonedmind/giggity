@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import SupabaseProvider from "@/context/auth";
 
 const inter = Inter({
   weight: "400",
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
           "flex h-[100svh] w-[100svw] flex-col overflow-x-hidden md:h-full"
         }
       >
-        {children}
+        <SupabaseProvider>{children}</SupabaseProvider>
       </body>
     </html>
   );
