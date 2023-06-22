@@ -15,8 +15,6 @@ export default async function ProfileSpotify({ user }) {
     })
   );
 
-  console.log(spotify);
-
   return (
     <div
       className={

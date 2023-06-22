@@ -30,8 +30,8 @@ export default async function Artist({ id }) {
     return (
       <div
         className={
-          "border-1 flex h-fit grow flex-col gap-4 rounded-lg border bg-neutral-800" +
-          " border-neutral-700 p-2 text-neutral-500 md:p-4"
+          "border-1 flex h-fit w-max grow flex-col gap-4 rounded-lg border" +
+          " border-neutral-700 bg-neutral-800 p-2 text-neutral-500 md:p-4"
         }
       >
         <div className={"flex flex-nowrap items-center gap-4"}>

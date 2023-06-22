@@ -50,10 +50,12 @@ export default async function Gig({ params }) {
           className={"flex w-full flex-col gap-4 p-2 pt-0 md:flex-wrap md:p-0"}
         >
           <ButtonWeatherArea item={item} latLong={latLong} />
-          {item.artists &&
-            item.artists.map((artist) => {
-              return <Artist id={artist} key={artist} />;
-            })}
+          <div className={"flex h-fit w-full flex-wrap gap-4"}>
+            {item.artists &&
+              item.artists.map((artist) => {
+                return <Artist id={artist} key={artist} />;
+              })}
+          </div>
         </div>
       </main>
     </>

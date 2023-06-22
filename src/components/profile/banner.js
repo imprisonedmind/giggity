@@ -5,6 +5,7 @@ import { UseQuickViewContext } from "@/context/quickView";
 import EditProfile from "@/components/profile/editProfile";
 import { copyToClipboard } from "../../../lib/utilities";
 import ProfileBannerImg from "@/components/profile/profileBannerImg";
+import ProfilePictureImg from "@/components/profile/profilePictureImg";
 
 export default function ProfileBanner({ userObj, userUid }) {
   const { setIsOpen, setContent } = UseQuickViewContext();
@@ -44,7 +45,7 @@ export default function ProfileBanner({ userObj, userUid }) {
             " bg-neutral-900 shadow-xl"
           }
         >
-          <ProfileBannerImg user={user} />
+          <ProfilePictureImg user={user} />
         </div>
         {/*Edit*/}
         {userUid && userUid !== userObj?.id ? (
