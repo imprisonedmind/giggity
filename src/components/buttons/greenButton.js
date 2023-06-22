@@ -10,7 +10,7 @@ export default function GreenButton({ title, icon, callBack, dark }) {
             dark ? "text-neutral-900" : "text-white "
           } border-1 flex cursor-pointer items-center justify-between gap-4 rounded-md` +
           " border border-white/20 bg-green-600 px-4 py-[7px] shadow-sm" +
-          " text-sm hover:bg-green-500 hover:shadow-lg md:text-lg"
+          " text-xs hover:bg-green-500 hover:shadow-lg sm:text-sm md:text-lg"
         }
       >
         <p>{title}</p>
