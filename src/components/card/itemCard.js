@@ -14,8 +14,9 @@ export default function ItemCard({ item, full }) {
       key={item.id}
       className={`${
         full ? "w-full " : "w-fit max-w-[300px]"
-      } col-span-1 flex cursor-pointer flex-col justify-between gap-2 rounded-xl 
-        border border-neutral-700 bg-neutral-800 p-2 md:max-w-[300px]`}
+      } group col-span-1 flex cursor-pointer flex-col justify-between gap-2 
+        rounded-xl border border-neutral-700 bg-neutral-800 p-2 transition 
+        duration-300 ease-in-out hover:border-neutral-600 md:max-w-[300px]`}
     >
       <ItemImage item={item} />
       <ItemTitle title={item.title} />

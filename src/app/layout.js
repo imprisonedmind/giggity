@@ -1,8 +1,14 @@
 import "./globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={"bg-neutral-900"}>
+    <html lang="en" className={`bg-neutral-900 ${inter.className}`}>
       <body
         className={
           "flex h-[100svh] w-[100svw] flex-col overflow-x-hidden md:h-full"

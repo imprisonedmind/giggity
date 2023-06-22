@@ -24,7 +24,7 @@ export async function getTopTracks(artistId, accessToken) {
 
 export default async function TopTracks({ artistId, token }) {
   const data = await getTopTracks(artistId, token);
-  const tracks = data?.tracks;
+  const tracks = data.tracks;
 
   return (
     <div>

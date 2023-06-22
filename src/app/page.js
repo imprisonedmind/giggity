@@ -1,9 +1,13 @@
-import TempReRoute from "@/components/tempReRoute";
+import FirstSection from "@/components/landing/firstSection/firstSection";
 
 export default function Page() {
   return (
-    <main>
-      <TempReRoute />
+    <main
+      className={
+        "bg-opacity-5 bg-[url(/texture/stars.svg)] bg-repeat shadow-vignette"
+      }
+    >
+      <FirstSection />
     </main>
   );
 }
