@@ -23,7 +23,7 @@ export default function SecondSection() {
     >
       <div
         className={
-          "mx-auto flex w-full max-w-[1280px] flex-col gap-4 p-4 pt-8 md:gap-10" +
+          "mx-auto flex w-full max-w-[1280px] flex-col gap-8 p-4 pt-8 md:gap-10" +
           " md:px-20 md:py-20"
         }
       >
