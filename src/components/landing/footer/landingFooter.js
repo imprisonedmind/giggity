@@ -9,7 +9,7 @@ export default function LandingFooter() {
     <div
       className={
         "flex max-w-[1280px] flex-wrap justify-between gap-8 border-t md:gap-0" +
-        " border-neutral-700 p-4 text-neutral-500 md:p-20"
+        " border-neutral-700 p-4 py-8 text-neutral-500 md:p-20 md:py-20"
       }
     >
       <div className={"pr-40 md:pr-0"}>
