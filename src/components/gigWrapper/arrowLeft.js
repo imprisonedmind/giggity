@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 export default function ArrowLeft({ dragPosition, handleLeftArrowClick }) {
   return (
@@ -14,7 +14,7 @@ export default function ArrowLeft({ dragPosition, handleLeftArrowClick }) {
               cursor-pointer items-center justify-center rounded-lg border border-neutral-600 
               bg-neutral-700 p-2 text-neutral-500 md:flex`}
       >
-        <ArrowLeftIcon className={"h-8 w-8"} />
+        <ChevronLeftIcon className={"h-8 w-8"} />
       </div>
     </div>
   );

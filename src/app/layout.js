@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import SupabaseProvider from "@/context/auth";
 
 const inter = Inter({
-  weight: "400",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({ children }) {

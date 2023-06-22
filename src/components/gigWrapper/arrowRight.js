@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export default function ArrowRight({
   dragPosition,
@@ -20,7 +20,7 @@ export default function ArrowRight({
               items-center justify-center rounded-lg border border-neutral-600 bg-neutral-700 
               p-2 text-neutral-500 md:flex`}
       >
-        <ArrowRightIcon className={"h-8 w-8"} />
+        <ChevronRightIcon className={"h-8 w-8"} />
       </div>
     </div>
   );
