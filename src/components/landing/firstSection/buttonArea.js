@@ -1,6 +1,6 @@
 "use client";
 import GreenButton from "@/components/buttons/greenButton";
-import { ArrowTrendingUpIcon, SparklesIcon } from "@heroicons/react/24/solid";
+import { DevicePhoneMobileIcon, SparklesIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 
 export default function ButtonArea() {
@@ -16,7 +16,7 @@ export default function ButtonArea() {
       />
       <GreenButton
         title={"Get it on Google Play"}
-        icon={<ArrowTrendingUpIcon className={"h-w w-4"} />}
+        icon={<DevicePhoneMobileIcon className={"h-w w-4"} />}
         dark={true}
         callBack={() =>
           router.push(
