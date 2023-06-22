@@ -12,7 +12,7 @@ export default function Logo() {
   return (
     <Link
       href={"/"}
-      className={"relative flex h-full flex-nowrap items-center gap-1"}
+      className={"relative flex h-fit flex-nowrap items-center gap-1"}
     >
       <div className={"relative h-10 w-10"}>
         <Image src={icon} alt={"Giggity Icon image"} fill={true} />

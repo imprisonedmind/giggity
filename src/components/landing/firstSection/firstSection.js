@@ -11,7 +11,8 @@ export default async function FirstSection() {
     <div
       className={
         "flex w-full max-w-[1280px] flex-col justify-between gap-10 sm:gap-8" +
-        " z-5 mx-auto  h-[100svh] px-4 md:gap-24 md:px-20"
+        " z-5 mx-auto  h-[100svh] bg-opacity-5 bg-[url(/texture/stars.svg)]  bg-repeat" +
+        " px-4 shadow-vignette md:gap-24 md:px-20"
       }
     >
       <div className={"flex grow flex-col gap-10 sm:gap-4 md:gap-14"}>

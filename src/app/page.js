@@ -1,15 +1,13 @@
 import FirstSection from "@/components/landing/firstSection/firstSection";
 import SecondSection from "@/components/landing/secondSection/secondSection";
+import LandingFooter from "@/components/landing/footer/landingFooter";
 
 export default function Page() {
   return (
-    <main
-      className={
-        "bg-opacity-5 bg-[url(/texture/stars.svg)] bg-repeat shadow-vignette"
-      }
-    >
+    <main>
       <FirstSection />
       <SecondSection />
+      <LandingFooter />
     </main>
   );
 }
