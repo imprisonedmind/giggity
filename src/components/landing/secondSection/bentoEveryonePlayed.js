@@ -12,7 +12,7 @@ import SpotifySmallItem from "@/components/landing/secondSection/spotifySmallIte
 
 export default function BentoEveryonePlayed() {
   return (
-    <div className="grid grid-cols-3 grid-rows-3">
+    <div className="grid grid-cols-3 grid-rows-3 pb-4">
       <SpotifySmallItem src={lung} alt={"Black Lung Spotify"} />
       <SpotifySmallItem src={consti} alt={"Constellatia Spotify"} />
       <SpotifySmallItem src={math} alt={"Black Math Spotify"} />

@@ -22,7 +22,7 @@ export default function BentoCard({
             large
               ? "flex-wrap items-center justify-between md:flex-nowrap"
               : "flex-col"
-          } flex w-full gap-8 overflow-hidden`}
+          } flex w-full gap-4 overflow-hidden md:gap-8`}
         >
           <div className="flex w-fit flex-col gap-2">
             {icon && icon}
