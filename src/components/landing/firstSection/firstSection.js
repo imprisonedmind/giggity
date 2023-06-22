@@ -9,11 +9,11 @@ export default async function FirstSection() {
   return (
     <div
       className={
-        "flex w-full max-w-[1280px] flex-col justify-between gap-14 sm:gap-8" +
+        "flex w-full max-w-[1280px] flex-col justify-between gap-10 sm:gap-8" +
         " mx-auto h-[100svh] px-4 md:gap-24 md:px-20"
       }
     >
-      <div className={"flex grow flex-col gap-14 sm:gap-4 md:gap-14"}>
+      <div className={"flex grow flex-col gap-10 sm:gap-4 md:gap-14"}>
         <LandingNavBar />
         <div className={"my-auto flex flex-col gap-4 md:gap-8"}>
           <div

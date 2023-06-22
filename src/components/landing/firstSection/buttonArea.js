@@ -7,7 +7,11 @@ export default function ButtonArea() {
   const router = useRouter();
 
   return (
-    <div className={"flex w-fit flex-nowrap gap-4"}>
+    <div
+      className={
+        "flex w-full flex-nowrap items-center justify-center gap-4 md:w-fit"
+      }
+    >
       <GreenButton
         title={"Try for free!"}
         icon={<SparklesIcon className={"h-w w-4"} />}
