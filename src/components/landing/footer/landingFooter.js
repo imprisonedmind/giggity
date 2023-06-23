@@ -8,7 +8,7 @@ export default function LandingFooter() {
   return (
     <div
       className={
-        "flex max-w-[1280px] flex-wrap justify-between gap-8 border-t md:gap-0" +
+        "flex w-full flex-wrap justify-between gap-8 border-t md:gap-0" +
         " border-neutral-700 p-4 py-8 text-neutral-500 md:p-20 md:py-20"
       }
     >
