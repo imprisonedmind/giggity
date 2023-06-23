@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LandingFooterElement from "@/components/landing/footer/landingFooterElement";
 import LandingFooterItem from "@/components/landing/footer/landingFooterItem";
 import Logo from "@/components/navigation/logo";
