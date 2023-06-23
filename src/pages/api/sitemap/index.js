@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 
 async function getGigs() {
-  let { data } = await supabaseAdmin.from("event").select("uid");
+  let { data } = await supabaseAdmin.from("event");
   return data;
 }
 
