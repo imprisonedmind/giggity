@@ -29,6 +29,11 @@ export default async function handler(req, res) {
       <lastmod>${isoDate}</lastmod>
       <priority>0.9</priority>
       <changefreq>daily</changefreq>
+      <image:image>
+        <image:loc>https://giggity.co.za/landing.png</image:loc>
+        <image:title>Giggity Landing Page</image:title>
+        <image:caption>This is the landing page for https://giggity.co.za</image:caption>
+      </image:image>
     </url>
     <url>
       <loc>https://giggity.co.za/app</loc>
@@ -74,6 +79,11 @@ export default async function handler(req, res) {
                     <lastmod>${isoDate}</lastmod>
                     <priority>0.7</priority>
                     <changefreq>daily</changefreq>
+                    <image:image>
+                      <image:loc>${gig.image}</image:loc>
+                      <image:title>${gig.title}</image:title>
+                      <image:caption>${gig.description}</image:caption>
+                    </image:image>
                 </url>
             `;
       })
