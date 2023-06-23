@@ -36,7 +36,7 @@ export default async function handler(req, res) {
       .map((gig) => {
         return `
                 <url>
-                    <loc>${`https://giggity.co.za/gig/${gig.uid}`}</loc>
+                    <loc>${`https://giggity.co.za/app/gig/${gig.uid}`}</loc>
                     <lastmod>${isoDate}</lastmod>
                 </url>
             `;
