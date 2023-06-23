@@ -1,7 +1,9 @@
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 
 async function getGigs() {
-  let { data } = await supabaseAdmin.from("event");
+  let { data } = await supabaseAdmin
+    .from("event")
+    .select("uid, title, description, image");
   return data;
 }
 
@@ -44,7 +46,7 @@ export default async function handler(req, res) {
     <url>
       <loc>https://giggity.co.za/onboard</loc>
       <lastmod>${isoDate}</lastmod>
-      <priority>0.1/priority>
+      <priority>0.1</priority>
       <changefreq>monthly</changefreq>
     </url>
     <url>
