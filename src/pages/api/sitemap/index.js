@@ -25,32 +25,46 @@ export default async function handler(req, res) {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
     <url>
-      <loc>https://www.giggity.co.za</loc>
+      <loc>https://giggity.co.za</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>0.9</priority>
+      <changefreq>daily</changefreq>
     </url>
     <url>
-      <loc>https://www.giggity.co.za/app</loc>
+      <loc>https://giggity.co.za/app</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>1.0</priority>
+      <changefreq>daily</changefreq>
     </url>
     <url>
-      <loc>https://www.giggity.co.za/onboard</loc>
+      <loc>https://giggity.co.za/onboard</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>0.1/priority>
+      <changefreq>monthly</changefreq>
     </url>
     <url>
-      <loc>https://www.giggity.co.za/onboard/login</loc>
+      <loc>https://giggity.co.za/onboard/login</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>0.8</priority>
+      <changefreq>monthly</changefreq>
     </url>
     <url>
-      <loc>https://www.giggity.co.za/signup</loc>
+      <loc>https://giggity.co.za/signup</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>0.9</priority>
+      <changefreq>monthly</changefreq>
     </url>
     <url>
-      <loc>https://www.giggity.co.za/changelogs</loc>
+      <loc>https://giggity.co.za/changelogs</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>0.3</priority>
+      <changefreq>monthly</changefreq>
     </url>
     <url>
-      <loc>https://www.giggity.co.za/privacy</loc>
+      <loc>https://giggity.co.za/privacy</loc>
       <lastmod>${isoDate}</lastmod>
+      <priority>0.1</priority>
+      <changefreq>monthly</changefreq>
     </url>
     ${data
       .map((gig) => {
@@ -58,6 +72,8 @@ export default async function handler(req, res) {
                 <url>
                     <loc>${`https://giggity.co.za/app/gig/${gig.uid}`}</loc>
                     <lastmod>${isoDate}</lastmod>
+                    <priority>0.7</priority>
+                    <changefreq>daily</changefreq>
                 </url>
             `;
       })
