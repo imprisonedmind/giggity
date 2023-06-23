@@ -29,7 +29,27 @@ export default async function handler(req, res) {
       <lastmod>${isoDate}</lastmod>
     </url>
     <url>
+      <loc>https://www.giggity.co.za/app</loc>
+      <lastmod>${isoDate}</lastmod>
+    </url>
+    <url>
+      <loc>https://www.giggity.co.za/onboard</loc>
+      <lastmod>${isoDate}</lastmod>
+    </url>
+    <url>
+      <loc>https://www.giggity.co.za/onboard/login</loc>
+      <lastmod>${isoDate}</lastmod>
+    </url>
+    <url>
+      <loc>https://www.giggity.co.za/signup</loc>
+      <lastmod>${isoDate}</lastmod>
+    </url>
+    <url>
       <loc>https://www.giggity.co.za/changelogs</loc>
+      <lastmod>${isoDate}</lastmod>
+    </url>
+    <url>
+      <loc>https://www.giggity.co.za/privacy</loc>
       <lastmod>${isoDate}</lastmod>
     </url>
     ${data
