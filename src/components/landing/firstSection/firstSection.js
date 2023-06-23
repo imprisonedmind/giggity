@@ -16,7 +16,8 @@ export default async function FirstSection() {
     >
       <div
         className={
-          "mx-auto flex max-w-[1280px] flex-col gap-10 px-4 sm:gap-8 md:gap-24 md:px-20"
+          "mx-auto flex h-full max-w-[1280px] flex-col gap-10 px-4 sm:gap-8 md:gap-24" +
+          " md:px-20"
         }
       >
         <div className={"flex grow flex-col gap-10 sm:gap-4 md:gap-14"}>
