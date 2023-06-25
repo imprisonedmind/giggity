@@ -22,7 +22,7 @@ export default async function EventSeo({ item }) {
         },
       }}
       url={`https://giggity.co.za/app/gig/${item.uid}`}
-      images={[item.img]}
+      images={[item.image]}
       description={item.description}
       offers={[
         {
