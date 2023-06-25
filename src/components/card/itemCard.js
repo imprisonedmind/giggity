@@ -6,7 +6,7 @@ import ItemLocation from "@/components/card/itemLocation";
 import Link from "next/link";
 import ItemCountDown from "@/components/card/itemCountDown";
 
-export default function ItemCard({ item, full, pos }) {
+export default function ItemCard({ item, full, pos, index }) {
   return (
     <Link
       prefetch={true}
@@ -18,7 +18,7 @@ export default function ItemCard({ item, full, pos }) {
         rounded-xl border border-neutral-700 bg-neutral-800 p-2 transition 
         duration-300 ease-in-out hover:border-neutral-600 md:max-w-[300px]`}
     >
-      <ItemImage item={item} pos={pos} />
+      <ItemImage item={item} pos={pos} index={index} />
       <ItemTitle title={item.title} />
 
       <div className={"flex w-full flex-col "}>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ItemImage({ item, pos }) {
+export default function ItemImage({ item, pos, index }) {
   return (
     <div
       className={
@@ -13,7 +13,7 @@ export default function ItemImage({ item, pos }) {
         src={item.image}
         alt={item.description}
         fill={true}
-        priority={pos === 1}
+        priority={pos === 1 && index < 4}
         sizes={"100%"}
         className={"object-cover"}
         placeholder={"blur"}

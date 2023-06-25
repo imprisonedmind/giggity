@@ -70,12 +70,13 @@ export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
         ref={containerRef}
         onScroll={handleScroll}
       >
-        {data.map((item) => (
+        {data.map((item, index) => (
           <ItemCard
             item={item}
             key={item.id}
             full={data.length === 1}
             pos={pos}
+            index={index}
           />
         ))}
       </div>
