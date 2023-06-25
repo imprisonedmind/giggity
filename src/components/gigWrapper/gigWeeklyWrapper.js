@@ -5,7 +5,7 @@ import ArrowLeft from "@/components/gigWrapper/arrowLeft";
 import ArrowRight from "@/components/gigWrapper/arrowRight";
 import TitleHandler from "@/components/gigWrapper/titleHandler";
 
-export default function GigWeeklyWrapper({ data, m, title, link }) {
+export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
   const containerRef = useRef(null);
   const [dragPosition, setDragPosition] = useState(0);
   const [maxScrollPosition, setMaxScrollPosition] = useState(712);
@@ -40,7 +40,12 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
 
   return (
     <div className={`${m} relative flex w-full flex-col gap-2`}>
-      <TitleHandler title={title} link={link} seeAll={data.length > 1} />
+      <TitleHandler
+        title={title}
+        link={link}
+        seeAll={data.length > 1}
+        pos={pos}
+      />
       <div
         className={
           "absolute flex h-full w-full select-none justify-between pt-8"
@@ -66,7 +71,12 @@ export default function GigWeeklyWrapper({ data, m, title, link }) {
         onScroll={handleScroll}
       >
         {data.map((item) => (
-          <ItemCard item={item} key={item.id} full={data.length === 1} />
+          <ItemCard
+            item={item}
+            key={item.id}
+            full={data.length === 1}
+            pos={pos}
+          />
         ))}
       </div>
     </div>

@@ -22,6 +22,7 @@ export default async function Home() {
           data={weekGigs}
           title={"Events This Week"}
           link={"/app/weekly"}
+          pos={1}
         />
       )}
       {futureGigs.length > 0 && (
@@ -29,12 +30,14 @@ export default async function Home() {
           data={futureGigs}
           title={"Upcoming Events"}
           link={"/app/upcoming"}
+          pos={2}
         />
       )}
       <GigWeeklyWrapper
         data={pastGigs}
         title={"Previous Events"}
         link={"/app/previous"}
+        pos={3}
       />
     </div>
   );
