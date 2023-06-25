@@ -76,7 +76,7 @@ export async function generateMetadata({ params }) {
       siteName: "Giggity",
       images: [
         {
-          url: `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
+          url: `htttps://giggity.co.za/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
           width: 1800,
           height: 1600,
           alt: item.description,
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }) {
       description: item.description,
       creator: "@lukey_stephens",
       images: [
-        `https://giggity-ruddy.vercel.app/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
+        `htttps://giggity.co.za/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
       ],
     },
     themeColor: "#22c55e",
