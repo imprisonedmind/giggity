@@ -41,6 +41,7 @@ export default async function Home() {
         pos={3}
       />
       <SoftwareAppJsonLd
+        useAppDir={true}
         name={"Giggity"}
         price={"0"}
         priceCurrency={null}
