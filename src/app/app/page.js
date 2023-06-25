@@ -1,5 +1,6 @@
 import GigWeeklyWrapper from "@/components/gigWrapper/gigWeeklyWrapper";
 import { getFuture8, getPast8, getThisWeeksEvents } from "/lib/dataFetching";
+import { SoftwareAppJsonLd } from "next-seo";
 
 export const revalidate = 120;
 
@@ -38,6 +39,13 @@ export default async function Home() {
         title={"Previous Events"}
         link={"/app/previous"}
         pos={3}
+      />
+      <SoftwareAppJsonLd
+        name={"Giggity"}
+        price={"0"}
+        priceCurrency={null}
+        operatingSystem="ANDROID"
+        applicationCategory="GameApplication"
       />
     </div>
   );
