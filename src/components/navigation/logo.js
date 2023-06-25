@@ -33,7 +33,11 @@ export default function Logo() {
           <h1 className={reenie.className}>Giggity</h1>
         </div>
       </Link>
-      <LogoJsonLd useAppDir={true} logo={icon} url={"https://giggity.co.za"} />
+      <LogoJsonLd
+        useAppDir={true}
+        logo={"https://giggity.co.za/devil.png"}
+        url={"https://giggity.co.za"}
+      />
     </>
   );
 }
