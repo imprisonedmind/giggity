@@ -39,9 +39,9 @@ export default async function EventSeo({ item }) {
         },
       ]}
       performers={[
-        data.map((x) => {
-          name: x.artistData.name;
-        }),
+        data.map((x) => ({
+          name: x.artistData.name,
+        })),
       ]}
       eventStatus={"https://schema.org/EventScheduled"}
     />
