@@ -39,7 +39,7 @@ export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
   };
 
   return (
-    <div className={`${m} relative flex w-full flex-col gap-2`}>
+    <section className={`${m} relative flex w-full flex-col gap-2`}>
       <TitleHandler
         title={title}
         link={link}
@@ -80,6 +80,6 @@ export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
