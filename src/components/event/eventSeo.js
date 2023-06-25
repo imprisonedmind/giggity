@@ -8,8 +8,6 @@ export default async function EventSeo({ item }) {
     })
   );
 
-  console.log("---->", data);
-
   return (
     <EventJsonLd
       useAppDir={true}
@@ -18,7 +16,7 @@ export default async function EventSeo({ item }) {
       endDate={item.date}
       location={{
         name: item.location,
-        sameAs: `https://www.google.com/search?q=${item.location}`,
+        sameAs: `https://www.google.com/search?q=${item.address}`,
         address: {
           streetAddress: item.location,
         },
@@ -28,9 +26,9 @@ export default async function EventSeo({ item }) {
       description={item.description}
       offers={[
         {
-          price: item.price,
+          price: item.onlinePrice,
           priceCurrency: "ZAR",
-          priceValidUntil: "2020-11-05",
+          priceValidUntil: item.date,
           itemCondition: "https://schema.org/NewCondition",
           availability: "https://schema.org/InStock",
           url: `https://giggity.co.za/app/gig/${item.uid}`,
@@ -40,7 +38,11 @@ export default async function EventSeo({ item }) {
           validFrom: item.date,
         },
       ]}
-      performers={data.map((x) => ({ name: x.name }))}
+      performers={[
+        data.map((x) => {
+          name: x.artistData.name;
+        }),
+      ]}
       eventStatus={"https://schema.org/EventScheduled"}
     />
   );
