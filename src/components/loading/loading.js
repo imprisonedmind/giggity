@@ -21,6 +21,8 @@ export default function Loading({ title, img, alt }) {
           alt={alt}
           fill={true}
           className={"h-full w-full object-cover"}
+          loading={"lazy"}
+          quality={70}
         />
       </div>
       <div className={"flex flex-nowrap items-center gap-4 p-2 pt-4"}>

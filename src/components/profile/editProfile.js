@@ -104,6 +104,8 @@ export default function EditProfile({ user }) {
               alt="User Banner Image"
               fill={true}
               className={"cursor-pointer object-cover"}
+              loading={"lazy"}
+              quality={70}
             />
           </div>
         </label>
@@ -121,6 +123,8 @@ export default function EditProfile({ user }) {
               alt={"User profile Image"}
               fill={true}
               className={"cursor-pointer object-cover"}
+              loading={"lazy"}
+              quality={70}
             />
           </label>
         </div>

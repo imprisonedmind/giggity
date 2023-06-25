@@ -8,6 +8,8 @@ export default function BentoStreamingIcons() {
         src={streams}
         alt={"Streaming logos coming soon"}
         className={"object-contain"}
+        loading={"lazy"}
+        quality={70}
       />
     </div>
   );

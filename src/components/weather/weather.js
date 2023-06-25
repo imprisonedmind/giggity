@@ -39,6 +39,8 @@ export default async function Weather({ latLng, date, apiKey }) {
             src={`https://openweathermap.org/img/wn/${icon}.png`}
             alt={"test"}
             fill={true}
+            loading={"lazy"}
+            quality={70}
           />
         </div>
       </div>

@@ -30,6 +30,8 @@ export default async function ProfileSpotify({ user }) {
           alt={"Spotify user iamge"}
           fill={true}
           className={"object-cover"}
+          loading={"lazy"}
+          quality={70}
         />
       </div>
       <div className={"flex flex-col"}>

@@ -12,6 +12,8 @@ export default function SecondSection() {
       className={"h-10 w-10 rounded-lg"}
       src={spotify}
       alt={"Spotify logo"}
+      loading={"lazy"}
+      quality={70}
     />
   );
 

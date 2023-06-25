@@ -60,6 +60,8 @@ export default function FooterContent({ version }) {
                   src={lukey}
                   alt={"https://bento.me/lukey"}
                   className={"h-6 w-6"}
+                  loading={"lazy"}
+                  quality={70}
                 />
               </Link>
             </div>

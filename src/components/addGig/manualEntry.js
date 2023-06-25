@@ -26,6 +26,8 @@ export default function ManualEntry() {
               fill={true}
               sizes={"100%"}
               className={"object-cover"}
+              loading={"lazy"}
+              quality={70}
             />
           </div>
         )}

@@ -17,6 +17,8 @@ export default function HeroImage({ image, imgAlt }) {
         className={"object-cover"}
         placeholder={"blur"}
         blurDataURL={image}
+        loading={"lazy"}
+        quality={70}
       />
     </div>
   );

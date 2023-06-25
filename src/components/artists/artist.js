@@ -44,7 +44,13 @@ export default async function Artist({ id }) {
               href={`https://open.spotify.com/artist/${id}`}
               target={"_blank"}
             >
-              <Image src={imgUrl} alt={imgUrl} fill={true} />
+              <Image
+                src={imgUrl}
+                alt={imgUrl}
+                fill={true}
+                loading={"lazy"}
+                quality={70}
+              />
             </Link>
             <Image
               src={spotify}

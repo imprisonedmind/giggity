@@ -58,6 +58,8 @@ export default function UserCard() {
               fill={true}
               sizes={"100%"}
               className={"object-cover"}
+              loading={"lazy"}
+              quality={50}
             />
           </div>
           <div className={"flex flex-col justify-center leading-4 "}>

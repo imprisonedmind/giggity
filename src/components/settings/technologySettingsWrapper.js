@@ -16,13 +16,27 @@ export default function TechnologySettingsWrapper() {
     <SettingsItemWrapper>
       <SettingsItem title={"Technology this website uses"} />
       <SettingsItem
-        icon={<Image src={openAi} alt={"Open Ai Logo"} />}
+        icon={
+          <Image
+            src={openAi}
+            alt={"Open Ai Logo"}
+            loading={"lazy"}
+            quality={70}
+          />
+        }
         title={"Open AI gpt-3"}
         callBack={() => router.push("https://openai.com/gpt-4")}
       />
       <SettingsItem
         title={"Google Cloud Vision"}
-        icon={<Image src={cloud} alt={"Cloud Vision Logo"} />}
+        icon={
+          <Image
+            src={cloud}
+            alt={"Cloud Vision Logo"}
+            loading={"lazy"}
+            quality={70}
+          />
+        }
         callBack={() => router.push("https://cloud.google.com/vision")}
       />
       <SettingsItem

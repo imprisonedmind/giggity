@@ -18,6 +18,8 @@ export default function LogoName() {
         src={devil}
         alt={"Giggity Logo"}
         className={"aspect-square h-60 w-60"}
+        loading={"lazy"}
+        quality={50}
       />
       <h1 className={reenie.className}>Giggity</h1>
     </Link>

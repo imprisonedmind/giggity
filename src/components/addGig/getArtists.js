@@ -113,6 +113,8 @@ export default function GetArtists() {
                       alt={item.images[0]?.url}
                       fill={true}
                       sizes={"100%"}
+                      loading={"lazy"}
+                      quality={70}
                     />
                   </div>
                   <div className={"flex flex-col"}>

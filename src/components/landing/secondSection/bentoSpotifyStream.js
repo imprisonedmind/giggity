@@ -11,6 +11,8 @@ export default function BentoSpotifyStream() {
         }
         alt={"Black math spotify stream"}
         src={math}
+        loading={"lazy"}
+        quality={70}
       />
       <Image
         className={
@@ -18,6 +20,8 @@ export default function BentoSpotifyStream() {
         }
         alt={"Mouse spotify stream"}
         src={mouse}
+        loading={"lazy"}
+        quality={70}
       />
     </div>
   );

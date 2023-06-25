@@ -8,6 +8,8 @@ export default function ProfileBannerImg({ user }) {
       fill={true}
       sizes={"100%"}
       className={"object-cover"}
+      loading={"lazy"}
+      quality={70}
     />
   );
 }

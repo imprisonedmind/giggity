@@ -31,6 +31,8 @@ export default function UserCircle() {
               fill={true}
               sizes={"100%"}
               className={"object-cover"}
+              loading={"lazy"}
+              quality={50}
             />
           ) : (
             <p>{initials}</p>

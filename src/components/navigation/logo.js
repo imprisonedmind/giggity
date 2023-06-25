@@ -15,7 +15,13 @@ export default function Logo() {
       className={"relative flex h-fit flex-nowrap items-center gap-1"}
     >
       <div className={"relative h-10 w-10"}>
-        <Image src={icon} alt={"Giggity Icon image"} fill={true} />
+        <Image
+          src={icon}
+          alt={"Giggity Icon image"}
+          fill={true}
+          loading={"lazy"}
+          quality={70}
+        />
       </div>
       <div
         className={"mt-2 h-fit text-xl font-thin tracking-[3px] text-green-600"}

@@ -28,6 +28,8 @@ export default async function OnboardLeftPanel() {
           height={500}
           priority={true}
           className={"h-full w-full object-cover"}
+          loading={"lazy"}
+          quality={70}
         />
       )}
     </div>

@@ -9,6 +9,8 @@ export default function SpotifySmallItem({ src, alt }) {
       }
       src={src}
       alt={alt}
+      loading={"lazy"}
+      quality={70}
     />
   );
 }
