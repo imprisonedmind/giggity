@@ -59,7 +59,7 @@ export default async function Gig({ params }) {
           </div>
         </div>
       </main>
-      <EventSeo item={item} />
+      <EventSeo item={item} getSpotify={true} />
     </>
   );
 }

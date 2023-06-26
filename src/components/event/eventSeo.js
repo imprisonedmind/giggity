@@ -1,12 +1,16 @@
 import { EventJsonLd } from "next-seo";
 import { getArtistData } from "@/components/artists/artist";
 
-export default async function EventSeo({ item }) {
-  const data = await Promise.all(
-    item.artists.map(async (a) => {
-      return await getArtistData(a);
-    })
-  );
+export default async function EventSeo({ item, getSpotify }) {
+  let data = [];
+
+  if (getSpotify) {
+    data = await Promise.all(
+      item.artists.map(async (a) => {
+        return await getArtistData(a);
+      })
+    );
+  }
 
   return (
     <EventJsonLd
