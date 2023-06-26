@@ -17,12 +17,13 @@ export default function ItemCountDown({ date, time }) {
     const interval = setInterval(() => {
       const now = new Date();
       const timeDiff = eventDate.getTime() - now.getTime();
-      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const months = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30)); // Calculate months
+      const days = Math.floor((timeDiff / (1000 * 60 * 60 * 24)) % 30); // Calculate remaining days
       const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
       const seconds = Math.floor((timeDiff / 1000) % 60);
 
-      setTimeRemaining({ days, hours, minutes, seconds });
+      setTimeRemaining({ months, days, hours, minutes, seconds });
     }, 1000);
 
     return () => clearInterval(interval);
@@ -32,27 +33,24 @@ export default function ItemCountDown({ date, time }) {
     return null;
   }
 
-  const { days, hours, minutes, seconds } = timeRemaining;
+  const { months, days, hours, minutes, seconds } = timeRemaining;
 
   let countdownText;
-  if (days > 0) {
-    countdownText = `In ${days} day${days > 1 ? "s" : ""}`;
+  if (months > 0) {
+    countdownText = `${months} Month${months > 1 ? "s" : ""}`;
+  } else if (days > 0) {
+    countdownText = `${days} Day${days > 1 ? "s" : ""}`;
   } else if (hours > 0) {
-    countdownText = `In ${hours} hour${hours > 1 ? "s" : ""}`;
+    countdownText = `${hours} Hour${hours > 1 ? "s" : ""}`;
   } else if (minutes > 0) {
-    countdownText = `In ${minutes} minute${minutes > 1 ? "s" : ""}`;
+    countdownText = `${minutes} Minute${minutes > 1 ? "s" : ""}`;
   } else {
-    countdownText = `In ${seconds} second${seconds > 1 ? "s" : ""}`;
+    countdownText = `${seconds} Second${seconds > 1 ? "s" : ""}`;
   }
 
   return (
-    <div
-      className={
-        "flex h-fit w-fit flex-nowrap rounded-md bg-yellow-500/10 px-2 py-1 text-xs" +
-        " text-yellow-500"
-      }
-    >
-      <p className={"text-xs"}>{countdownText}</p>
+    <div className="flex h-fit w-fit flex-nowrap rounded-md bg-yellow-500/10 px-2 py-1 text-xs text-yellow-500">
+      <p className="text-xs">{countdownText}</p>
     </div>
   );
 }

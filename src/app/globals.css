@@ -4,9 +4,6 @@
 
 
 /*SCROLLBARS*/
-* {
-    @apply scroll-smooth
-}
 
 /* width */
 ::-webkit-scrollbar {
