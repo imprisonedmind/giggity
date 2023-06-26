@@ -5,11 +5,17 @@ import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
 import { supabaseAdmin } from "../../lib/supabaseClient";
 import { parseDateString, parseTimeString } from "../../lib/utilities";
+import { useSupabase } from "@/context/auth";
 
 export const AddGigContext = createContext({});
 export const useAddGigContext = () => useContext(AddGigContext);
 
 export function AddGigContextProvider({ children }) {
+  const session = useSupabase();
+  const user = session?.user;
+
+  console.log(user);
+
   const router = useRouter();
 
   // State variable to store abstract artist data
@@ -40,6 +46,8 @@ export function AddGigContextProvider({ children }) {
       address: null,
       onlinePrice: null,
       doorPrice: null,
+      user_id: user?.id,
+      username: user?.user_metadata?.username,
     },
     onSubmit: async (values) => {
       try {
@@ -109,6 +117,8 @@ export function AddGigContextProvider({ children }) {
       city: location,
       onlinePrice: price,
       doorPrice: doorPrice,
+      user_id: user?.id,
+      username: user?.user_metadata?.username,
     });
     setLoading(false);
     setShowInputs(true);
