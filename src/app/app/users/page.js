@@ -10,6 +10,8 @@ import ProfileBannerImg from "@/components/profile/profileBannerImg";
 import ProfilePictureImg from "@/components/profile/profilePictureImg";
 import ListWrapper from "@/components/wrappers/listWrapper";
 
+export const revalidate = 120;
+
 export default async function UsersPage() {
   const { data, error } = await supabaseAdmin.auth.admin.listUsers();
 

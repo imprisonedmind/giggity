@@ -12,7 +12,8 @@ export default function LandingFooter() {
     >
       <div
         className={
-          " mx-auto flex max-w-[1280px] flex-wrap justify-between gap-8 md:gap-0 md:p-20 md:py-20"
+          " mx-auto flex max-w-[1280px] flex-wrap justify-between gap-8 md:gap-0" +
+          " md:p-10 md:py-20 lg:p-20"
         }
       >
         <div className={"pr-40 md:pr-0"}>
@@ -39,7 +40,7 @@ export default function LandingFooter() {
             link={"https://openai.com/gpt-4"}
           />
         </LandingFooterElement>
-        <LandingFooterElement title={"Creator"}>
+        <LandingFooterElement title={"Information"}>
           <LandingFooterItem
             title={"Luke Stephens"}
             link={"https://bento.me/lukey"}
@@ -48,6 +49,7 @@ export default function LandingFooter() {
             title={"Support this project"}
             link={"https://www.buymeacoffee.com/lukestephens"}
           />
+          <LandingFooterItem title={"Changelogs"} link={"/app/changelogs"} />
         </LandingFooterElement>
         <LandingFooterElement title={"Download"}>
           <LandingFooterItem title={"Desktop"} link={"/"} />

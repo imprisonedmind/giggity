@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ArrowLeft from "@/components/gigWrapper/arrowLeft";
 import ArrowRight from "@/components/gigWrapper/arrowRight";
 import TitleHandler from "@/components/gigWrapper/titleHandler";
+import EventSeo from "@/components/event/eventSeo";
 
 export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
   const containerRef = useRef(null);
@@ -71,13 +72,16 @@ export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
         onScroll={handleScroll}
       >
         {data.map((item, index) => (
-          <ItemCard
-            item={item}
-            key={item.id}
-            full={data.length === 1}
-            pos={pos}
-            index={index}
-          />
+          <>
+            <ItemCard
+              item={item}
+              key={item.id}
+              full={data.length === 1}
+              pos={pos}
+              index={index}
+            />
+            <EventSeo item={item} />
+          </>
         ))}
       </div>
     </section>
