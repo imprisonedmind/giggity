@@ -8,11 +8,11 @@ export default function TitleHandler({ title, link, seeAll, pos }) {
       }
     >
       {pos === 1 ? (
-        <h2 className={"select-none"}>{title}</h2>
+        <h1 className={"select-none"}>{title}</h1>
       ) : pos === 2 ? (
-        <h3 className={"select-none"}>{title}</h3>
+        <h2 className={"select-none"}>{title}</h2>
       ) : (
-        <h4 className={"select-none"}>{title}</h4>
+        <h3 className={"select-none"}>{title}</h3>
       )}
       {seeAll && (
         <Link

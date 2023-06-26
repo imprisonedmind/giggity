@@ -30,7 +30,7 @@ export default function Logo() {
             "mt-2 h-fit text-xl font-thin tracking-[3px] text-green-600"
           }
         >
-          <h1 className={reenie.className}>Giggity</h1>
+          <title className={reenie.className}>Giggity</title>
         </div>
       </Link>
       <LogoJsonLd
