@@ -7,7 +7,7 @@ export default function LandingFooter() {
   return (
     <div
       className={
-        " w-full border-t border-neutral-700 p-4 py-8 text-neutral-500 "
+        "hidden w-full border-t border-neutral-700 p-4 py-8 text-neutral-500 md:inline-block"
       }
     >
       <div
@@ -45,7 +45,7 @@ export default function LandingFooter() {
             link={"https://bento.me/lukey"}
           />
           <LandingFooterItem
-            title={"Buy me a coffee"}
+            title={"Support this project"}
             link={"https://www.buymeacoffee.com/lukestephens"}
           />
         </LandingFooterElement>

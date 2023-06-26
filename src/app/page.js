@@ -7,7 +7,7 @@ export default function Page() {
     <main>
       <FirstSection />
       <SecondSection />
-      <LandingFooter />
+      {/*<LandingFooter />*/}
     </main>
   );
 }

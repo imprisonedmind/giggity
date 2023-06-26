@@ -12,6 +12,12 @@ export default function CreatorSettingsWrapper() {
         title={"Made with ♥ by Luke Stephens"}
         callBack={() => router.push("http://lukestephens.co.za")}
       />
+      <SettingsItem
+        title={"Support this project"}
+        callBack={() =>
+          router.push("https://www.buymeacoffee.com/lukestephens")
+        }
+      />
     </SettingsItemWrapper>
   );
 }

@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import SupabaseProvider from "@/context/auth";
+import LandingFooter from "@/components/landing/footer/landingFooter";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         }
       >
         <SupabaseProvider>{children}</SupabaseProvider>
+        <LandingFooter />
       </body>
     </html>
   );
