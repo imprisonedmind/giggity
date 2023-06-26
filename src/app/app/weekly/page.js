@@ -16,6 +16,13 @@ export default async function Page() {
 
 export function generateMetadata() {
   return {
+    title: {
+      default: "Giggity | Live music gigs this week.",
+      template: "Giggity | %s ",
+    },
+    description:
+      "Explore the exciting live music gigs happening this week on Giggity. Discover a diverse range of upcoming performances, talented artists, and unforgettable experiences. Don't miss out on the incredible live music events lined up for this week!",
+    keywords: ["Giggity", "Gigs", "Weekly", "upcoming", "Music"],
     themeColor: "#22c55e",
   };
 }

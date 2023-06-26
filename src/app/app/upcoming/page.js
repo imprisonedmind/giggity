@@ -16,6 +16,13 @@ export default async function Page() {
 
 export function generateMetadata() {
   return {
+    title: {
+      default: "Giggity | Upcoming live music gigs.",
+      template: "Giggity | %s ",
+    },
+    description:
+      "Discover upcoming live music gigs in Cape Town. Explore a vibrant lineup of upcoming performances, talented artists, and unforgettable experiences at Giggity. Don't miss out on the hottest live music events in town!",
+    keywords: ["Giggity", "Gigs", "Previous", "Live", "Music"],
     themeColor: "#22c55e",
   };
 }

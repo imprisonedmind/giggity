@@ -16,6 +16,13 @@ export default async function Page() {
 
 export function generateMetadata() {
   return {
+    title: {
+      default: "Giggity | Previous live music gigs.",
+      template: "Giggity | %s ",
+    },
+    description:
+      "Explore the exciting memories from previous live music gigs in Cape Town. Relive the energy, performances, and unforgettable moments from past events hosted on Giggity.",
+    keywords: ["Giggity", "Gigs", "Previous", "Live", "Music"],
     themeColor: "#22c55e",
   };
 }
