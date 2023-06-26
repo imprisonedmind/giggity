@@ -32,9 +32,7 @@ export default function MainArea({ item }) {
                 ? `/app/profile/${item.user_id}`
                 : `/app/profile/8e0b48e6-ba2c-431f-98ab-c82c8d4d182d`
             }
-            className={
-              "group" + " cursor-pointer" + " text-xs text-neutral-500"
-            }
+            className={"group cursor-pointer text-xs text-neutral-500"}
           >
             Posted by{" "}
             <span

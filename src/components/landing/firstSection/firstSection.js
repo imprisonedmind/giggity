@@ -3,9 +3,11 @@ import GigWeeklyWrapper from "@/components/gigWrapper/gigWeeklyWrapper";
 import ButtonArea from "@/components/landing/firstSection/buttonArea";
 import { getNext8 } from "/lib/dataFetching";
 import SectionHeader from "@/components/landing/sectionHeader";
+import FirstSectionTitle from "@/components/landing/firstSection/firstSectionTitle";
 
 export default async function FirstSection() {
   const futureGigs = await getNext8();
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
 
   return (
     <div
@@ -23,11 +25,7 @@ export default async function FirstSection() {
         <div className={"flex grow flex-col gap-10 sm:gap-4 md:gap-14"}>
           <LandingNavBar />
           <div className={"my-auto flex flex-col gap-4 md:gap-8"}>
-            <SectionHeader
-              title={
-                "Discover the Thrill of Live Music in Cape Town with Giggity."
-              }
-            />
+            <FirstSectionTitle apiKey={apiKey} />
             <ButtonArea />
           </div>
         </div>
