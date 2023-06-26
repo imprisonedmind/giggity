@@ -58,8 +58,9 @@ export default function GetArtists() {
     if (selectedArtists.includes(id)) {
       selectedArtists = selectedArtists.filter((artistId) => artistId !== id);
     } else {
-      selectedArtists = [id];
+      selectedArtists.push(id);
     }
+
     formik.setFieldValue("artists", selectedArtists);
     console.log(selectedArtists);
   };

@@ -11,10 +11,9 @@ export const AddGigContext = createContext({});
 export const useAddGigContext = () => useContext(AddGigContext);
 
 export function AddGigContextProvider({ children }) {
+  // Get the current user to add their details to the gig
   const session = useSupabase();
   const user = session?.user;
-
-  console.log(user);
 
   const router = useRouter();
 
