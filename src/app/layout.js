@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import SupabaseProvider from "@/context/auth";
 import LandingFooter from "@/components/landing/footer/landingFooter";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,6 +20,17 @@ export default function RootLayout({ children }) {
         <SupabaseProvider>{children}</SupabaseProvider>
         <LandingFooter />
       </body>
+      {/*GOOGLE TAG*/}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZCBBV97YDW" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZCBBV97YDW');
+        `}
+      </Script>
     </html>
   );
 }
