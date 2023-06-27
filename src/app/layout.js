@@ -21,14 +21,14 @@ export default function RootLayout({ children }) {
         <LandingFooter />
       </body>
       {/*GOOGLE TAG*/}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZCBBV97YDW" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-4BJNGWR6CP" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-ZCBBV97YDW');
+          gtag('config', 'G-4BJNGWR6CP');
         `}
       </Script>
     </html>
