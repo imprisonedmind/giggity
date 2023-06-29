@@ -49,6 +49,10 @@ export default function LandingFooter() {
             title={"Support this project"}
             link={"https://www.buymeacoffee.com/lukestephens"}
           />
+          <LandingFooterItem
+            title={"Twitter"}
+            link={"https://twitter.com/giggity_app"}
+          />
           <LandingFooterItem title={"Changelogs"} link={"/app/changelogs"} />
         </LandingFooterElement>
         <LandingFooterElement title={"Download"}>

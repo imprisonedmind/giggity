@@ -133,7 +133,7 @@ export default async function (params) {
                 " border-[5px] border-neutral-600 shadow-lg m-auto"
               }
             >
-              <Image
+              <img
                 src={gigImg}
                 tw={"w-full h-full"}
                 alt={title}
