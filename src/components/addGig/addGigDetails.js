@@ -69,10 +69,10 @@ export default function AddGigDetails() {
                 />
                 <div
                   onClick={() => deleteArtist(artist.id)}
-                  className={
-                    "absolute right-1 hidden aspect-square h-3/4 bg-red-500/20" +
-                    " cursor-pointer rounded-md p-[5px] text-red-500 group-hover:flex"
-                  }
+                  className={`
+                  absolute right-3 hidden aspect-square h-3/4 cursor-pointer rounded-md 
+                  bg-red-500/20 p-[5px] text-red-500 group-hover:flex
+                  `}
                 >
                   <TrashIcon />
                 </div>
