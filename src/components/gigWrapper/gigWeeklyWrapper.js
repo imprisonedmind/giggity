@@ -80,7 +80,7 @@ export default function GigWeeklyWrapper({ data, m, title, link, pos }) {
               pos={pos}
               index={index}
             />
-            <EventSeo item={item} getSpotify={false} />
+            {/*<EventSeo item={item} getSpotify={false} />*/}
           </>
         ))}
       </div>
