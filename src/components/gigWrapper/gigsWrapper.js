@@ -4,7 +4,10 @@ import EventSeo from "@/components/event/eventSeo";
 export default function GigsWrapper({ data, m }) {
   return (
     <div
-      className={`${m} flex h-max w-full flex-wrap gap-4 p-2 md:overflow-auto md:px-4 md:pb-0 md:pt-0`}
+      className={`
+      ${m} grid h-max w-full grid-cols-1 gap-4 p-2 md:grid-cols-2 md:overflow-auto md:px-4 
+      md:pb-4 md:pt-0 lg:grid-cols-3
+      `}
     >
       {data.map((item) => (
         <>
