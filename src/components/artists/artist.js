@@ -24,50 +24,49 @@ export default async function Artist({ id }) {
   const artistData = data.artistData;
   const token = data.accessToken;
 
-  if (artistData) {
-    const followers = artistData.followers.total;
-    const imgUrl = artistData.images[0].url;
-    return (
-      <div
-        className={
-          "border-1 flex h-fit w-max grow flex-col gap-4 rounded-lg border" +
-          " border-neutral-700 bg-neutral-800 p-2 text-neutral-500 md:p-4"
-        }
-      >
-        <div className={"flex flex-nowrap items-center gap-4"}>
-          <div
-            className={
-              "relative h-28 w-28 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
-            }
+  const followers = artistData.followers.total;
+  const imgUrl = artistData.images[0].url;
+
+  return (
+    <div
+      className={
+        "border-1 flex h-fit w-max grow flex-col gap-4 rounded-lg border" +
+        " border-neutral-700 bg-neutral-800 p-2 text-neutral-500 md:p-4"
+      }
+    >
+      <div className={"flex flex-nowrap items-center gap-4"}>
+        <div
+          className={
+            "relative h-28 w-28 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
+          }
+        >
+          <Link
+            href={`https://open.spotify.com/artist/${id}`}
+            target={"_blank"}
           >
-            <Link
-              href={`https://open.spotify.com/artist/${id}`}
-              target={"_blank"}
-            >
-              <Image
-                src={imgUrl}
-                alt={imgUrl}
-                fill={true}
-                loading={"lazy"}
-                quality={70}
-              />
-            </Link>
             <Image
-              src={spotify}
-              alt={"Spotify.com Logo"}
-              className={"absolute bottom-2 left-2 h-6 w-6"}
+              src={imgUrl}
+              alt={imgUrl}
+              fill={true}
+              loading={"lazy"}
+              quality={70}
             />
-          </div>
-          <div className={"flex-col"}>
-            <p className={"text-xl"}>{artistData.name}</p>
-            <p className={"text-sm uppercase tracking-wider"}>
-              {followers} Followers
-            </p>
-          </div>
+          </Link>
+          <Image
+            src={spotify}
+            alt={"Spotify.com Logo"}
+            className={"absolute bottom-2 left-2 h-6 w-6"}
+          />
         </div>
-        <div className={"border-1 w-full border border-neutral-700"} />
-        <TopTracks artistId={id} token={token} />
+        <div className={"flex-col"}>
+          <p className={"text-xl"}>{artistData.name}</p>
+          <p className={"text-sm uppercase tracking-wider"}>
+            {followers} Followers
+          </p>
+        </div>
       </div>
-    );
-  } else return null;
+      <div className={"border-1 w-full border border-neutral-700"} />
+      <TopTracks artistId={id} token={token} />
+    </div>
+  );
 }

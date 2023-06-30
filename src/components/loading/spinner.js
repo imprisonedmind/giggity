@@ -1,6 +1,6 @@
 export default function CircleLoadingSpinner() {
   return (
-    <div className={"flex h-[90svh] w-[100svw] justify-center"}>
+    <div className={"m-auto flex h-[90svh] w-full justify-center"}>
       <div
         className={
           "relative m-auto h-20 w-20 animate-spin overflow-hidden rounded-full" +
