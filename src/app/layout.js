@@ -4,6 +4,8 @@ import SupabaseProvider from "@/context/auth";
 import LandingFooter from "@/components/landing/footer/landingFooter";
 import Script from "next/script";
 
+export const revalidate = 120;
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
