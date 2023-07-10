@@ -12,8 +12,8 @@ export default async function FirstSection() {
   return (
     <div
       className={
-        "z-5 mx-auto  h-[100svh] w-full  justify-between bg-opacity-5" +
-        "  bg-[url(/texture/stars.svg)] bg-repeat shadow-vignette"
+        "z-5 mx-auto  max-h-[100vh] min-h-[100svh] w-full  justify-between bg-opacity-5" +
+        " bg-[url(/texture/stars.svg)] bg-repeat shadow-vignette"
       }
     >
       <div
