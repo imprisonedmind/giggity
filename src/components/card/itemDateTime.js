@@ -25,7 +25,7 @@ export default function ItemDateTime({ eventDate, eventTime }) {
   ];
 
   // Get the hour and minute components of the event time
-  const [hour, minute] = eventTime.split(":");
+  const [hour, minute] = eventTime?.split(":");
 
   // Convert the hour to 12-hour format and add the AM/PM suffix
   let hour12 = parseInt(hour, 10) % 12;
