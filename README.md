@@ -13,6 +13,10 @@ The platform currently use OCR → GPT 3.5 turbo to handle autmatic form complet
 is utalised to provide rich artist specific data on each gig page.
 
 
+## Links
+- [Giggity.co.za](https://giggity.co.za)
+- [Google Play](https://play.google.com/store/apps/details?id=za.co.giggity.twa)
+
 ## Features
 
 - Find and explore upcoming music gigs and events.
