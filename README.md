@@ -9,7 +9,7 @@
 Welcome to **Giggity**, your gateway to the vibrant local music scene! 🎶
 
 This project is my attempt to decentralise local music gig/artist/event finding via community contributions & fun tech!
-The platform currently use OCR → GPT 3.5 turbo to handle autmatic form complete for gig creation, just from an event poster. Ontop of that the Spotify API
+The platform currently use OCR → GPT 3.5 turbo to handle autmatic form completion for gig creation, just from an event poster. Ontop of that the Spotify API
 is utalised to provide rich artist specific data on each gig page.
 
 
