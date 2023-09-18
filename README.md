@@ -1,6 +1,6 @@
 [![Cover Image](https://i.imgur.com/bvO0etf.png)](https://giggity.co.za)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/imprisonedmind/giggity/blob/main/license.md)
 
 ---
 
