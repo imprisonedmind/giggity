@@ -17,7 +17,7 @@ export default async function FirstSection() {
     >
       <div
         className={`
-          flex h-full max-w-[1280px] flex-col justify-between gap-10 px-4 sm:gap-8 
+          mx-auto flex h-full max-w-[1280px] flex-col justify-between gap-10 px-4 sm:gap-8 
           md:gap-24 md:px-20
         `}
       >
