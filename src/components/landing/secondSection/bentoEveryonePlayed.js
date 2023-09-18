@@ -15,39 +15,39 @@ export default function BentoEveryonePlayed() {
     <div className="grid grid-cols-3 grid-rows-3 pb-4">
       <SpotifySmallItem
         src={lung}
-        alt={"Black Lung - Giggity, Surfa Rosa, District"}
+        alt={"Black Lung - Giggity, Surfa Rosa, District, Cape Town, Cape Town"}
       />
       <SpotifySmallItem
         src={consti}
-        alt={"Constellatia - Giggity, Surfa Rosa, District"}
+        alt={"Constellatia - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={math}
-        alt={"Black Math - Giggity, Surfa Rosa, District"}
+        alt={"Black Math - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={tough}
-        alt={"Tough Guy - Giggity, Surfa Rosa, District"}
+        alt={"Tough Guy - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={myn}
-        alt={"Yndian Mynah - Giggity, Surfa Rosa, District"}
+        alt={"Yndian Mynah - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={elle}
-        alt={"Elle E - Giggity, Surfa Rosa, District"}
+        alt={"Elle E - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={cis}
-        alt={"Cistamatic - Giggity, Surfa Rosa, District"}
+        alt={"Cistamatic - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={mouse}
-        alt={"Mouse - Giggity, Surfa Rosa, District"}
+        alt={"Mouse - Giggity, Surfa Rosa, District, Cape Town"}
       />
       <SpotifySmallItem
         src={danger}
-        alt={"Dangerfields - Giggity, Surfa Rosa, District"}
+        alt={"Dangerfields - Giggity, Surfa Rosa, District, Cape Town"}
       />
     </div>
   );
