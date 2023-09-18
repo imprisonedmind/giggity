@@ -1,0 +1,26 @@
+Giggity.co.za - NOTICE
+
+This product includes software developed by the Apache Software Foundation (http://www.apache.org/).
+
+1. Apache License
+   - The Giggity.co.za software includes components licensed under the Apache License, Version 2.0.
+   - For more details on the Apache License, please see the `LICENSE` file in the root directory of this project.
+
+2. Third-party Dependencies
+   - Giggity.co.za may include third-party dependencies and libraries. Each of these dependencies may have its own license, which can be found within the respective package or directory.
+   - Refer to the `LICENSE` or `NOTICE` files in those dependencies for their individual license terms.
+
+3. Attribution and Backlink
+   - If you use this code or any part of the Giggity.co.za software in your own project, we kindly request that you provide attribution to the author, "Luke Stephens," and include a backlink to [Giggity.co.za](https://giggity.co.za) in your project's documentation, website, or credits section.
+   - Your support in promoting and crediting the author and Giggity.co.za is greatly appreciated.
+
+4. Acknowledgment
+   - Giggity.co.za is built with the help of various open-source projects and libraries. We would like to express our gratitude to the open-source community for their contributions.
+
+Please consult the relevant licenses and notices for each component or dependency used in this project to understand their terms and conditions.
+
+For any questions or concerns regarding licensing or attribution, please contact us at [your contact information].
+
+[Giggity | Luke Stephens]
+[lukexstephens@gmail.com]
+[18/09/2023]
