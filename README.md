@@ -1,5 +1,3 @@
-# Giggity.co.za
-
 [![Cover Image](https://i.imgur.com/bvO0etf.png)](https://giggity.co.za)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
