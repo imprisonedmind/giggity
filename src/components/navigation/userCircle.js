@@ -10,7 +10,7 @@ export default function UserCircle() {
   const initials = session?.user?.email.charAt(0).toUpperCase();
   const [menu, showMenu] = useState(false);
 
-  if (session.user)
+  if (session?.user)
     return (
       <div className={"relative"}>
         <PopUpMenu menu={menu} showMenu={showMenu} />

@@ -42,6 +42,7 @@ export const metadata = {
     default: "Giggity",
     template: "Giggity | %s ",
   },
+  name: "Giggity",
   description:
     "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
   keywords: ["Giggity", "Gigs", "District", "Surfa Rosa", "Cape Town"],
