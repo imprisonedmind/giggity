@@ -39,11 +39,11 @@ export default function RootLayout({ children }) {
 
 export const metadata = {
   title: {
-    default: "Giggity | Find live music gigs in Cape Town.",
+    default: "Giggity",
     template: "Giggity | %s ",
   },
   description:
-    "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
+    "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
   keywords: ["Giggity", "Gigs", "District", "Surfa Rosa", "Cape Town"],
   generator: "Next.js",
   applicationName: "Giggity",
@@ -66,7 +66,7 @@ export const metadata = {
   openGraph: {
     title: "Giggity",
     description:
-      "Discover and explore the vibrant music scene in Cape Town with Giggity! Find the hottest local music gigs, concerts, and events near you. Get ready to immerse yourself in the rhythm and energy of Cape Town's diverse music culture. Don't miss out on the unforgettable live performances and talented artists. Experience the magic of Giggity and uncover the best local music gigs in Cape Town today!",
+      "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
     url: "htttps://giggity.co.za",
     siteName: "Giggity",
     images: [
@@ -74,7 +74,7 @@ export const metadata = {
         url: "htttps://giggity.co.za/api/og",
         width: 1800,
         height: 1600,
-        alt: "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
+        alt: "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
       },
     ],
     locale: "en-US",

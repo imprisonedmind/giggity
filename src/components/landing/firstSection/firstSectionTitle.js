@@ -62,15 +62,13 @@ export default function FirstSectionTitle({ apiKey }) {
   }, [apiKey]);
 
   const title = nearestCity
-    ? `Giggity | Find live music gigs in ${nearestCity}!`
+    ? `Giggity | Find live music gigs in ${nearestCity}.`
     : "Giggity | Find live music gigs near you!";
 
   if (nearestCity === null)
     return (
       <div>
-        <SectionHeader
-          title={`Discover the Thrill of Live Music with Giggity.`}
-        />
+        <SectionHeader title={`Find live music gigs!`} />
       </div>
     );
 
@@ -78,7 +76,7 @@ export default function FirstSectionTitle({ apiKey }) {
     <>
       {title && <title>{title}</title>}
       <SectionHeader
-        title={`Discover the Thrill of Live Music in ${
+        title={`Find live music gigs in ${
           nearestCity || "Cape Town"
         } with Giggity.`}
       />

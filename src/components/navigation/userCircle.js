@@ -7,11 +7,12 @@ import Image from "next/image";
 export default function UserCircle() {
   const session = useSupabase();
 
-  const initials = session?.user.email.charAt(0).toUpperCase();
-
+  const initials = session?.user?.email.charAt(0).toUpperCase();
   const [menu, showMenu] = useState(false);
 
-  if (session)
+  console.log(session);
+
+  if (session.user)
     return (
       <div className={"relative"}>
         <PopUpMenu menu={menu} showMenu={showMenu} />
@@ -26,7 +27,7 @@ export default function UserCircle() {
         >
           {session ? (
             <Image
-              src={session.user.user_metadata.profile_img}
+              src={session?.user?.user_metadata.profile_img}
               alt={"User profile Image"}
               fill={true}
               sizes={"100%"}
