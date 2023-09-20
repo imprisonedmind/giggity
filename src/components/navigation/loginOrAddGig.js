@@ -19,7 +19,7 @@ export default function LoginOrAddGig() {
 
   return (
     <>
-      {session ? (
+      {session?.user ? (
         <GreenButton
           title={"Add a Gig"}
           icon={<MusicalNoteIcon className={"h-4 w-4"} />}

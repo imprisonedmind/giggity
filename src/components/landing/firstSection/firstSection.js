@@ -11,14 +11,15 @@ export default async function FirstSection() {
   return (
     <div
       className={`
-        z-5 relative mx-auto flex max-h-[h-fit] min-h-[h-min] w-[100svw] flex-col justify-between bg-opacity-5 
-        bg-[url(/texture/stars.svg)] bg-repeat shadow-vignette
+        z-5 relative mx-auto flex max-h-[h-fit] min-h-[h-min] w-full flex-col 
+        justify-between overflow-y-auto bg-opacity-5 bg-[url(/texture/stars.svg)] bg-repeat
+        shadow-vignette
       `}
     >
       <div
         className={`
-          mx-auto flex h-full max-w-[1280px] flex-col justify-between gap-10 px-4 sm:gap-8 
-          md:gap-24 md:px-20
+          mx-auto flex h-full w-full max-w-[1280px] flex-col justify-between gap-10 px-4 
+          sm:gap-8 md:gap-24 md:px-20
         `}
       >
         <div className={"flex grow flex-col gap-10 sm:gap-4 md:gap-14"}>
