@@ -16,7 +16,10 @@ export default function MainArea({ item }) {
           " p-2 md:flex-nowrap md:p-4"
         }
       >
-        <HeroImage image={item.image} imgAlt={item.description} />
+        <HeroImage
+          image={item.image}
+          imgAlt={item.title + "Giggity, Cape Town"}
+        />
 
         <div className={"flex w-full flex-col gap-2"}>
           <h2 className={"text-xl"}>{item.title}</h2>
