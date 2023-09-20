@@ -1,6 +1,6 @@
 [![Cover Image](https://i.imgur.com/bvO0etf.png)](https://giggity.co.za)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/imprisonedmind/giggity/blob/main/license.md)
 
 ---
 
@@ -16,7 +16,6 @@ is utalised to provide rich artist specific data on each gig page.
 - [Google Play](https://play.google.com/store/apps/details?id=za.co.giggity.twa)
 
 ## Features
-
 - Find and explore upcoming music gigs and events.
 - Discover local artists and their music.
 - Directly see artists Spotify accounts & top songs.
@@ -24,6 +23,7 @@ is utalised to provide rich artist specific data on each gig page.
 - Event sharing through web api.
 
 ## Planned Features
+- Move auth to server
 - Filtering:
   - Country (Automatic)
   - Town (KM slider like tinder)
