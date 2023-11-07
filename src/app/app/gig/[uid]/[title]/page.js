@@ -83,9 +83,6 @@ export async function generateMetadata({ params }) {
   ];
 
   return {
-    title: {
-      default: item.title,
-    },
     description: item.description,
     keywords: [...baseKeywords],
     openGraph: {

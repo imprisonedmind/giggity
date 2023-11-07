@@ -74,7 +74,6 @@ export default function FirstSectionTitle({ apiKey }) {
 
   return (
     <>
-      <title>Giggity</title>
       <SectionHeader
         title={`Find live music gigs in ${
           nearestCity || "Cape Town"
