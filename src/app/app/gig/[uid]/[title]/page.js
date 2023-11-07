@@ -73,7 +73,14 @@ export async function generateMetadata({ params }) {
 
   const sanitizedTitle = item.title.replace(/[^\w\s]/gi, "").trim(); // Remove special characters and trim spaces.
 
-  const baseKeywords = [sanitizedTitle, city, venue, item.date, item.time];
+  const baseKeywords = [
+    sanitizedTitle,
+    city,
+    venue,
+    item.date,
+    item.time,
+    `R${item.price}`,
+  ];
 
   return {
     title: {
