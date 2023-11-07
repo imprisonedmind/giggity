@@ -44,8 +44,19 @@ export const metadata = {
   },
   name: "Giggity",
   description:
-    "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
-  keywords: ["Giggity", "Gigs", "District", "Surfa Rosa", "Cape Town"],
+    "Connect with Cape Town's electric music vibe through Giggity. Immerse yourself in live gigs, explore top venues like District and Surfa Rosa, and experience the city's best concerts and events.",
+  keywords: [
+    "Cape Town live music",
+    "Giggity events guide",
+    "music gigs Cape Town",
+    "concert tickets Cape Town",
+    "live performances Cape Town",
+    "local bands",
+    "Quicket tickets",
+    "upcoming gigs District",
+    "Surfa Rosa events",
+    "Let's Get Local",
+  ],
   generator: "Next.js",
   applicationName: "Giggity",
   robots: {
@@ -67,7 +78,7 @@ export const metadata = {
   openGraph: {
     title: "Giggity",
     description:
-      "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
+      "Your gateway to Cape Town's rich musical tapestry. Giggity provides a platform to find and book tickets for the latest gigs, showcasing everything from underground rock to mainstream jazz.",
     url: "htttps://giggity.co.za",
     siteName: "Giggity",
     images: [
@@ -75,7 +86,7 @@ export const metadata = {
         url: "htttps://giggity.co.za/api/og",
         width: 1800,
         height: 1600,
-        alt: "Discover Cape Town's Vibrant Music Scene with Giggity! Find Local Music Gigs, Concerts, and Events. Don't Miss Unforgettable Live Performances and Talented Artists. Explore Now!",
+        alt: "Explore Cape Town's Dynamic Music Scene with Giggity",
       },
     ],
     locale: "en-US",
@@ -85,7 +96,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Giggity",
     description:
-      "Find your favorite artist & local gigs with our platform. Browse diverse concerts, sample music on Spotify & don't miss unforgettable experiences. Start exploring now!",
+      "Dive into the heart of Cape Town's music scene with Giggity. From jazz nights to rock concerts, find and book the most exciting gigs in town. Join the rhythm of the city today.",
     creator: "@lukey_stephens",
     images: ["htttps://giggity.co.za/api/og"],
   },

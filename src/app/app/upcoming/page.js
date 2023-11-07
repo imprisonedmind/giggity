@@ -18,8 +18,19 @@ export function generateMetadata() {
   return {
     title: "Upcoming live music gigs.",
     description:
-      "Discover upcoming live music gigs in Cape Town. Explore a vibrant lineup of performances, talented artists, and unforgettable experiences at Giggity. Don't miss the hottest live music events in town!",
-    keywords: ["Giggity", "Gigs", "Upcoming", "Live", "Music"],
+      "Join the thrill of live concerts with Giggity's curated list of upcoming gigs in Cape Town. From indie bands to jazz nights, find your perfect music event and immerse yourself in the vibrant Cape Town music scene.",
+    keywords: [
+      "upcoming gigs Cape Town",
+      "live music events Cape Town",
+      "best concert tickets",
+      "Cape Town music scene",
+      "indie bands live shows",
+      "jazz music events",
+      "exclusive music performances",
+      "Giggity event listings",
+      "local gigs guide",
+      "live entertainment Cape Town",
+    ],
     themeColor: "#22c55e",
   };
 }

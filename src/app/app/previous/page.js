@@ -18,8 +18,20 @@ export function generateMetadata() {
   return {
     title: "Previous live music gigs.",
     description:
-      "Relive the excitement of past live music gigs in Cape Town. Experience the energy, outstanding performances, and unforgettable moments from previous events hosted on Giggity.",
-    keywords: ["Giggity", "Gigs", "Previous", "Live", "Music"],
+      "Dive into Giggity's archives for a nostalgic journey through Cape Town's most memorable music events. Revisit the highlights and legacy of the city's celebrated live gigs.",
+    keywords: [
+      "Cape Town past music events",
+      "historical live gigs",
+      "memorable concerts Cape Town",
+      "archived music performances",
+      "Giggity gig history",
+      "popular past gigs",
+      "music event archives",
+      "legendary live shows Cape Town",
+      "previous music festivals",
+      "retrospective music experience",
+      "historical music scene Cape Town",
+    ],
     themeColor: "#22c55e",
   };
 }

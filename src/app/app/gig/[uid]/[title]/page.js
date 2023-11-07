@@ -66,12 +66,21 @@ export default async function Gig({ params }) {
 
 export async function generateMetadata({ params }) {
   const item = await getGig(params);
+
+  // Additional contextual information for better keywords
+  const city = item.city || "Cape Town";
+  const venue = item.address || "District, Surfa Rosa";
+
+  const sanitizedTitle = item.title.replace(/[^\w\s]/gi, "").trim(); // Remove special characters and trim spaces.
+
+  const baseKeywords = [sanitizedTitle, city, venue, item.date, item.time];
+
   return {
     title: {
       default: item.title,
     },
     description: item.description,
-    keywords: item.title.split(/\s+/).map((word) => word.replace(/[,x-]/g, "")),
+    keywords: [...baseKeywords],
     openGraph: {
       title: item.title,
       description: item.description,
@@ -81,7 +90,7 @@ export async function generateMetadata({ params }) {
           url: `htttps://giggity.co.za/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
           width: 1800,
           height: 1600,
-          alt: item.description,
+          alt: item.title,
         },
       ],
       locale: "en-US",
@@ -91,6 +100,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: item.title,
       description: item.description,
+      alt: item.title,
       creator: "@lukey_stephens",
       images: [
         `htttps://giggity.co.za/api/gigImage?title="${item.title}"&gigImg="${item.image}"`,
