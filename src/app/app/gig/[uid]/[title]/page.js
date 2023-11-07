@@ -6,7 +6,7 @@ import { supabaseAdmin } from "/lib/supabaseClient";
 import NavBack from "@/components/gigOverview/navBack";
 import EventSeo from "@/components/event/eventSeo";
 
-const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
+const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
 async function getLatLngFromAddress(address) {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiKey}`;

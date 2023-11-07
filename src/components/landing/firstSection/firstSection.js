@@ -6,7 +6,7 @@ import FirstSectionTitle from "@/components/landing/firstSection/firstSectionTit
 
 export default async function FirstSection() {
   const futureGigs = await getNext8();
-  const apiKey = process.env.GOOGLE_MAPS_API_KEY || "";
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
   return (
     <div

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import PopUpItems from "@/components/navigation/popUpMenu/popUpItems";
 
 export default function PopUpMenu({ menu, showMenu }) {
-  const version = process.env.APP_VERSION;
+  const version = process.env.NEXT_PUBLIC_APP_VERSION;
   const copyRightDate = new Date();
 
   useEffect(() => {
