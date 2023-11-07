@@ -1,4 +1,5 @@
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
+import { sanitizeString } from "../../../../lib/utilities";
 
 async function getGigs() {
   let { data } = await supabaseAdmin
@@ -76,18 +77,17 @@ export default async function handler(req, res) {
     ${data
       .map((gig) => {
         const encodedTitle = encodeURIComponent(gig.title);
-        const encodedDescription = encodeURIComponent(gig.description);
         return `
                 <url>
-                    <loc>${`https://giggity.co.za/app/gig/${encodedTitle}/${gig.title}`}</loc>
+                    <loc>${`https://giggity.co.za/app/gig/${gig.uid}/${encodedTitle}`}</loc>
                     <lastmod>${isoDate}</lastmod>
                     <priority>0.7</priority>
                     <changefreq>daily</changefreq>
                     <image:image>
                       <image:loc>${gig.image}</image:loc>
-                      <image:title><![CDATA[${encodedTitle}]]></image:title>
+                      <image:title><![CDATA[${gig.title}]]></image:title>
                       <image:caption>
-                      <![CDATA[${encodedDescription}]]>
+                      <![CDATA[${gig.description}]]>
                       </image:caption>
                     </image:image>
                 </url>
