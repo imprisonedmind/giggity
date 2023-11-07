@@ -74,12 +74,7 @@ export default function FirstSectionTitle({ apiKey }) {
 
   return (
     <>
-      {where && (
-        <div>
-          <title>Giggity</title>
-          <p>${where}</p>
-        </div>
-      )}
+      <title>Giggity</title>
       <SectionHeader
         title={`Find live music gigs in ${
           nearestCity || "Cape Town"
