@@ -77,16 +77,16 @@ export default async function handler(req, res) {
       .map((gig) => {
         return `
                 <url>
-                    <loc>${`https://giggity.co.za/app/gig/${gig.uid}`}</loc>
+                    <loc>${`https://giggity.co.za/app/gig/${gig.uid}/${gig.title}`}</loc>
                     <lastmod>${isoDate}</lastmod>
                     <priority>0.7</priority>
                     <changefreq>daily</changefreq>
                     <image:image>
                       <image:loc>${gig.image}</image:loc>
                       <image:title><![CDATA[${gig.title}]]></image:title>
-                      <image:caption><![CDATA[${
-                        gig.description
-                      }]]></image:caption>
+                      <image:caption>
+                      <![CDATA[${gig.description}]]>
+                      </image:caption>
                     </image:image>
                 </url>
             `;
