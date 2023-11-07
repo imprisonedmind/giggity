@@ -75,9 +75,10 @@ export default async function handler(req, res) {
     </url>
     ${data
       .map((gig) => {
+        const encodedTitle = encodeURIComponent(gig.title);
         return `
                 <url>
-                    <loc>${`https://giggity.co.za/app/gig/${gig.uid}/${gig.title}`}</loc>
+                    <loc>${`https://giggity.co.za/app/gig/${encodedTitle}/${gig.title}`}</loc>
                     <lastmod>${isoDate}</lastmod>
                     <priority>0.7</priority>
                     <changefreq>daily</changefreq>

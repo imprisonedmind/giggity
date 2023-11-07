@@ -6,11 +6,12 @@ import ItemLocation from "@/components/card/itemLocation";
 import Link from "next/link";
 import ItemCountDown from "@/components/card/itemCountDown";
 
-export default function ItemCard({ params, item, full, pos, index }) {
+export default function ItemCard({ item, full, pos, index }) {
+  const encodedTitle = encodeURIComponent(item.title);
   return (
     <Link
       prefetch={true}
-      href={`/app/gig/${item.uid}/${item.title}`}
+      href={`/app/gig/${item.uid}/${encodedTitle}`}
       key={item.id}
       className={`${
         full ? "w-full " : "w-fit max-w-[300px] md:max-w-full lg:max-w-[310px]"
