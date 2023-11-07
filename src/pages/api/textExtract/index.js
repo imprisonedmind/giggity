@@ -1,5 +1,7 @@
+const OPENAI_API_KEY = process.env.NEXT_PUBLIC_OPEN_API_KEY;
+
 export default async function handler(req, res) {
-  const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+  console.log("HERE IS THE FUCKING KEY!!!", OPENAI_API_KEY);
 
   try {
     const { imgUrl } = req.body;

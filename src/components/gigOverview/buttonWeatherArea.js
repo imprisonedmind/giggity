@@ -2,7 +2,7 @@ import ButtonArea from "@/components/gigOverview/buttonArea";
 import Weather from "@/components/weather/weather";
 
 export default function ButtonWeatherArea({ item, latLong }) {
-  const weatherApiKey = process.env.OPEN_WEATHER_API || "";
+  const weatherApiKey = process.env.NEXT_PUBLIC_OPEN_WEATHER_API || "";
 
   let hide = false;
 
