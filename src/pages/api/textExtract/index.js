@@ -1,11 +1,8 @@
 const OPENAI_API_KEY = process.env.NEXT_PUBLIC_OPEN_API_KEY;
 
 export default async function handler(req, res) {
-  console.log("HERE IS THE FUCKING KEY!!!", OPENAI_API_KEY);
-
   try {
     const { imgUrl } = req.body;
-    console.log(`here is the image: ${imgUrl}`);
     const messages = [
       {
         role: "user",
