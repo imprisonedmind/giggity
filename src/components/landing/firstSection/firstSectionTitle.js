@@ -61,9 +61,9 @@ export default function FirstSectionTitle({ apiKey }) {
     }
   }, [apiKey]);
 
-  const title = nearestCity
-    ? `Giggity | Find live music gigs in ${nearestCity}.`
-    : "Giggity | Find live music gigs near you!";
+  const where = nearestCity
+    ? ` | Find live music gigs in ${nearestCity}.`
+    : " | Find live music gigs near you!";
 
   if (nearestCity === null)
     return (
@@ -74,7 +74,12 @@ export default function FirstSectionTitle({ apiKey }) {
 
   return (
     <>
-      {title && <title>{title}</title>}
+      {where && (
+        <div>
+          <title>Giggity</title>
+          <p>${where}</p>
+        </div>
+      )}
       <SectionHeader
         title={`Find live music gigs in ${
           nearestCity || "Cape Town"
