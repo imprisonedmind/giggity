@@ -76,6 +76,7 @@ export default async function handler(req, res) {
     ${data
       .map((gig) => {
         const encodedTitle = encodeURIComponent(gig.title);
+        const encodedDescription = encodeURIComponent(gig.description);
         return `
                 <url>
                     <loc>${`https://giggity.co.za/app/gig/${encodedTitle}/${gig.title}`}</loc>
@@ -84,9 +85,9 @@ export default async function handler(req, res) {
                     <changefreq>daily</changefreq>
                     <image:image>
                       <image:loc>${gig.image}</image:loc>
-                      <image:title><![CDATA[${gig.title}]]></image:title>
+                      <image:title><![CDATA[${encodedTitle}]]></image:title>
                       <image:caption>
-                      <![CDATA[${gig.description}]]>
+                      <![CDATA[${encodedDescription}]]>
                       </image:caption>
                     </image:image>
                 </url>
