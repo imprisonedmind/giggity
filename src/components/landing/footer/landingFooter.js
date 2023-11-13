@@ -32,11 +32,7 @@ export default function LandingFooter() {
             link={"https://supabase.com/"}
           />
           <LandingFooterItem
-            title={"Cloud Vision"}
-            link={"https://cloud.google.com/vision"}
-          />
-          <LandingFooterItem
-            title={"Open Api gpt-3"}
+            title={"Open Api gpt-4-vision"}
             link={"https://openai.com/gpt-4"}
           />
         </LandingFooterElement>
