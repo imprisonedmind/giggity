@@ -16,7 +16,7 @@ export default async function Page() {
 
 export function generateMetadata() {
   return {
-    title: "Previous live music gigs.",
+    title: "Previous live music gigs",
     description:
       "Dive into Giggity's archives for a nostalgic journey through Cape Town's most memorable music events. Revisit the highlights and legacy of the city's celebrated live gigs.",
     keywords: [

@@ -16,7 +16,7 @@ export default async function Page() {
 
 export function generateMetadata() {
   return {
-    title: "Upcoming live music gigs.",
+    title: "Upcoming live music gigs",
     description:
       "Join the thrill of live concerts with Giggity's curated list of upcoming gigs in Cape Town. From indie bands to jazz nights, find your perfect music event and immerse yourself in the vibrant Cape Town music scene.",
     keywords: [
