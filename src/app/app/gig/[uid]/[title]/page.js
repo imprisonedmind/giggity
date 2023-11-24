@@ -75,6 +75,7 @@ export async function generateMetadata({ params }) {
 
   const baseKeywords = [
     sanitizedTitle,
+    "tickets",
     city,
     venue,
     item.date,
