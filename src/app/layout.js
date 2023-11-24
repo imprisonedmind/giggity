@@ -38,10 +38,7 @@ export default function RootLayout({ children }) {
 }
 
 export const metadata = {
-  title: {
-    default: "Giggity",
-    template: "Giggity | %s ",
-  },
+  title: "Giggity",
   name: "Giggity",
   description:
     "Connect with Cape Town's electric music vibe through Giggity. Immerse yourself in live gigs, explore top venues like District and Surfa Rosa, and experience the city's best concerts and events.",
