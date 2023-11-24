@@ -29,3 +29,23 @@ export default function LoginLayout({ children }) {
     </SupabaseProvider>
   );
 }
+
+export const onboardingMetadata = {
+  title: "Giggity Onboarding - Get Started with Cape Town's Music Scene",
+  description:
+    "Begin your journey with Giggity's seamless onboarding process. Dive into Cape Town's vibrant music scene and personalize your experience. Explore live gigs, discover top venues like District and Surfa Rosa, and tailor your preferences to unlock the best concerts and events in the city.",
+  keywords: [
+    "Cape Town live music",
+    "Giggity onboarding",
+    "music gigs Cape Town",
+    "concert tickets Cape Town",
+    "live performances Cape Town",
+    "local bands",
+    "Quicket tickets",
+    "upcoming gigs District",
+    "Surfa Rosa events",
+    "Let's Get Local",
+    "music scene exploration",
+    "personalized music experience",
+  ],
+};

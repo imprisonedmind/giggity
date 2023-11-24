@@ -90,3 +90,23 @@ export default function Login() {
     </form>
   );
 }
+
+export const loginMetadata = {
+  title: "Log in to Giggity - Your Passport to Cape Town's Music Scene",
+  description:
+    "Unlock exclusive access to Cape Town's vibrant music landscape. Log in to Giggity and immerse yourself in live gigs, explore top venues like District and Surfa Rosa, and secure your spot in the heart of the city's best concerts and events.",
+  keywords: [
+    "Cape Town live music",
+    "Giggity login",
+    "music gigs Cape Town",
+    "concert tickets Cape Town",
+    "live performances Cape Town",
+    "local bands",
+    "Quicket tickets",
+    "upcoming gigs District",
+    "Surfa Rosa events",
+    "Let's Get Local",
+    "music event login",
+    "exclusive music access",
+  ],
+};
