@@ -1,5 +1,7 @@
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 
+export const dynamic = "force-dynamic";
+
 async function getChangeLogs() {
   let { data } = await supabaseAdmin
     .from("changelogs")

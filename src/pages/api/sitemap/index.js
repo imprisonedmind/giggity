@@ -1,10 +1,6 @@
 import { supabaseAdmin } from "../../../../lib/supabaseClient";
 import { sanitizeString } from "../../../../lib/utilities";
 
-export const config = {
-  runtime: "edge",
-};
-
 async function getGigs() {
   let { data } = await supabaseAdmin
     .from("event")

@@ -1,7 +1,7 @@
 import ListWrapper from "@/components/wrappers/listWrapper";
 import FetchProfileContent from "@/components/profile/fetchProfileContent";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 export default function Profile({ params }) {
   return (

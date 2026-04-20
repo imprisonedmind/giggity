@@ -1,9 +1,5 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 import Image from "next/image";
-
-export const config = {
-  runtime: "edge",
-};
 
 export default async function (params) {
   const url1 = await new URL(params.url);

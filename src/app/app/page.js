@@ -2,6 +2,8 @@ import GigWeeklyWrapper from "@/components/gigWrapper/gigWeeklyWrapper";
 import { getFuture8, getPast8, getThisWeeksEvents } from "/lib/dataFetching";
 import { SoftwareAppJsonLd } from "next-seo";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const [weekGigs, futureGigs, pastGigs] = await Promise.all([
     getThisWeeksEvents(),

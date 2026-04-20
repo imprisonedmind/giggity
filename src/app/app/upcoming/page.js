@@ -3,6 +3,8 @@ import { getFutureAll } from "/lib/dataFetching";
 import NavBack from "@/components/gigOverview/navBack";
 import ListWrapper from "@/components/wrappers/listWrapper";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   let data = await getFutureAll();
 

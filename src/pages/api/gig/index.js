@@ -1,8 +1,5 @@
 // import puppeteer from 'puppeteer-core'
 // import edgeChromium from 'chrome-aws-lambda'
-export const config = {
-  runtime: "edge",
-};
 
 export default function handler(req, res) {
   res.status(410).json({ message: "This endpoint is no longer available" });
