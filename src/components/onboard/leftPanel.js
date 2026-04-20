@@ -12,6 +12,7 @@ export default async function OnboardLeftPanel() {
   const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=pg-13`;
 
   const img = await getImg(url);
+  const imageUrl = img?.images?.original?.webp;
 
   return (
     <div
@@ -20,9 +21,9 @@ export default async function OnboardLeftPanel() {
         " border-neutral-700"
       }
     >
-      {img && (
+      {imageUrl && (
         <Image
-          src={img.images.original.webp}
+          src={imageUrl}
           alt={img.title}
           width={500}
           height={500}
