@@ -7,6 +7,7 @@ const withPwa = require("@ducanh2912/next-pwa").default({
 module.exports = withPwa({
   output: "standalone",
   images: {
+    unoptimized: true,
     domains: [
       "scontent-cpt1-1.cdninstagram.com",
       "openweathermap.org",
