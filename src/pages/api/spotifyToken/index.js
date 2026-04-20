@@ -2,6 +2,10 @@ const endpoint = "https://accounts.spotify.com/api/token";
 const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
 
+export const config = {
+  runtime: "edge",
+};
+
 export default async function handler(req, res) {
   try {
     const tokenResponse = await fetch(endpoint, {

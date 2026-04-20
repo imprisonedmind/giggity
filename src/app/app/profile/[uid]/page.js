@@ -1,6 +1,8 @@
 import ListWrapper from "@/components/wrappers/listWrapper";
 import FetchProfileContent from "@/components/profile/fetchProfileContent";
 
+export const runtime = "edge";
+
 export default function Profile({ params }) {
   return (
     <ListWrapper>

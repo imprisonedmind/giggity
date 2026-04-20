@@ -6,6 +6,8 @@ import { supabaseAdmin } from "/lib/supabaseClient";
 import NavBack from "@/components/gigOverview/navBack";
 import EventSeo from "@/components/event/eventSeo";
 
+export const runtime = "edge";
+
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
 async function getLatLngFromAddress(address) {

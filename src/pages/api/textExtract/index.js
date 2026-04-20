@@ -1,5 +1,9 @@
 const OPENAI_API_KEY = process.env.NEXT_PUBLIC_OPEN_API_KEY;
 
+export const config = {
+  runtime: "edge",
+};
+
 export default async function handler(req, res) {
   try {
     const { imgUrl } = req.body;
